@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>树型控件</title>
+    <link href="../../Resources/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../Resources/Font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../Resources/Styles/layout.css" rel="stylesheet" />
+    <link href="../../Resources/Styles/widget.css" rel="stylesheet" />
+    <link href="../../Resources/Styles/treeview.css" rel="stylesheet" />
+
+    <script src="../../Resources/Jquery/jquery-2.0.3.js" type="text/javascript"></script>
+    <script src="../../Resources/Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../Resources/Bootstrap/plugin/treeview/fuelux.tree.js"></script>
+    <script src="../../Resources/Scripts/tree.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#tree").tree({
+                dataSource: treeDataSource,
+                multiSelect: true
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container" style="margin-top: 100px; background-color: white; padding: 50px">
+        <div id="widget-box" class="widget-box">
+            <div id="widget-header" class="widget-header"></div>
+            <div id="widget-body" class="widget-body">
+                <div id="widget-content" class="widget-content" style="height:400px; overflow-y:scroll">
+                    <div id="tree" class="tree">
+                        <div class="tree-folder " style="display: none;">
+                            <div class="tree-folder-header">
+                                <i class="icon-plus"></i>
+                                <i class="icon-ok"></i>
+                                <div class="tree-folder-name">folder</div>
+                            </div>
+                            <div class="tree-folder-content" style="display: none;">
+                            </div>
+                            <div class="tree-loader" style="display: none">
+                                <div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>
+                            </div>
+                            <div class="tree-item" style="display: none;">
+                                <i class="icon-ok"></i>
+                                <div class="tree-item-name">item</div>
+                            </div>
+                        </div>
+                        <div class="tree-loader" style="display: none">
+                            <div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+            </div>
+    </div>
+</body>
+    <!--<div class="tree-folder " style="display: block;">
+                             <div class="tree-folder-header">
+                                 <i class="icon-minus"></i>
+                                 <i class="icon-ok"></i>
+                                 <div class="tree-folder-name">For Sale</div>
+                             </div>
+                             <div class="tree-folder-content" style="display: block;">
+                                 <div class="tree-folder" style="display: block;">
+                                     <div class="tree-folder-header">
+                                         <i class="icon-plus"></i>
+                                         <div class="tree-folder-name" >Vehicles</div>
+                                     </div>
+                                     <div class="tree-folder-content">
+                                         <div class="tree-folder tree-selected" style="display: block;">
+                                             <div class="tree-folder-header">
+                                                 <i class="icon-plus"></i>
+                                                 <i class="icon-ok"></i>
+                                                 <div class="tree-folder-name">Vehicles</div>
+                                             </div>
+                                             <div class="tree-folder-content">
+                                                 <div class="tree-item tree-selected" style="display: block;">
+                                                     <i class="icon-ok"></i>
+                                                     <div class="tree-item-name">Appliances</div>
+                                                 </div>
+                                                 <div class="tree-item tree-selected" style="display: block;">
+                                                     <i class="icon-ok"></i>
+                                                     <div class="tree-item-name">Arts &amp; Crafts</div>
+                                                 </div>
+                                                 <div class="tree-item" style="display: block;">
+                                                     <i class="icon-ok"></i>
+                                                     <div class="tree-item-name">Clothing</div>
+                                                 </div>
+                                                 <div class="tree-item" style="display: block;">
+                                                     <i class="icon-remove"></i>
+                                                     <div class="tree-item-name">Computers</div>
+                                                 </div>
+                                                 <div class="tree-item" style="display: block;">
+                                                     <i class="icon-remove"></i>
+                                                     <div class="tree-item-name">Jewelry</div>
+                                                 </div>
+                                                 <div class="tree-item" style="display: block;">
+                                                     <i class="icon-remove"></i>
+                                                     <div class="tree-item-name">Office &amp; Business</div>
+                                                 </div>
+                                                 <div class="tree-item" style="display: block;">
+                                                     <i class="icon-remove"></i>
+                                                     <div class="tree-item-name">Sports &amp; Fitness</div>
+                                                 </div>
+                                             </div>
+                                             <div class="tree-loader" style="display: none;">
+                                                 <div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="tree-loader" style="display: none;">
+                                         <div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>
+                                     </div>
+                                 </div>
+                                 <div class="tree-item tree-selected" style="display: block;">
+                                     <i class="icon-ok"></i>
+                                     <div class="tree-item-name">Tickets</div>
+                                 </div>
+                                 <div class="tree-item " style="display: block;">
+                                     <i class="icon-remove"></i>
+                                     <div class="tree-item-name">Tickets</div>
+                                 </div>
+                                 <div class="tree-item tree-selected" style="display: block;">
+                                     <i class="icon-ok"></i>
+                                     <div class="tree-item-name">Appliances</div>
+                                 </div>
+                                 <div class="tree-item tree-selected" style="display: block;">
+                                     <i class="icon-ok"></i>
+                                     <div class="tree-item-name">Arts &amp; Crafts</div>
+                                 </div>
+                                 <div class="tree-item" style="display: block;">
+                                     <i class="icon-remove"></i>
+                                     <div class="tree-item-name">Clothing</div>
+                                 </div>
+                                 <div class="tree-item" style="display: block;">
+                                     <i class="icon-remove"></i>
+                                     <div class="tree-item-name">Computers</div>
+                                 </div>
+                                 <div class="tree-item" style="display: block;">
+                                     <i class="icon-remove"></i>
+                                     <div class="tree-item-name">Jewelry</div>
+                                 </div>
+                                 <div class="tree-item" style="display: block;">
+                                     <i class="icon-remove"></i>
+                                     <div class="tree-item-name">Office &amp; Business</div>
+                                 </div>
+                                 <div class="tree-item" style="display: block;">
+                                     <i class="icon-remove"></i>
+                                     <div class="tree-item-name">Sports &amp; Fitness</div>
+                                 </div>
+                             </div>
+                             <div class="tree-loader" >
+                                 <div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>
+                             </div>
+                         </div>-->
+</html>

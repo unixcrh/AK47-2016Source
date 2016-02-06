@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Acts>
+  <Act actID="PropertyEdit">
+    <!--正常编辑-->
+    <Scene sceneID="Normal">
+      <Item controlID="propertyForm" readOnly="false"  recursive="true" />
+      <Item controlID="okButton" visible="true"/>
+    </Scene>
+    <!--只读-->
+    <Scene sceneID="ReadOnly">
+      <Item controlID="propertyForm" readOnly="true" recursive="true"/>
+      <Item controlID="okButton" visible="false" readOnly="true"/>
+      <Item controlID="grid" visible="true" readOnly="true"/>
+      <Item controlID="nextButton" visible="false" readOnly="true"/>
+      <Item controlID="ProcessDescInfoDeluxeGrid" readOnly="true"/>
+      <Item controlID="div_add" visible="false" readOnly="true"/>
+      <Item controlID="txt_OuterEntityName" visible="true" readOnly="true"/>
+      <Item controlID="ddl_InType" visible="true" readOnly="true"/>
+      
+      <Item controlID="btn_addEntity" visible="false"/>
+      <Item controlID="btn_delEntity" visible="false"/>
+      <Item controlID="btn_moveEntity" visible="false"/>
+      <Item controlID="btn_copyEntity" visible="false"/>
+      <Item controlID="btn_Import" visible="false"/>
+      <Item controlID="btn_addEntityAndMapping" visible="false"/>
+      <Item controlID="btn_addEtlEntity" visible="false"/>
+      
+    </Scene>
+  </Act>
+</Acts>

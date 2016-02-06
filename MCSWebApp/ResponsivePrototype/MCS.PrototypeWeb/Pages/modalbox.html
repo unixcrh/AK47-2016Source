@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模态窗口</title>
+    <link href="../Resources/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../Resources/Styles/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../Resources/Styles/elements.css" rel="stylesheet" type="text/css" />
+    <link href="../Resources/Styles/modalbox.css" rel="stylesheet" />
+    <link href="../Resources/Styles/oguselecter.css" rel="stylesheet" />
+    <link href="../Resources/Styles/treeview.css" rel="stylesheet" />
+    <link href="../Resources/Styles/form.css" rel="stylesheet" />
+    <script src="../Resources/Jquery/jquery-2.0.3.js" type="text/javascript"></script>
+    <script src="../Resources/Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../Resources/Scripts/modalbox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function oguSelecter() {
+            var options = {
+                title: "组织机构选人",
+                control: {
+                    id: 'oguselecter',
+                    clone: true
+                }
+            }
+            modalbox.show(options);
+        }
+
+        function showOguTree() {
+            var options = {
+                title: "组织机构选人2",
+                control: {
+                    id: 'ogutest',
+                    clone: true
+                }
+            }
+            modalbox.show(options);
+        }
+
+
+        $(document).ready(function () {
+            $("#simpleDialog").click(function () {
+                var options = {
+                    title: "委托授权定义",
+                    width: 600,
+                    height: 350,
+                    control: {
+                        id: 'delagateUser',
+                        clone: true
+                    }
+                };
+                modalbox.show(options);
+            })
+
+            $("#scrollGrid").click(function () {
+                var options = {
+                    title: "模版流程定义列表",
+                    width: 600,
+                    height: 400,
+                    control: {
+                        id: 'divScrollGrid',
+                        clone: true
+                    }
+                };
+                modalbox.show(options);
+            })
+            
+            $("#btnlayout").click(function () {
+                var options = {
+                    title: "个人设置",
+                    width: 600,
+                    height: 400,
+                    iframe: {
+                        width: '100%',
+                        height: '100%',
+                        src: './modalbox/leftrightlayout.html'
+                    }
+                };
+                modalbox.show(options);
+            })
+
+            $("#btntabSearch").click(function () {
+                var options = {
+                    title: "搜索",
+                    width: 600,
+                    height: 300,
+                    control: {
+                        id: 'tabSearch',
+                        clone: true
+                    }
+                };
+                modalbox.show(options);
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+    <div class="row" style="width: 90%">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <a href="javascript:void(0)" class="btn btn-primary bt-lg" data-toggle="modal" id="simpleDialog">简单对话框
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <a href="javascript:void(0)" class="btn btn-primary bt-lg" data-toggle="modal" id="scrollGrid">滚动列表对话框
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <a href="javascript:void(0)" class="btn btn-primary bt-lg" data-toggle="modal" id="btnlayout">左右布局对话框
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <a href="javascript:void(0)" class="btn btn-primary bt-lg" data-toggle="modal" id="btntabSearch">标签页与高级搜索
+            </a>
+        </div>
+    </div>
+    <div class="container">
+    </div>
+
+
+
+
+    <!-- 简单对话框 -->
+    <div id="delagateUser" class="modal-body" style="display:none">
+        <div class="form-group">
+            <label class="col-md-3 control-lable" for="delegationUser">被委托用户：</label>
+            <div class="col-md-9">
+                <div class="oguselecter">
+                    <div class="oguselecter-input" style="width: 80%">
+                        <span>袁旭;</span>
+                        <span>恒星;</span>
+                        <span>刘景;</span>
+                        <span>沈佳颖;</span>
+                        <input type="text" />
+                    </div>
+                    <div class="oguselecter-user" id='showOguUser' onclick="oguSelecter()"></div>
+                    <div class="oguselecter-ou" id="showOguTree"></div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group">
+            <label class="col-md-3 control-lable" for="delegationBeginTime">委托开始时间：</label>
+            <div class="col-md-9">
+                <div class="input-group">
+                    <input type="datetime" class="form-control" id="delegationBeginTime" />
+
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group">
+            <label class="col-md-3 control-lable" for="delegationEndTime">委托结束时间：</label>
+            <div class="col-md-9">
+                <div class="input-group">
+                    <input type="datetime" class="form-control" id="delegationEndTime" />
+
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+    <!-- /简单对话框 -->
+
+    <!-- 滚动列表对话框 -->
+    <div id="divScrollGrid" class="modal-body" style="display:none">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                Panel heading
+            </div>
+            <div class="panel-body">
+                <p>panel body</p>
+            </div>
+            <div style="height: 200px; overflow-y: auto">
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                th1
+                            </th>
+                            <th>
+                                th2
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="success">
+                            <td>
+                                td1.
+                            </td>
+                            <td>
+                                td2
+                            </td>
+                        </tr>
+                        <tr class="error">
+                            <td>
+                                td1.
+                            </td>
+                            <td>
+                                td2
+                            </td>
+                        </tr>
+                        <tr class="warning">
+                            <td>
+                                td1.
+                            </td>
+                            <td>
+                                td2
+                            </td>
+                        </tr>
+                        <tr class="info">
+                            <td>
+                                td1.
+                            </td>
+                            <td>
+                                td2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                td1.
+                            </td>
+                            <td>
+                                td2
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- /滚动列表对话框 -->
+
+    <!-- 标签页与高级搜索 -->
+
+    <div id="tabSearch" class="modal-body" style="display:none">
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="input-group">
+                            <input type="text" class="form-control" />
+                            <span class="input-group-addon" style="border-left: 0px">
+                                <a href="#">查询</a>
+                            </span>
+                            <span class="input-group-addon">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    高级查询
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                    <label for="txtRequirement">需求名称</label>
+                                </div>
+                                <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                    <input type="text" class="form-control" id="txtRequirement" placeholder="需求名称" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="dropdown pull-right tabdrop active">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify"></i><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="">
+                        <a data-toggle="tab" href="#retab5">
+                            Section 5
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+            <li><a href="#profile" data-toggle="tab">Profile</a></li>
+            <li><a href="#messages" data-toggle="tab">Messages</a></li>
+            <li><a href="#settings" data-toggle="tab">Settings</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="home">
+            </div>
+            <div class="tab-pane" id="profile">Profile...</div>
+            <div class="tab-pane" id="messages">Messages...</div>
+            <div class="tab-pane" id="settings">Settings...</div>
+            <div class="tab-pane" id="retab5">Section 5...</div>
+        </div>
+
+        <script>
+            $(function () {
+                $('#myTab a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+
+                })
+            })
+        </script>
+    </div>
+
+    <!-- /标签页与高级搜索 -->
+
+    <!--OguTree-->
+    <div id="oguselecter" class="modal-body" style="display:none">
+        <div class="oguselecter">
+            <div class="oguselecter-input" style="width: 80%">
+                <span>袁旭;</span>
+                <span>恒星;</span>
+                <span>刘景;</span>
+                <span>沈佳颖;</span>
+                <input type="text" />
+            </div>
+            <div class="oguselecter-user" id='showOguUser1' onclick="showOguTree()"></div>
+            <div class="oguselecter-ou" id="Div2"></div>
+        </div>
+    </div>
+
+    <div id="ogutest" class="modal-body" style="display:none">
+        ogu
+        <br />
+        <br />
+    </div>
+</body>
+</html>

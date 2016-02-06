@@ -1,0 +1,872 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F33BB962-FA9B-4380-B1AC-8AE65E9744D4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCS.Dynamics.Web</RootNamespace>
+    <AssemblyName>MCS.Dynamics.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>C:\Users\Administrator\Desktop\images\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library, Version=1.2.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.Data, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.OGUPermission, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.OGUPermission.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.Passport, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.SOA.DataObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.SOA.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.SOA.DataObjects.Dynamics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.SOA.DataObjects.Dynamics.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.SOA.DataObjects.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.SOA.DataObjects.Schemas.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.SOA.Web.WebControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.SOA.Web.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Web.Library, Version=1.2.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Web.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Web.Library.Script.Json">
+      <HintPath>..\..\Bin\MCS.Web.Library.Script.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Web.Responsive.Library">
+      <HintPath>..\..\Bin\MCS.Web.Responsive.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Web.WebControls, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Web.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Microsoft.IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Microsoft.IdentityModel.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Microsoft.SharePoint.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\AclEditor.xml" />
+    <Content Include="App_Data\PropertyEditScene.xml" />
+    <Content Include="Css\basePage.css" />
+    <Content Include="Css\Bigeasyui.css" />
+    <Content Include="Css\demo.css" />
+    <Content Include="Css\dlg.css" />
+    <Content Include="Css\form.css" />
+    <Content Include="Css\home.css" />
+    <Content Include="Css\icon.css" />
+    <Content Include="Css\pccom.css" />
+    <Content Include="Css\pccssreform.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="defaultView.aspx" />
+    <Content Include="Dialogs\AddEntityAndMapping.aspx" />
+    <Content Include="Dialogs\EntityDetails.aspx" />
+    <Content Include="Dialogs\EntityFieldDetails.aspx" />
+    <Content Include="Dashboard\EntityMappingDetail.aspx" />
+    <Content Include="Dialogs\GenerateEntityAndMapping.aspx" />
+    <Content Include="Dialogs\OuterEntityMapping.aspx" />
+    <Content Include="Dialogs\showObjectInfo.aspx" />
+    <Content Include="Dialogs\SelectCategory.aspx" />
+    <Content Include="Images\16\avi.gif" />
+    <Content Include="Images\16\checked.gif" />
+    <Content Include="Images\16\css.gif" />
+    <Content Include="Images\16\default.gif" />
+    <Content Include="Images\16\delay.gif" />
+    <Content Include="Images\16\delete.gif" />
+    <Content Include="Images\16\dll.gif" />
+    <Content Include="Images\16\dot.gif" />
+    <Content Include="Images\16\excel.gif" />
+    <Content Include="Images\16\find.gif" />
+    <Content Include="Images\16\htm.gif" />
+    <Content Include="Images\16\image.gif" />
+    <Content Include="Images\16\initialActivity.gif" />
+    <Content Include="Images\16\js.gif" />
+    <Content Include="Images\16\pdf.gif" />
+    <Content Include="Images\16\ppt.gif" />
+    <Content Include="Images\16\print.gif" />
+    <Content Include="Images\16\rm.gif" />
+    <Content Include="Images\16\search.gif" />
+    <Content Include="Images\16\sort.gif" />
+    <Content Include="Images\16\success.gif" />
+    <Content Include="Images\16\tif.gif" />
+    <Content Include="Images\16\unchecktask.gif" />
+    <Content Include="Images\16\viewtrack.gif" />
+    <Content Include="Images\16\visio.gif" />
+    <Content Include="Images\16\wav.gif" />
+    <Content Include="Images\16\winzip.gif" />
+    <Content Include="Images\16\wmp.gif" />
+    <Content Include="Images\16\word.gif" />
+    <Content Include="Images\16\wordpad.gif" />
+    <Content Include="Images\16\xinzeng.gif" />
+    <Content Include="Images\16\zip.gif" />
+    <Content Include="Images\appIcon\01.gif" />
+    <Content Include="Images\appIcon\02.gif" />
+    <Content Include="Images\appIcon\03.gif" />
+    <Content Include="Images\appIcon\04.gif" />
+    <Content Include="Images\appIcon\05.gif" />
+    <Content Include="Images\appIcon\06.gif" />
+    <Content Include="Images\appIcon\07.gif" />
+    <Content Include="Images\appIcon\08.gif" />
+    <Content Include="Images\appIcon\09.gif" />
+    <Content Include="Images\appIcon\10.gif" />
+    <Content Include="Images\appIcon\11.gif" />
+    <Content Include="Images\appIcon\12.gif" />
+    <Content Include="Images\appIcon\13.gif" />
+    <Content Include="Images\appIcon\14.gif" />
+    <Content Include="Images\appIcon\15.gif" />
+    <Content Include="Images\appIcon\16.gif" />
+    <Content Include="Images\appIcon\17.gif" />
+    <Content Include="Images\icon_01.gif" />
+    <Content Include="Images\jiahao.gif" />
+    <Content Include="Images\jianhao.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\sitelogo.png" />
+    <Content Include="Images\wait.gif" />
+    <Content Include="Images\wait.jpg" />
+    <Content Include="Images\wenjianjia.gif" />
+    <Content Include="inc\WebControls\Banner.ascx" />
+    <Content Include="inc\WebControls\BannerIframe.ascx" />
+    <Content Include="Index.aspx" />
+    <Content Include="Javascript\BannerNotice.js" />
+    <Content Include="Javascript\home.js" />
+    <Content Include="Javascript\jquery-1.7.2.min.js" />
+    <Content Include="Javascript\MicrosoftAjax.debug.js" />
+    <Content Include="Javascript\pc.js" />
+    <Content Include="Javascript\PermissionPropertyEditors.js" />
+    <Content Include="Javascript\RelaxedTabStrip.js" />
+    <Content Include="Javascript\timeline_2.3.0\CHANGES.txt" />
+    <Content Include="Javascript\timeline_2.3.0\LICENSE.txt" />
+    <Content Include="Javascript\timeline_2.3.0\README.txt" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\content\history.html" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-down.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-up.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-bottom-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-bottom-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-bottom.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-top-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-top-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\bubble-top.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\close-button.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\copy.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\message-bottom-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\message-bottom-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\message-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\message-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\message-top-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\images\message-top-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\scripts\signal.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\simile-ajax-api.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\simile-ajax-bundle.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\styles\graphics-ie6.css" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_ajax\styles\graphics.css" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\blue-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-bottom-arrow.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-bottom-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-bottom-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-bottom.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-left-arrow.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-right-arrow.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-top-arrow.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-top-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-top-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\bubble-top.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\close-button.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\copyright-vertical.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\copyright.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\dark-blue-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\dark-green-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\dark-red-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\dull-blue-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\dull-green-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\dull-red-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\gray-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\green-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\message-bottom-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\message-bottom-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\message-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\message-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\message-top-left.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\message-top-right.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\progress-running.gif" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\red-circle.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\images\top-bubble.png" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\cs\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\cs\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\de\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\de\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\en\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\en\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\es\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\es\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\fr\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\fr\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\it\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\it\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\nl\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\nl\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\ru\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\ru\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\se\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\se\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\tr\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\tr\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\vi\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\vi\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\zh\labellers.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\scripts\l10n\zh\timeline.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\timeline-api.js" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\timeline-bundle.css" />
+    <Content Include="Javascript\timeline_2.3.0\timeline_js\timeline-bundle.js" />
+    <Content Include="Pages\Converter\Default.aspx" />
+    <Content Include="Pages\Demo\Demo.aspx" />
+    <Content Include="Pages\editNode\AddNode.aspx" />
+    <Content Include="Pages\editNode\NodeDetails.aspx" />
+    <Content Include="Pages\editNode\EditDetails.aspx" />
+    <Content Include="Pages\Demo\SAPEntityFileTypeTest.aspx" />
+    <Content Include="Pages\EntityMapping\EntityMapping.aspx" />
+    <Content Include="Pages\Entity\EntityInfo.aspx" />
+    <Content Include="Pages\Job\TaskMonitor.aspx" />
+    <Content Include="Pages\Logs\LogList.aspx" />
+    <Content Include="Pages\Logs\LogView.aspx" />
+    <Content Include="Pages\PlanSchedule\ScheduleList.aspx" />
+    <Content Include="Themes\default\css\common.css" />
+    <Content Include="Themes\default\css\index.css" />
+    <Content Include="Themes\default\css\jquery-ui.css" />
+    <Content Include="Themes\default\images\c_ico01.png" />
+    <Content Include="Themes\default\images\c_ico02.png" />
+    <Content Include="Themes\default\images\c_ico11.png" />
+    <Content Include="Themes\default\images\c_ico12.png" />
+    <Content Include="Themes\default\images\c_ico20.png" />
+    <Content Include="Themes\default\images\c_ico_exit.png" />
+    <Content Include="Themes\default\images\c_ico_red.png" />
+    <Content Include="Themes\default\images\c_ico_user.png" />
+    <Content Include="Themes\default\images\i_p_bg1.png" />
+    <Content Include="Themes\default\images\i_p_ico01.png" />
+    <Content Include="Themes\default\images\i_p_ico10.png" />
+    <Content Include="Themes\default\images\i_p_ico11.png" />
+    <Content Include="Themes\default\images\i_p_ico12.png" />
+    <Content Include="Themes\default\images\i_p_ico13.png" />
+    <Content Include="Themes\default\images\i_p_ico14.png" />
+    <Content Include="Themes\default\images\i_p_ico15.png" />
+    <Content Include="Themes\default\images\i_p_ico20.png" />
+    <Content Include="Themes\default\images\i_p_ico21.png" />
+    <Content Include="Themes\default\images\i_p_ico22.png" />
+    <Content Include="Themes\default\images\i_p_ico23.png" />
+    <Content Include="Themes\default\images\i_p_ico24.png" />
+    <Content Include="Themes\default\images\i_p_ico25.png" />
+    <Content Include="Themes\default\images\i_p_ico26.png" />
+    <Content Include="Themes\default\images\i_p_ico27.png" />
+    <Content Include="Themes\default\images\i_p_ico28.png" />
+    <Content Include="Themes\default\images\i_p_ico29.png" />
+    <Content Include="Themes\default\images\i_p_ico30.png" />
+    <Content Include="Themes\default\images\i_p_ico31.png" />
+    <Content Include="Themes\default\images\i_p_ico32.png" />
+    <Content Include="Themes\default\images\i_p_ico33.png" />
+    <Content Include="Themes\default\images\i_p_ico34.png" />
+    <Content Include="Themes\default\images\i_p_ico35.png" />
+    <Content Include="Themes\default\images\i_p_ico90.png" />
+    <Content Include="Themes\default\images\i_p_ico99.png" />
+    <Content Include="Themes\default\images\loading.gif" />
+    <Content Include="Themes\default\images\logo.png" />
+    <Content Include="Themes\default\images\pic01.png" />
+    <Content Include="Themes\default\images\pic02.png" />
+    <Content Include="Themes\default\images\project_loadBg.png" />
+    <Content Include="Themes\default\images\ui-bg_flat_100_dddddd_40x100.png" />
+    <Content Include="Themes\default\images\ui-bg_flat_100_f37944_40x100.png" />
+    <Content Include="Themes\default\images\ui-bg_flat_100_fa6829_40x100.png" />
+    <Content Include="Themes\default\images\ui-bg_flat_100_fc8f60_40x100.png" />
+    <Content Include="Themes\default\images\ui-bg_flat_100_ffffff_40x100.png" />
+    <Content Include="Themes\default\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="Themes\default\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="Themes\default\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Themes\default\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Themes\default\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Themes\default\images\ui-icons_a83300_256x240.png" />
+    <Content Include="Themes\default\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Pages\ValidatorSelectorControlTest.aspx" />
+    <Content Include="scripts\BannerNotice.js" />
+    <Content Include="scripts\easyui-lang-zh_CN.js" />
+    <Content Include="scripts\EntityCommon.js" />
+    <Content Include="scripts\Entity\AddEntityAndMapping.js" />
+    <Content Include="scripts\Entity\EntityDetails.js" />
+    <Content Include="scripts\Entity\EntityInfo.js" />
+    <Content Include="scripts\Entity\EntityMappingDetail.js" />
+    <Content Include="scripts\Entity\showObjectInfo.js" />
+    <Content Include="scripts\ETLEntity\common.js" />
+    <Content Include="scripts\ETLEntity\EntityDetails.js" />
+    <Content Include="scripts\ETLEntity\EtlJobDetail.js" />
+    <Content Include="scripts\ETLEntity\JobEditor.js" />
+    <Content Include="scripts\ETLEntity\showObjectInfo.js" />
+    <Content Include="scripts\jquery-1.7.2.min.js" />
+    <Content Include="scripts\jquery-1.9.0.js" />
+    <Content Include="scripts\jquery.easyui.min.js" />
+    <Content Include="scripts\jquery.metadata.js" />
+    <Content Include="scripts\jquery.tmpl.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\JSLINQ.js" />
+    <Content Include="scripts\json2.js" />
+    <Content Include="scripts\MicrosoftAjax.debug.js" />
+    <Content Include="scripts\My97DatePicker\calendar.js" />
+    <Content Include="scripts\My97DatePicker\config.js" />
+    <Content Include="scripts\My97DatePicker\lang\en.js" />
+    <Content Include="scripts\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="scripts\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="scripts\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="scripts\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\skin\default\down.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\default\img.gif" />
+    <Content Include="scripts\My97DatePicker\skin\default\left.gif" />
+    <Content Include="scripts\My97DatePicker\skin\default\navLeft.gif" />
+    <Content Include="scripts\My97DatePicker\skin\default\navRight.gif" />
+    <Content Include="scripts\My97DatePicker\skin\default\right.gif" />
+    <Content Include="scripts\My97DatePicker\skin\default\up.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\down.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\left.gif" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\navLeft.gif" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\navRight.gif" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\other\bg2.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\other\interface.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\right.gif" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\up.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\ymbg.jpg" />
+    <Content Include="scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="scripts\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="scripts\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="scripts\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="scripts\My97DatePicker\开发包\readme.txt" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="scripts\pc.js" />
+    <Content Include="scripts\PermissionPropertyEditors.js" />
+    <Content Include="scripts\RelaxedTabStrip.js" />
+    <Content Include="scripts\timeline_2.3.0\CHANGES.txt" />
+    <Content Include="scripts\timeline_2.3.0\LICENSE.txt" />
+    <Content Include="scripts\timeline_2.3.0\README.txt" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\content\history.html" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-down.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-arrow-point-up.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-bottom-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-bottom-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-bottom.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-top-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-top-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\bubble-top.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\close-button.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\copy.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\message-bottom-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\message-bottom-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\message-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\message-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\message-top-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\images\message-top-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\scripts\signal.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\simile-ajax-api.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\simile-ajax-bundle.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\styles\graphics-ie6.css" />
+    <Content Include="scripts\timeline_2.3.0\timeline_ajax\styles\graphics.css" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\blue-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-bottom-arrow.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-bottom-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-bottom-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-bottom.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-left-arrow.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-right-arrow.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-top-arrow.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-top-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-top-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\bubble-top.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\close-button.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\copyright-vertical.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\copyright.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\dark-blue-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\dark-green-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\dark-red-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\dull-blue-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\dull-green-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\dull-red-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\gray-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\green-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\message-bottom-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\message-bottom-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\message-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\message-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\message-top-left.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\message-top-right.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\progress-running.gif" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\red-circle.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\images\top-bubble.png" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\cs\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\cs\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\de\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\de\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\en\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\en\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\es\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\es\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\fr\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\fr\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\it\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\it\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\nl\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\nl\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\ru\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\ru\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\se\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\se\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\tr\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\tr\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\vi\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\vi\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\zh\labellers.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\scripts\l10n\zh\timeline.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\timeline-api.js" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\timeline-bundle.css" />
+    <Content Include="scripts\timeline_2.3.0\timeline_js\timeline-bundle.js" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\PublishProfiles\DynamicWeb.pubxml" />
+    <None Include="Service References\Saplocalhost\MCS.Dynamics.Web.Saplocalhost.InstanceParam.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Saplocalhost\WebServiceConnectSAP1.wsdl" />
+    <None Include="Service References\SapUserCompare\MCS.Dynamics.Web.SapUserCompare.SapConnection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SapUserCompare\MCS.Dynamics.Web.SapUserCompare.TB_SapUserCompare.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SapUserCompare\SapUserCompareService.disco" />
+    <None Include="Service References\SapUserCompare\configuration91.svcinfo" />
+    <None Include="Service References\SapUserCompare\configuration.svcinfo" />
+    <None Include="Service References\SapUserCompare\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Saplocalhost\configuration91.svcinfo" />
+    <None Include="Service References\Saplocalhost\configuration.svcinfo" />
+    <None Include="Service References\Saplocalhost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Saplocalhost\WebServiceConnectSAP1.disco" />
+    <Content Include="Services\CommonService.asmx" />
+    <Content Include="Handlers\EntityExport.ashx" />
+    <Content Include="Handlers\CheckCopyEntity.ashx" />
+    <Content Include="Handlers\CopyEntities.ashx" />
+    <Content Include="Services\GetEntityDefine.asmx" />
+    <Content Include="Dialogs\ValidatorSelectorDialog.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\SapUserCompare\SapUserCompareService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSource\DBInfoObjectDataSource.cs" />
+    <Compile Include="DataSource\EntityMappingDataSource.cs" />
+    <Compile Include="DataSource\PropertyDropdownListDataSource.cs" />
+    <Compile Include="inc\EntityMappingItemDataSource.cs" />
+    <Compile Include="DataSource\EntitySearchDataSource.cs" />
+    <Compile Include="Handlers\CheckCopyEntity.ashx.cs">
+      <DependentUpon>CheckCopyEntity.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSource\DynamicsLogDataSource.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="defaultView.aspx.cs">
+      <DependentUpon>defaultView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="defaultView.aspx.designer.cs">
+      <DependentUpon>defaultView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddEntityAndMapping.aspx.cs">
+      <DependentUpon>AddEntityAndMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddEntityAndMapping.aspx.designer.cs">
+      <DependentUpon>AddEntityAndMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EntityDetails.aspx.cs">
+      <DependentUpon>EntityDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EntityDetails.aspx.designer.cs">
+      <DependentUpon>EntityDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EntityFieldDetails.aspx.cs">
+      <DependentUpon>EntityFieldDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EntityFieldDetails.aspx.designer.cs">
+      <DependentUpon>EntityFieldDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\EntityMappingDetail.aspx.cs">
+      <DependentUpon>EntityMappingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\EntityMappingDetail.aspx.designer.cs">
+      <DependentUpon>EntityMappingDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GenerateEntityAndMapping.aspx.cs">
+      <DependentUpon>GenerateEntityAndMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\GenerateEntityAndMapping.aspx.designer.cs">
+      <DependentUpon>GenerateEntityAndMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OuterEntityMapping.aspx.cs">
+      <DependentUpon>OuterEntityMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OuterEntityMapping.aspx.designer.cs">
+      <DependentUpon>OuterEntityMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PropertyEditorSceneAdapter.cs" />
+    <Compile Include="Dialogs\showObjectInfo.aspx.cs">
+      <DependentUpon>showObjectInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\showObjectInfo.aspx.designer.cs">
+      <DependentUpon>showObjectInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectCategory.aspx.cs">
+      <DependentUpon>SelectCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectCategory.aspx.designer.cs">
+      <DependentUpon>SelectCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\CopyEntities.ashx.cs">
+      <DependentUpon>CopyEntities.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\EntityExport.ashx.cs">
+      <DependentUpon>EntityExport.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="inc\ajaxResult.ashx.cs">
+      <DependentUpon>ajaxResult.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="inc\BatchErrorAdapter.cs" />
+    <Compile Include="inc\DbUtil.cs" />
+    <Compile Include="inc\IconSizeType.cs" />
+    <Compile Include="inc\ISceneDescriptor.cs" />
+    <Compile Include="inc\ManageAclStatus.cs" />
+    <Compile Include="inc\ManageRoleNotExistException.cs" />
+    <Compile Include="inc\ObjectNotFoundException.cs" />
+    <Compile Include="inc\SceneControlAttribute.cs" />
+    <Compile Include="inc\Util.cs" />
+    <Compile Include="inc\WebControls\Banner.ascx.cs">
+      <DependentUpon>Banner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inc\WebControls\Banner.ascx.designer.cs">
+      <DependentUpon>Banner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="inc\WebControls\BannerIframe.ascx.cs">
+      <DependentUpon>BannerIframe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inc\WebControls\BannerIframe.ascx.designer.cs">
+      <DependentUpon>BannerIframe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="inc\WebControls\BannerNotice.cs" />
+    <Compile Include="inc\WebControls\SceneControl.cs" />
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lists\TransferTypes.cs" />
+    <Compile Include="Pages\Converter\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Converter\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Demo\Demo.aspx.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Demo\Demo.aspx.designer.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\editNode\AddNode.aspx.cs">
+      <DependentUpon>AddNode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\editNode\AddNode.aspx.designer.cs">
+      <DependentUpon>AddNode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\editNode\NodeDetails.aspx.cs">
+      <DependentUpon>NodeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\editNode\NodeDetails.aspx.designer.cs">
+      <DependentUpon>NodeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\editNode\EditDetails.aspx.cs">
+      <DependentUpon>EditDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\editNode\EditDetails.aspx.designer.cs">
+      <DependentUpon>EditDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Demo\SAPEntityFileTypeTest.aspx.cs">
+      <DependentUpon>SAPEntityFileTypeTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Demo\SAPEntityFileTypeTest.aspx.designer.cs">
+      <DependentUpon>SAPEntityFileTypeTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EntityMapping\EntityMapping.aspx.cs">
+      <DependentUpon>EntityMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EntityMapping\EntityMapping.aspx.designer.cs">
+      <DependentUpon>EntityMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Entity\EntityInfo.aspx.cs">
+      <DependentUpon>EntityInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Entity\EntityInfo.aspx.designer.cs">
+      <DependentUpon>EntityInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Job\TaskMonitor.aspx.cs">
+      <DependentUpon>TaskMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Job\TaskMonitor.aspx.designer.cs">
+      <DependentUpon>TaskMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Logs\LogList.aspx.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Logs\LogList.aspx.designer.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Logs\LogView.aspx.cs">
+      <DependentUpon>LogView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Logs\LogView.aspx.designer.cs">
+      <DependentUpon>LogView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlanSchedule\ScheduleList.aspx.cs">
+      <DependentUpon>ScheduleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PlanSchedule\ScheduleList.aspx.designer.cs">
+      <DependentUpon>ScheduleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyEditors\CodeNameUniqueEditor.cs" />
+    <Compile Include="Pages\ValidatorSelectorControlTest.aspx.cs">
+      <DependentUpon>ValidatorSelectorControlTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ValidatorSelectorControlTest.aspx.designer.cs">
+      <DependentUpon>ValidatorSelectorControlTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Saplocalhost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SapUserCompare\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CommonService.asmx.cs">
+      <DependentUpon>CommonService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\GetEntityDefine.asmx.cs">
+      <DependentUpon>GetEntityDefine.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validate\CheckEntityChildren.cs" />
+    <Compile Include="Dialogs\ValidatorSelectorDialog.aspx.cs">
+      <DependentUpon>ValidatorSelectorDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ValidatorSelectorDialog.aspx.designer.cs">
+      <DependentUpon>ValidatorSelectorDialog.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="inc\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="inc\ajaxResult.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Saplocalhost\" />
+    <WCFMetadataStorage Include="Service References\SapUserCompare\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>25242</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MCSWebApp/MCS.Dynamics.Web/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

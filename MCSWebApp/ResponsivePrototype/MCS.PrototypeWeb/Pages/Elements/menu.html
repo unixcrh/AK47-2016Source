@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>左侧导航栏</title>
+    <link href="../../Resources/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../../Resources/Font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../../Resources/Styles/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../../Resources/Styles/elements.css" rel="stylesheet" />
+    <script src="../../Resources/Jquery/jquery-2.0.3.js" type="text/javascript"></script>
+    <script src="../../Resources/Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/sidemenu.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var options = {
+                callback: function ($a) {
+                    var src = $a.attr("href")
+                    if (src != "#") {
+                        $("#main-content-inner").attr("src", src);
+                        return false;
+                    }
+                }
+            };
+            lib.handle_side_menu(options);
+        });
+    </script>
+</head>
+<body>
+    <!--左侧导航收缩按钮-->
+    <a class="menu-toggler" id="menu-toggler" href="#" style="left: 220px;">
+        <span class="menu-text"></span>
+    </a>
+
+    <!--左侧导航-->
+    <div id="sidebar" class="sidebar">
+        <ul class="nav nav-list" id="ul">
+            <li id="ul-li-1">
+                <a href="index.html">
+                    <i class="icon-dashboard"></i>
+                    <span class="menu-text">工作台 </span>
+                </a>
+            </li>
+
+            <li id="ul-li-2">
+                <a href="#">
+                    <i class="icon-text-width"></i>
+                    <span class="menu-text">待办事项 </span>
+                </a>
+            </li>
+
+            <li id="ul-li-3">
+                <a href="#">
+                    <i class="icon-desktop"></i>
+                    <span class="menu-text">我的流程</span>
+                </a>
+            </li>
+
+            <li  id="ul-li-4">
+                <a href="#" class="dropdown-toggle">
+                    <i class="icon-list"></i>
+                    <span class="menu-text">发起流程 </span>
+
+                    <b class="arrow icon-angle-down"></b>
+                </a>
+
+                <ul class="submenu" id="ul-li-4-ul-1">
+                    <li id="ul-li-4-ul-1-li-1">
+                        <a href="#">
+                            <i class="icon-double-angle-right"></i>
+                            通用流程
+                        </a>
+                    </li>
+
+                    <li id="ul-li-4-ul-1-li-2">
+                        <a href="#">
+                            <i class="icon-double-angle-right"></i>
+                            业务流程
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li id="ul-li-5">
+                <a href="#" class="dropdown-toggle">
+                    <i class="icon-edit"></i>
+                    <span class="menu-text">委托授权 </span>
+                    <b class="arrow icon-angle-down"></b>
+                </a>
+
+                <ul class="submenu" id="ul-li-5-ul-1">
+                    <li id="ul-li-5-ul-1-li-1">
+                        <a href="#">
+                            <i class="icon-double-angle-right"></i>
+                            Form Elements
+                        </a>
+                    </li>
+
+                    <li id="ul-li-5-ul-1-li-2">
+                        <a href="#">
+                            <i class="icon-double-angle-right"></i>
+                            Wizard &amp; Validation
+                        </a>
+                    </li>
+
+                    <li id="ul-li-5-ul-1-li-3">
+                        <a href="#">
+                            <i class="icon-double-angle-right"></i>
+                            Wysiwyg &amp; Markdown
+                        </a>
+                    </li>
+
+                    <li id="ul-li-5-ul-1-li-4">
+                        <a href="#">
+                            <i class="icon-double-angle-right"></i>
+                            Dropzone File Upload
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li id="ul-li-6">
+                <a href="#">
+                    <i class="icon-list-alt"></i>
+                    <span class="menu-text">个人设置 </span>
+                </a>
+            </li>
+
+            <li class="active open"  id="ul-li-7">
+                <a href="#" class="dropdown-toggle">
+                    <i class="icon-file-alt"></i>
+
+                    <span class="menu-text">一级菜单</span>
+                    <span class="badge badge-primary ">5</span>
+
+
+                    <b class="arrow icon-angle-down"></b>
+                </a>
+
+                <ul class="submenu" id="ul-li-7-ul-1">
+                    <li class="active open" id="ul-li-7-ul-1-li-1">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-pencil"></i>
+                            二级菜单
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu" id="ul-li-7-ul-1-li-1-ul-1">
+                            <li class="active open" id="ul-li-7-ul-1-li-1-ul-1-li-1">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="icon-plus"></i>
+                                    三级菜单
+                                    <b class="arrow icon-angle-down"></b>
+                                </a>
+                                <ul class="submenu" id="ul-li-7-ul-1-li-1-ul-1-li-1-ul-1">
+                                    <li class="active" id="ul-li-7-ul-1-li-1-ul-1-li-1-li-1">
+                                        <a href="#">
+                                            <i class="icon-eye-open"></i>
+                                            四级菜单
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+        <div class="sidebar-collapse" id="sidebar-collapse">
+            <i class="icon-double-angle-left" data-icon-left="icon-double-angle-left" data-icon-right="icon-double-angle-right"></i>
+        </div>
+    </div>
+
+    <div>
+        <iframe id="content" style="top: 100px"></iframe>
+
+    </div>
+</body>
+</html>

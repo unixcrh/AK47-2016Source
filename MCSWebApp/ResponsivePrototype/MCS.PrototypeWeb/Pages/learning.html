@@ -1,0 +1,1533 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning</title>
+    <link href="../Resources/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../Resources/Styles/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../Resources/Styles/elements.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .div-margin
+        {
+            margin: 10px 20px 10px 10px;
+        }
+
+        .form-control
+        {
+            width: 80%;
+        }
+
+        body
+        {
+            padding: 10px 10px 10px 10px;
+        }
+    </style>
+
+    <!--<script src="../Resources/Jquery/jquery-2.0.3.js" type="text/javascript" ></script>-->
+    <script src="../Resources/Jquery/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="../Resources/Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../Resources/Scripts/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#optionsSubmit").unbind().bind('click', function () {
+                //alert(document.getElementsByName('optionsBox').value);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Definition List</h1>
+    <div class="div-margin">
+        <h3>Common Electronics Parts</h3>
+        <dl class="dl-horizontal">
+            <dt>LED</dt>
+            <dd>A light-emitting diode (LED) is a semiconductor light source.</dd>
+            <dt>Servo</dt>
+            <dd>Servos are small, cheap, mass-produced actuators used for radio control and small
+                robotics.</dd>
+        </dl>
+        <br />
+    </div>
+
+    <h1>Code p and pre</h1>
+    <div class="div-margin">
+        <p>
+            Instead of always using divs, in HTML5, you can use new elements like <code>&lt;section&gt;</code>,
+            <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code>. The html should look
+            something like this:
+        </p>
+        <pre>
+      &lt;article&gt;
+        &lt;h1&gt;Article Heading&lt;/h1&gt;
+      &lt;/article&gt;
+    </pre>
+        <br />
+    </div>
+
+
+    <h1>Table    </h1>
+    <div class="div-margin">
+        <table class="table table-hover">
+            <caption>
+                table caption</caption>
+            <thead>
+                <tr>
+                    <th>th1
+                    </th>
+                    <th>th2
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>td1.
+                    </td>
+                    <td>td2
+                    </td>
+                </tr>
+                <tr>
+                    <td>td1.
+                    </td>
+                    <td>td2
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <caption>
+                table caption</caption>
+            <thead>
+                <tr>
+                    <th>th1
+                    </th>
+                    <th>th2
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>td1.
+                    </td>
+                    <td>td2
+                    </td>
+                </tr>
+                <tr>
+                    <td>td1.
+                    </td>
+                    <td>td2
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <caption>
+                table caption</caption>
+            <thead>
+                <tr>
+                    <th>th1
+                    </th>
+                    <th>th2
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>td1.
+                    </td>
+                    <td>td2
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-condensed">
+            <caption>
+                table caption</caption>
+            <thead>
+                <tr>
+                    <th>th1
+                    </th>
+                    <th>th2
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>td1.
+                    </td>
+                    <td>td2
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class=" table-responsive">
+            <table class="table">
+                <caption>
+                    table caption</caption>
+                <thead>
+                    <tr>
+                        <th>th1
+                        </th>
+                        <th>th2
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="success">
+                        <td>td1.
+                        </td>
+                        <td>td2
+                        </td>
+                    </tr>
+                    <tr class="error">
+                        <td>td1.
+                        </td>
+                        <td>td2
+                        </td>
+                    </tr>
+                    <tr class="warning">
+                        <td>td1.
+                        </td>
+                        <td>td2
+                        </td>
+                    </tr>
+                    <tr class="info">
+                        <td>td1.
+                        </td>
+                        <td>td2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>td1.
+                        </td>
+                        <td>td2
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                Panel heading
+            </div>
+            <div class="panel-body">
+                <p>panel body</p>
+            </div>
+            <div style="height: 200px; overflow-y: auto">
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>th1
+                            </th>
+                            <th>th2
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="success">
+                            <td>td1.
+                            </td>
+                            <td>td2
+                            </td>
+                        </tr>
+                        <tr class="error">
+                            <td>td1.
+                            </td>
+                            <td>td2
+                            </td>
+                        </tr>
+                        <tr class="warning">
+                            <td>td1.
+                            </td>
+                            <td>td2
+                            </td>
+                        </tr>
+                        <tr class="info">
+                            <td>td1.
+                            </td>
+                            <td>td2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>td1.
+                            </td>
+                            <td>td2
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>
+
+
+    <h1>Form</h1>
+    <div class="div-margin">
+        <h2>基本案例</h2>
+        <form action="javascript:void(0)" role="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">
+                    Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">
+                    Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">
+                    File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">
+                    Example block-level help text here.
+                </p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    Check me out
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">
+                Submit</button>
+        </form>
+
+        <br />
+        <h2>内联表单</h2>
+        <form action="javascript:void(0)" class="form-inline" role="form">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail2">
+                    Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword2">
+                    Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    Remember me
+                </label>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-default">Sign in</a>
+            <button type="submit" class="btn btn-default">
+                Sign in</button>
+        </form>
+
+        <h2>水平排列表单</h2>
+        <form action="javascript:void(0)" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    姓名</label>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+                <label for="inputEmail4" class="col-sm-2 control-label">
+                    Email</label>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputOrg" class="col-sm-2 control-label">
+                    部门</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="inputOrg" placeholder="Password">
+                </div>
+                <label for="inputPassword3" class="col-sm-2 control-label">
+                    密码</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">
+                        Sign in</button>
+                </div>
+            </div>
+        </form>
+
+        <h2>基本控件</h2>
+        <p>text、password、datetime、datetime-local、date、month、time、week、number、email、url、search、tel和color</p>
+        <br />
+        <h3>text</h3>
+        <input type="text" class="form-control" placeholder="Text input">
+        <br />
+        <textarea class="form-control" rows="5" cols="10"></textarea>
+        <br />
+
+        <h3>Checkbox & Radio</h3>
+        <form action="javascript:void(0)">
+            <div class="checkbox">
+                <label>
+                    <input id="optioncheck1" type="checkbox" name="optionsBox" value="option1">
+                    Option one is this and that--be sure to include why it's great
+                </label>
+            </div>
+            <label class="checkbox">
+                <input id="optioncheck2" type="checkbox" name="optionsBox" value="option2">
+                Option one is this and that—be sure to include why it's great.
+            </label>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="Radio1" value="option1" checked>
+                    Option one is this and that&mdash;be sure to include why it's great
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="Radio2" value="option2">
+                    Option two can be something else and selecting it will deselect option one
+                </label>
+            </div>
+            <label class="radio">
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Option one is this and that—be sure to include why it's great.
+            </label>
+            <label class="radio">
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                Option two can be something else, and selecting it will deselect option one
+            </label>
+            <a href="javascript:void(0)" class="btn btn-default" id="optionsSubmit">提交</a>
+        </form>
+
+        <h3>checkbox inline</h3>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1">
+            1
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2">
+            2
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3">
+            3
+        </label>
+
+        <h3>下拉框</h3>
+        <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <br />
+        <select multiple class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+
+        <h3>静态控件</h3>
+        <form action="javascript:void(0)" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">
+                    Email</label>
+                <div class="col-lg-10">
+                    <p class="form-control-static">
+                        email@example.com
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">
+                    Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+            </div>
+        </form>
+
+        <h3>控件聚焦</h3>
+        <input class="form-control" id="focusedInput" type="text" value="This is focused...">
+        <br />
+
+        <h3>禁用控件</h3>
+        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+        <form role="form" action="javascript:void(0)">
+            <fieldset legend="" disabled>
+                <div class="form-group">
+                    <label for="disabledTextInput">
+                        Disabled input</label>
+                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                </div>
+                <div class="form-group">
+                    <label for="disabledSelect">
+                        Disabled select menu</label>
+                    <select id="disabledSelect" class="form-control">
+                        <option>Disabled select</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">
+                        Can't check this
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Submit</button>
+            </fieldset>
+        </form>
+
+        <h3>校验状态</h3>
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">
+                Input with success</label>
+            <input type="text" class="form-control" id="inputSuccess">
+        </div>
+        <div class="form-group has-warning">
+            <label class="control-label" for="inputWarning">
+                Input with warning</label>
+            <input type="text" class="form-control" id="inputWarning">
+        </div>
+        <div class="form-group has-error">
+            <label class="control-label" for="inputError">
+                Input with error</label>
+            <input type="text" class="form-control" id="inputError">
+        </div>
+        <br />
+
+        <h3>控件大小</h3>
+        <input class="form-control input-lg" type="text" placeholder=".input-lg">
+        <br />
+        <input class="form-control" type="text" placeholder="Default input">
+        <br />
+        <input class="form-control input-sm" type="text" placeholder=".input-sm">
+        <br />
+        <select class="form-control input-lg">
+        </select>
+        <br />
+        <select class="form-control">
+        </select>
+        <br />
+        <select class="form-control input-sm">
+        </select>
+        <br />
+        <div class="row">
+            <div class="col-lg-2">
+                <input type="text" class="form-control" placeholder=".col-lg-2">
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder=".col-lg-3">
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder=".col-lg-4">
+                <span class="help-block">自己独占一行或多行的块级帮助文本。</span>
+            </div>
+
+        </div>
+
+
+
+
+        <h2>按钮</h2>
+        <div class="div-margin">
+            <!-- Standard button -->
+            <button type="button" class="btn btn-default">
+                Default</button>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <button type="button" class="btn btn-primary">
+                Primary</button>
+            <!-- Indicates a successful or positive action -->
+            <button type="button" class="btn btn-success">
+                Success</button>
+            <!-- Contextual button for informational alert messages -->
+            <button type="button" class="btn btn-info">
+                Info</button>
+            <!-- Indicates caution should be taken with this action -->
+            <button type="button" class="btn btn-warning">
+                Warning</button>
+            <!-- Indicates a dangerous or potentially negative action -->
+            <button type="button" class="btn btn-danger">
+                Danger</button>
+            <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+            <button type="button" class="btn btn-link">
+                Link</button>
+            <br />
+            <a href="javascript:void(0)" class="btn btn-default btn-lg btn-primary disabled">Primary link</a>
+            <a href="javascript:void(0)" class="btn btn-default btn-lg disabled">Link</a>
+            <br />
+            <button type="button" class="btn btn-lg btn-primary disabled" disabled>Primary button</button>
+            <button type="button" class="btn btn-lg" disabled>Button</button>
+
+            <input class="btn btn-default" type="button" value="Input">
+            <input class="btn btn-default" type="submit" value="Submit">
+
+            <h3>按钮大小</h3>
+            <p>
+                <button type="button" class="btn btn-primary btn-lg">
+                    Large button</button>
+                <button type="button" class="btn btn-default btn-lg">
+                    Large button</button>
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary">
+                    Default button</button>
+                <button type="button" class="btn btn-default">
+                    Default button</button>
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary btn-sm">
+                    Small button</button>
+                <button type="button" class="btn btn-default btn-sm">
+                    Small button</button>
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary btn-xs">
+                    Extra small button</button>
+                <button type="button" class="btn btn-default btn-xs">
+                    Extra small button</button>
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                    <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>关闭按钮</h4>
+                    <button type="button" class="close">&times;</button>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                    <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+
+            <br />
+
+        </div>
+
+        <h2>Images</h2>
+        <div class="div-margin">
+            <img alt="" src="../Resources/AceAdmin/assets/avatars/avatar.png" class="img-rounded">
+            <img alt="" src="../Resources/AceAdmin/assets/avatars/avatar.png" class="img-circle">
+            <img alt="" src="../Resources/AceAdmin/assets/avatars/avatar.png" class="img-polaroid">
+
+            <img src="../Resources/AceAdmin/assets/avatars/avatar.png" class="img-responsive" alt="Responsive image">
+            <br />
+
+            <span class="glyphicon glyphicon-search"></span>
+            <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-star"></span>Star
+            </button>
+
+        </div>
+        <br />
+
+        <h2>浮动</h2>
+        <p>不可用于导航条</p>
+        <div class="div-margin">
+            <div class="pull-left">左浮动</div>
+            <div class="pull-right">右浮动</div>
+        </div>
+        <br />
+        <h2>内容居中</h2>
+        <div class="div-margin">
+            <div class="center-block">测试</div>
+        </div>
+
+
+        <br />
+        <h2>Dropdown Menus</h2>
+        <div class="div-margin">
+            <ul class="dropdown-menu" role="menu">
+                <li><a tabindex="-1" href="javascript:void(0)">Action</a></li>
+                <li><a tabindex="-1" href="javascript:void(0)">Another action</a></li>
+                <li><a tabindex="-1" href="javascript:void(0)">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+
+
+        <br />
+        <h2>栅格</h2>
+        <div class="div-margin">
+            <div class="row">
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+                <div class="col-md-1">
+                    .col-md-1
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    .col-md-8
+                </div>
+                <div class="col-md-4">
+                    .col-md-4
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    .col-md-4
+                </div>
+                <div class="col-md-4">
+                    .col-md-4
+                </div>
+                <div class="col-md-4">
+                    .col-md-4
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    .col-md-6
+                </div>
+                <div class="col-md-6">
+                    .col-md-6
+                </div>
+            </div>
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    .col-xs-12 .col-md-8
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    .col-xs-6 .col-md-4
+                </div>
+            </div>
+            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    .col-xs-6 .col-md-4
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    .col-xs-6 .col-md-4
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    .col-xs-6 .col-md-4
+                </div>
+            </div>
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="col-xs-6">
+                    .col-xs-6
+                </div>
+                <div class="col-xs-6">
+                    .col-xs-6
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    .col-xs-6 .col-sm-3
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    .col-xs-6 .col-sm-3
+                </div>
+                <!-- Add the extra clearfix for only the required viewport -->
+                <div class="clearfix visible-xs">
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    .col-xs-6 .col-sm-3
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    .col-xs-6 .col-sm-3
+                </div>
+            </div>
+
+            <!--列偏移-->
+            <div class="row">
+                <div class="col-md-4">
+                    .col-md-4
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    .col-md-4 .col-md-offset-4
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-md-offset-3">
+                    .col-md-3 .col-md-offset-3
+                </div>
+                <div class="col-md-3 col-md-offset-3">
+                    .col-md-3 .col-md-offset-3
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    .col-md-6 .col-md-offset-3
+                </div>
+            </div>
+
+
+            <h2>列嵌套</h2>
+            <div class="row">
+                <div class="col-md-9">
+                    Level 1: .col-md-9
+                    <div class="row">
+                        <div class="col-md-6">
+                            Level 2: .col-md-6
+                        </div>
+                        <div class="col-md-6">
+                            Level 2: .col-md-6
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>列排序</h2>
+            <div class="row">
+                <div class="col-md-9 col-md-push-3">
+                    .col-md-9 .col-md-push-3
+                </div>
+                <div class="col-md-3 col-md-pull-9">
+                    .col-md-3 .col-md-pull-9
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <br />
+    <h1>Glyphicons 图标</h1>
+    <div class="div-margin">
+
+        <span class="glyphicon glyphicon-search"></span>
+
+        <button type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-star"></span>Star
+        </button>
+
+        <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-star"></span>Star
+        </button>
+
+        <button type="button" class="btn btn-default btn-xs">
+            <span class="glyphicon glyphicon-star"></span>Star
+        </button>
+
+    </div>
+
+    <br />
+
+    <h1>下拉菜单</h1>
+    <div class="div-margin">
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown">
+                Dropdown   <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)">Action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)">Another action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)">Something else here</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+        <br />
+        <div class="dropdown">
+            <a class="btn btn-default dropdown-toggle" href="javascript:void(0)" id="dropMenu2" data-toggle="dropdown">DropDown <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header"><a href="javascript:void(0)">Header</a></li>
+                <li><a href="javascript:void(0)">Action</a></li>
+                <li><a href="javascript:void(0)">Another action</a></li>
+                <li role="presentation" class="divider"></li>
+                <li class="disabled"><a href="javascript:void(0)">Third Action</a></li>
+            </ul>
+        </div>
+        <br />
+
+
+    </div>
+
+    <br />
+    <br />
+
+    <h1>工具栏与按钮组</h1>
+    <div class="div-margin">
+        <h2>按钮组</h2>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+        <br />
+        <h2>工具栏</h2>
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">1</button>
+                <button type="button" class="btn btn-default">2</button>
+                <button type="button" class="btn btn-default">3</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">4</button>
+                <button type="button" class="btn btn-default">5</button>
+                <button type="button" class="btn btn-default">6</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">7</button>
+                <button type="button" class="btn btn-default">8</button>
+                <button type="button" class="btn btn-default">9</button>
+            </div>
+        </div>
+        <h2>嵌套</h2>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Dropdown
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Dropdown link</a></li>
+                    <li><a href="javascript:void(0)">Dropdown link</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>两端对齐</h2>
+        <div class="btn-group btn-group-justified">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+
+
+        <h2>竖排</h2>
+        <div class="btn-group btn-group-vertical">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Dropdown
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Dropdown link</a></li>
+                    <li><a href="javascript:void(0)">Dropdown link</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>按钮菜单</h2>
+        <div class="btn-group dropup">
+            <button type="button" class="btn btn-default">Default</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)">Action</a></li>
+                <li><a href="javascript:void(0)">Another action</a></li>
+                <li><a href="javascript:void(0)">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)">Action</a></li>
+                <li><a href="javascript:void(0)">Another action</a></li>
+                <li><a href="javascript:void(0)">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)">Action</a></li>
+                <li><a href="javascript:void(0)">Another action</a></li>
+                <li><a href="javascript:void(0)">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)">Action</a></li>
+                <li><a href="javascript:void(0)">Another action</a></li>
+                <li><a href="javascript:void(0)">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)">Action</a></li>
+                <li><a href="javascript:void(0)">Another action</a></li>
+                <li><a href="javascript:void(0)">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)">Action</a></li>
+                <li><a href="javascript:void(0)">Another action</a></li>
+                <li><a href="javascript:void(0)">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h1>输入组框</h1>
+    <div class="div-margin">
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" placeholder="Username" />
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-addon">.00</span>
+                </div>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" />
+                    <span class="input-group-addon">.00</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="checkbox" />
+                            </span>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="radio" />
+                            </span>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    Action <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)">Action</a></li>
+                                    <li><a href="javascript:void(0)">Another action</a></li>
+                                    <li><a href="javascript:void(0)">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:void(0)">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                            <input type="text" class="form-control">
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    Action <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0)">Action</a></li>
+                                    <li><a href="javascript:void(0)">Another action</a></li>
+                                    <li><a href="javascript:void(0)">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:void(0)">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+
+    <h1>导航</h1>
+    <div class="div-margin">
+        <h2>标签页</h2>
+        <p>完整功能需要：<a href="http://v3.bootcss.com/javascript/#tabs">Tab插件</a></p>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="javascript:void(0)">Home</a></li>
+            <li><a href="javascript:void(0)">Profile</a></li>
+            <li><a href="javascript:void(0)">Messages</a></li>
+        </ul>
+
+        <h2>胶囊式标签</h2>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="javascript:void(0)">Home</a></li>
+            <li><a href="javascript:void(0)">Profile</a></li>
+            <li><a href="javascript:void(0)">Messages</a></li>
+        </ul>
+
+        <h2>垂直标签</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="javascript:void(0)">Home</a></li>
+                    <li><a href="javascript:void(0)">Profile</a></li>
+                    <li><a href="javascript:void(0)">Messages</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="active"><a href="javascript:void(0)">Home</a></li>
+                    <li><a href="javascript:void(0)">Profile</a></li>
+                    <li class="disabled"><a href="javascript:void(0)">Messages</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="active"><a href="javascript:void(0)">Home</a></li>
+                    <li><a href="javascript:void(0)">Profile</a></li>
+                    <li class="dropdown"><a class="btn btn-default dropdown-toggle" href="javascript:void(0)"
+                        id="A2" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">Action</a></li>
+                            <li><a href="javascript:void(0)">Another action</a></li>
+                            <li><a href="javascript:void(0)">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0)">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="btn btn-default dropdown-toggle" href="javascript:void(0)"
+                        id="A1" data-toggle="dropdown">DropDown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header"><a href="javascript:void(0)">Header</a></li>
+                            <li><a href="javascript:void(0)">Action</a></li>
+                            <li><a href="javascript:void(0)">Another action</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li class="disabled"><a href="javascript:void(0)">Third Action</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <h2>导航条</h2>
+        <p>完整功能需要：<a href="http://v3.bootcss.com/javascript/#collapse">Collapse插件</a></p>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <nav class="navbar navbar-default" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <!--<span class="sr-only">Toggle navigation</span> -->
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Brand</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                                <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">
+                                Submit</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                                <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <br />
+        <h2>面包屑导航条</h2>
+        <div class="rows">
+            <div class="col-md-8">
+                <ol class="breadcrumb">
+                    <li><a href="javascript:void(0)">Home</a></li>
+                    <li><a href="javascript:void(0)">Library</a></li>
+                    <li class="active">Data</li>
+                </ol>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <h1>表单</h1>
+    <div class="div-margin">
+        <h2>查询表单</h2>
+        <p>navbar-form和 .form-inline 具有类似的功能，存在代码共享</p>
+        <div class="rows">
+            <div class="col-md-8">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <label for="inputsearch11" class="sr-only"></label>
+                        <input id="inputsearch11" type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">
+                        Submit</button>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+        <br />
+        <br />
+        <br />
+
+        <h2>分页</h2>
+        <div class="rows">
+            <div class="col-md-8">
+                <ul class="pagination">
+                    <li class="disabled"><a href="javascript:void(0)">Previous</a></li>
+                    <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="javascript:void(0)">2</a></li>
+                    <li><a href="javascript:void(0)">3</a></li>
+                    <li><a href="javascript:void(0)">4</a></li>
+                    <li><a href="javascript:void(0)">5</a></li>
+                    <li><a href="javascript:void(0)">6</a></li>
+                    <li><a href="javascript:void(0)">Next</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <h2>标签</h2>
+        <span class="label label-default">Default</span> <span class="label label-primary">Primary</span>
+        <span class="label label-success">Success</span> <span class="label label-info">Info</span>
+        <span class="label label-warning">Warning</span> <span class="label label-danger">Danger</span>
+
+
+        <h2>徽章</h2>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#"><span class="badge pull-right">42</span> Home </a>
+            </li>
+            ...
+        </ul>
+
+        <br />
+        <br />
+        <br />
+        <h2>页面标题</h2>
+        <div class="page-header">
+            <h1>Example page header <small>Subtext for header</small></h1>
+        </div>
+    </div>
+
+
+    <h1>模态窗口</h1>
+    <div class="div-margin">
+        <!-- Button trigger modal -->
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <div class="div-margin">
+            <div style="float: left">
+                <div>
+                    div4
+                 <div>div5</div>
+                </div>
+
+            </div>
+            <div style="float: left">div2</div>
+            <div style="float: left">div3</div>
+        </div>
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <div class="div-margin">
+            <div id="main-container" style="width: 100%">
+                <div id="main-container-inner" style="width: 100%">
+                    <div id="sidebar-container" style="float: left; width: 20%; border: 1px solid red">
+                        sidebar
+                    <br />
+                    </div>
+                    <div id="main-content" style="float: right; width: 70%; border: 1px solid red">content<br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="div-margin">
+            <span class="btn-arrow left-active "></span>
+            <span class="btn-arrow left-unactive "></span>
+            <span class="btn-arrow right-active "></span>
+            <span class="btn-arrow right-unactive "></span>
+
+            <span class="lync-head-icon away "></span>
+            <span class="lync-head-icon awayoof"></span>
+            <span class="lync-head-icon blocked"></span>
+            <span class="lync-head-icon busy"></span>
+            <span class="lync-head-icon dnd"></span>
+            <span class="lync-head-icon dndoof"></span>
+            <span class="lync-head-icon hdr"></span>
+            <span class="lync-head-icon idle"></span>
+            <span class="lync-head-icon idlebusy"></span>
+            <span class="lync-head-icon idlebusyoof"></span>
+            <span class="lync-head-icon dileoof"></span>
+            <span class="lync-head-icon off"></span>
+            <span class="lync-head-icon offoof"></span>
+            <span class="lync-head-icon on"></span>
+            <span class="lync-head-icon onoof"></span>
+        </div>
+
+
+        <div style="display: table; width: 100%">
+            table 
+            <div style="display: table-caption; width: 100%">caption</div>
+            <div style="display: table-row; width: 100%">
+                row
+                <div style="display: table-cell; width: 50%">
+                    col
+
+                </div>
+                <div style="display: table-cell; width: 100%">
+                    col
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="div-margin">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Collapsible Group Item #1
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Collapsible Group Item #3
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

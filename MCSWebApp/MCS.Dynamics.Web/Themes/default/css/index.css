@@ -1,0 +1,200 @@
+﻿/******************************************************************************/
+@charset "utf-8";
+html { overflow-y: hidden; overflow-x: scroll; }
+.pageTop { width: 100%; height: 65px; position: fixed; }
+.pageTop .mLogo { width: 360px; padding-left: 30px; padding-top: 5px; float: left; }
+.pageTop .mLogin { width: 300px; position: fixed; right: 0; }
+.mLogin .userIco { float: left; width: 70px; padding-top: 3px; }
+.mLogin .userInfo { float: left; padding-top: 12px; }
+.mLogin .userInfo .name { font-size: 14px; }
+.mLogin .userInfo .info { }
+.mLogin .menuAction { background: url("../images/i_p_ico01.png") center no-repeat; background-color: #b1d1e3; width: 40px; height: 40px; position: fixed; right: 44px; cursor: pointer; }
+.mLogin .exitAction { background: url("../images/c_ico_exit.png") center no-repeat; background-color: #cccccc; width: 40px; height: 40px; position: fixed; right: 0; cursor: pointer; }
+/******************************************************************************/
+.pageContent { width: auto; margin-top: 65px; position: absolute; white-space: nowrap; }
+
+.panel { margin-left: 10px; display: inline-block; vertical-align: top; }
+.panel.ml30 { margin-left: 30px; }
+.panel.ml50 { margin-left: 50px; }
+
+.panelTitle { height: 42px; }
+.panelTitle h1 { font-size: 25px; float: left; color: #333333; font-weight: normal; }
+.panelTitle h5 { font-size: 16px; padding-top: 10px; padding-left: 10px; float: left; color: #cccccc; font-weight: normal; }
+.panelBody { white-space: normal; }
+/******************************************************************************/
+.panelBody .list { float: left; margin-right: 10px; }
+
+.funcBox { height: 150px; width: 150px; margin-bottom: 10px; }
+.funcBox.ml10 { margin-left: 10px; }
+.funcBox.fl { float: left; }
+
+.funcBox.blue { background-color: #64a3c8; }
+.funcBox.green { background-color: #b0c340; }
+.funcBox.orange { background-color: #fbb078; }
+.funcBox.violet { background-color: #ac71c6; }
+.funcBox.red { background-color: #ff8380; }
+.funcBox.grey { background-color: #f7f7f7; }
+.funcBox.blue:hover { background-color: #609dc1; }
+.funcBox.green:hover { background-color: #a8bc32; }
+.funcBox.orange:hover { background-color: #faa25f; }
+.funcBox.violet:hover { background-color: #a75dc7; }
+.funcBox.red:hover { background-color: #ff6966; }
+.funcBox.grey:hover { background-color: #f0f0f0; }
+
+.funcBox.blue:hover { background-color: #258ac5; }
+.funcBox.green:hover { background-color: #9db417; }
+.funcBox.orange:hover { background-color: #fb9445; }
+.funcBox.violet:hover { background-color: #9042b1; }
+.funcBox.red:hover { background-color: #f35a58; }
+.funcBox.grey:hover { background-color: #f0f0f0; }
+.funcBox.project { background-image: url("../images/i_p_bg1.png"); width: 580px; height: 470px; }
+.funcBox.projectDes { width: 580px; height: 470px; display: none; }
+
+.funcBox.h150 { height: 150px; }
+.funcBox.h230 { height: 230px; }
+.funcBox.h310 { height: 310px; }
+.funcBox.w150 { width: 150px; }
+.funcBox.w310 { width: 310px; }
+/******************************************************************************/
+.funcBox .fBox { display: none; }
+/*********************************/
+.funcBox .fLoading { text-align: center; }
+.fLoading.project { width: 580px; height: 470px; background-image: url("../images/project_loadBg.png"); }
+.fLoading .fContent.pt1 { padding-top: 20px !important; }
+.fLoading .fContent.pt2 { padding-top: 175px !important; }
+.fLoading .fContent.pt3 { padding-top: 60px !important; }
+.fLoading .fContent.pt4 { padding-top: 100px !important; }
+.fLoading p, .fLoading a { color: #333333; }
+/******************************************************************************/
+.funcBox .fTop { padding: 15px; padding-top: 11px; height: 21px; font-size: 18px; }
+.funcBox .fTop .title { float: left; color: #fff; }
+.funcBox .fTop .num { float: right; color: #fff; }
+.funcBox .fTop .title2 { float: left; color: #000; }
+.funcBox .fTop .num2 { float: right; color: #000; }
+.funcBox .fTop .close { float: right; color: #fff; font-size: 18px; padding-top: 2px; font-weight: bold; font-family: "宋体"; cursor: pointer; }
+.funcBox .fTop2 { padding: 15px; padding-top: 11px; padding-bottom: 0px; height: 21px; font-size: 18px; }
+.funcBox .fTop2 .title { float: left; color: #fff; }
+.funcBox .fTop2 .num { float: right; color: #fff; }
+.funcBox .fTop2 .title2 { float: left; color: #000; }
+.funcBox .fTop2 .num2 { float: right; color: #000; }
+.funcBox .num a { color: #fff; }
+.funcBox .num2 a { color: #000; }
+/*********************************/
+.funcBox .fContent { padding: 0px 15px; }
+.funcBox .fContent .listItem { color: #fff; height: 30px; }
+.listItem .link { float: left; width: 240px; overflow: hidden; }
+.listItem .link a { color: #fff; font-size: 14px; }
+.listItem .link2 { float: left; width: 280px; overflow: hidden; }
+.listItem .link2 a { color: #fff; font-size: 14px; }
+.listItem .date { float: right; width: 40px; text-align: right; font-size: 12px; }
+/*********************************/
+.funcBox .fContent .listItem2 { color: #333; height: 30px; }
+.listItem2 .link { float: left; width: 240px; overflow: hidden; }
+.listItem2 .link a { color: #333; font-size: 14px; }
+.listItem2 .date { float: right; width: 40px; text-align: right; font-size: 12px; }
+/*********************************/
+.listItem2 .link .red, .listItem .link .red, .listItem .link2 .red { background: url("../images/c_ico_red.png") left no-repeat; width: 20px; height: 16px; display: inline-block; }
+/*********************************/
+.funcBox .fContent .listItem3 { height: 45px; margin-top: 16px; }
+.listItem3 .leftBoder { float: left; width: 12px; height: 40px; margin-top: 6px; }
+.listItem3 .leftBoder.color1 { border-left: solid 4px #c0dae9; }
+.listItem3 .leftBoder.color2 { border-left: solid 4px #dac9eb; }
+.listItem3 .leftBoder.color3 { border-left: solid 4px #fbb379; }
+.listItem3 .leftBoder.color4 { border-left: solid 4px #96dcc4; }
+.listItem3 .item { float: left; color: #333; width:264px; }
+.listItem3 .item a { color: #333; }
+.listItem3 .item.colorWhite { color: #fff; }
+.listItem3 .item.colorWhite a { color: #fff; }
+.listItem3 .item .item1 { height: 30px; font-size: 14px; }
+.listItem3 .item .item1 .left { float: left; }
+.listItem3 .item .item1 .right { float: right; font-size: 12px; padding-top: 2px; text-align: right; }
+.listItem3 .item .item2 { font-size: 12px; }
+.listItem3 .item .item2 .left { float: left; }
+.listItem3 .item .item2 .right { float: right; text-align: right; }
+/*********************************/
+.funcBox .fContent .listItem4 { height: 81px; padding-top: 3px; }
+.listItem4 .ico { float: left; width: 80px; padding-top: 3px; }
+.listItem4 .ico .date { width: 64px; height: 44px; line-height: 44px; color: #333; font-size: 22px; text-align: center; background-color: #fff; }
+.listItem4 .ico .time { width: 64px; height: 20px; line-height: 20px; color: #fff; font-size: 12px; text-align: center; background-color: #afc340; }
+.listItem4 .item { float: left; }
+.listItem4 .item a { color: #333; }
+.listItem4 .item .item1 { height: 27px; color: #333; font-size: 14px; }
+.listItem4 .item .item2 { color: #666; height: 23px; font-size: 12px; }
+.listItem4 .item .item3 { color: #666; font-size: 12px; }
+/*********************************/
+.funcBox .fContent .listItem5 { margin-top: 12px; }
+.listItem5 .leftBoder { float: left; width: 10px; height: 83px; border-left: solid 4px #c0dae9; margin-top: 6px; margin-left: 6px; }
+.listItem5 .item { float: left; color: #fff; }
+.listItem5 .item a { color: #fff; }
+.listItem5 .item .item1 { font-size: 14px; height: 25px; }
+.listItem5 .item .item2 { font-size: 12px; padding-left: 20px; height: 24px; }
+.listItem5 .item .item3 { font-size: 12px; padding-left: 20px; height: 24px; }
+.listItem5 .item .item4 { font-size: 12px; padding-left: 20px; }
+/******************************************************************************/
+.fContent .proLeft { width: 383px; float: left; }
+.fContent .proRight { width: 167px; float: left; }
+.proLeft .chart { height: 353px; padding-top: 16px; }
+.proLeft .chart .red { float: left; width: 55px; padding-left: 40px; padding-top: 2px; font-size: 16px; }
+.proLeft .chart .red .item { height: 49px; }
+.proLeft .chart .red a { color: #333; }
+.proLeft .chart .main { float: left; }
+.proLeft .chart .main .item { width: 235px; text-align: center; height: 49px; font-size: 20px; }
+.chart .color1 { color: #89a201; }
+.chart .color2 { color: #002598; }
+.chart .color3 { color: #56028f; }
+.chart .color4 { color: #009062; }
+.chart .color5 { color: #028295; }
+.chart .color6 { color: #a17703; }
+.chart .color7 { color: #a14704; }
+.chart .color1 a { color: #89a201; }
+.chart .color2 a { color: #002598; }
+.chart .color3 a { color: #56028f; }
+.chart .color4 a { color: #009062; }
+.chart .color5 a { color: #028295; }
+.chart .color6 a { color: #a17703; }
+.chart .color7 a { color: #a14704; }
+.proLeft .count { color: #666; font-size: 14px; font-weight: bolder; }
+.proLeft .count .item0 { float: left; padding-left: 5px; padding-top: 3px; width: 20px; }
+.proLeft .count .item1 { float: left; width: 70px; }
+.proLeft .count .item2 { float: left; }
+.proLeft .count .item3 { float: left; padding-left: 15px; }
+.proLeft .count font { font-size: 14px; color: #333; font-weight: normal; }
+/*********************************/
+.proRight .item { height: 57px; }
+.proRight .item .type { font-size: 16px; height: 28px; color: #333; }
+.proRight .item .type a { font-size: 16px; color: #333; }
+.proRight .item .detail { font-size: 12px; color: #666; width: 165px; overflow: hidden; }
+.proRight .item .detail a { font-size: 12px; color: #666; }
+/******************************************************************************/
+.funcBox .fLink { width: 64px; height: 64px; margin: 0 auto; margin-top: 5px; }
+.fLink.pic10 { background: url(../images/i_p_ico10.png); }
+.fLink.pic11 { background: url(../images/i_p_ico11.png); }
+.fLink.pic12 { background: url(../images/i_p_ico12.png); }
+.fLink.pic13 { background: url(../images/i_p_ico13.png); }
+.fLink.pic14 { background: url(../images/i_p_ico14.png); }
+.fLink.pic15 { background: url(../images/i_p_ico15.png); }
+.fLink.pic20 { background: url(../images/i_p_ico20.png); }
+.fLink.pic21 { background: url(../images/i_p_ico21.png); }
+.fLink.pic22 { background: url(../images/i_p_ico22.png); }
+.fLink.pic23 { background: url(../images/i_p_ico23.png); }
+.fLink.pic24 { background: url(../images/i_p_ico24.png); }
+.fLink.pic25 { background: url(../images/i_p_ico25.png); }
+.fLink.pic26 { background: url(../images/i_p_ico26.png); }
+.fLink.pic27 { background: url(../images/i_p_ico27.png); }
+.fLink.pic28 { background: url(../images/i_p_ico28.png); }
+.fLink.pic29 { background: url(../images/i_p_ico29.png); }
+.fLink.pic30 { background: url(../images/i_p_ico30.png); }
+.fLink.pic31 { background: url(../images/i_p_ico31.png); }
+.fLink.pic32 { background: url(../images/i_p_ico32.png); }
+.fLink.pic33 { background: url(../images/i_p_ico33.png); }
+.fLink.pic34 { background: url(../images/i_p_ico34.png); }
+.fLink.pic35 { background: url(../images/i_p_ico35.png); }
+.fLink.pic90 { background: url(../images/i_p_ico90.png); }
+.fLink.pic99 { background: url(../images/i_p_ico99.png); }
+/******************************************************************************/
+.fContent .today { text-align: center; color: #fff; }
+.fContent .today .date { font-size: 60px; }
+.fContent .today .week { font-size: 18px; }
+/******************************************************************************/
+.fContent .fText { padding: 10px; color: #fff; text-indent: 24px; }
+/******************************************************************************/

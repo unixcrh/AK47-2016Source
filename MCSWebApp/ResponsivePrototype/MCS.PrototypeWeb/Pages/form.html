@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link href="../Resources/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Resources/Font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../Resources/Styles/layout.css" rel="stylesheet" />
+    <link href="../Resources/Styles/form.css" rel="stylesheet" />
+
+    <script src="../Resources/Jquery/jquery-2.0.3.js" type="text/javascript"></script>
+    <script src="../Resources/Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <header>
+        <!--导航条-->
+        <nav id="navbar" class="navbar navbar-default navbar-mcs navbar-fixed-top" role="navigation">
+            <!-- 窗口缩小后的菜单按钮定义 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div id="collapseMenu" class="collapse navbar-collapse navbar-ex-collapse">
+                <ul class="nav navbar-nav" >
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">送签 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">送签</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">送签并通知</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">送签并传阅</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">保存</a></li>
+                    <li><a href="#">加签</a></li>
+                    <li><a href="#">转签</a></li>
+                    <li><a href="#">会签</a></li>
+                    <li><a href="#">结束</a></li>
+                    <li><a href="#">退件</a></li>
+                    <li><a href="#">作废</a></li>
+                    <li><a href="#">交办</a></li>
+                    <li><a href="#">催办</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">跟踪 <b class="caret"></b></a>
+                    </li>
+                    <li class="active"><a href="#">打印</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container container-mcs-form">
+        <div class="row container-inner">
+            <div class="process-nav">
+                <div class="process-nav-title">
+                    流程导航
+                </div>
+                <div class="process-nav-left">
+                    <span class="btn-arrow left-active " ></span>
+                </div>
+                <div class="process-nav-content">
+                    <ul class="process-nav-nodes">
+                        <li class="arrow arrow-right arrow-success">
+                            <a href="#">
+                                <span class="lync-status-icon away"></span>
+                                <span>袁旭</span>
+                            </a>
+                        </li>
+                        <li class="arrow arrow-right arrow-success">
+                            <a href="#">
+                                <span class="lync-status-icon away"></span>
+                                <span>袁旭</span>
+                            </a>
+                        </li>
+                        <li class="arrow arrow-right arrow-success ">
+                            <a data-toggle="dropdown" class="dropdown-toggle current" href="#">
+                                <span class="lync-status-icon away"></span>
+                                <span>袁旭</span>
+                            </a>
+                            <div class="arrow arrow-down arrow-success" style="float:left; position:absolute; top:32px;left:10px;"></div>
+                            <div class="arrow arrow-right arrow-success" style="float:left; position:absolute; top:36px;left:19px;"></div>
+                            <div class="sub-nav">                                
+                                <ul class="process-nav-nodes">
+                                    <li class="arrow arrow-right arrow-success">
+                                        <a href="#">
+                                            <span class="lync-status-icon away"></span>
+                                            <span>袁旭</span>
+                                        </a>
+                                    </li>
+                                    <li class="arrow arrow-right arrow-success">
+                                        <a href="#">
+                                            <span class="lync-status-icon away"></span>
+                                            <span>袁旭</span>
+                                        </a>
+                                    </li>
+                                      <li class="arrow arrow-right arrow-success">
+                                        <a href="#">
+                                            <span class="lync-status-icon away"></span>
+                                            <span>袁旭</span>
+                                        </a>
+                                    </li>
+                                      <li class="arrow arrow-right arrow-success">
+                                        <a href="#">
+                                            <span class="lync-status-icon away"></span>
+                                            <span>袁旭</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <img title="流程结束" src="../Resources/Images/completeActivity.gif" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="arrow arrow-right arrow-important">
+                            <a href="#">
+                                <span class="lync-status-icon away"></span>
+                                <span>袁旭</span>
+                            </a>
+                        </li>
+                        <li class="arrow arrow-right arrow-important">
+                            <a href="#">
+                                <span class="lync-status-icon away"></span>
+                                <span>袁旭</span>
+                            </a>
+                        </li>
+                        <li>
+                            <img title="流程结束" src="../Resources/Images/completeActivity.gif" />
+                        </li>
+                    </ul>
+                </div>                
+                <div class="process-nav-right">
+                    <span class="btn-arrow right-active "></span>
+                </div>
+            </div>
+        </div>
+        <div class="row container-inner">
+            <div class="col-md-12">
+                <div class="page-header form-header">
+                    <h3>应用系统新功能上线申请单</h3>
+                </div>
+            </div>
+            <div class="form-horizontal" role="form">
+                <div class="container">
+                    <ul class="nav nav-tabs" id="Ul1">
+                        <li class="active"><a href="javascript:void(0)" data-toggle="tab">申请信息</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="Div1">
+                            <div class="form-table">
+                                <div class="form-group form-table-row">
+                                    <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                        <label for="txtRequirement">需求名称</label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                        <input type="text" class="form-control" id="txtRequirement" placeholder="需求名称" />
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                        <label for="txtDepartment">提报部门</label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                        <input type="text" class="form-control" id="txtDepartment" placeholder="需求提报部门" />
+                                    </div>
+                                </div>
+                                <div class="form-group form-table-row">
+                                    <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                        <label for="txtCheckTime">
+                                            审核时间</label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                        <input type="text" class="form-control" id="txtCheckTime" placeholder="需求审核时间" />
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                        <label for="txtCompletedTime">
+                                            完工时间</label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                        <input type="text" class="form-control" id="txtCompletedTime" placeholder="程序完工时间" />
+                                    </div>
+                                </div>
+                                <div class="form-group form-table-row">
+                                    <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                        <label for="txtCreator">
+                                            拟稿人</label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                        <input type="text" class="form-control" id="txtCreator" placeholder="拟稿人" />
+                                    </div>
+                                    <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                        <label for="txtApplyTime">
+                                            申请日期</label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                        <input type="text" class="form-control" id="txtApplyTime" placeholder="申请日期" />
+                                    </div>
+                                </div>
+                                <div class="form-group form-table-row">
+                                    <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                        <label for="txtApplication">
+                                            应用系统</label>
+                                    </div>
+                                    <div class="col-lg-11 col-md-10 col-sm-10  form-table-value">
+                                        <div>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="inlineCheckbox1" value="option1" />
+                                                ERP总部
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="inlineCheckbox2" value="option2" />
+                                                ERP分部
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="inlineCheckbox3" value="option3" />
+                                                ERP物流
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox4" value="option1" />
+                                                BI
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox5" value="option2" />
+                                                B2B
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox6" value="option3" />
+                                                电子商务
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox1" value="option1" />
+                                                资产管理
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox2" value="option2" />
+                                                HR
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox3" value="option3" />
+                                                ELearning
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox7" value="option1" />
+                                                财务NC系统
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="Checkbox8" value="option2" />
+                                                预算系统
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li><a href="#approve" data-toggle="tab">审批信息</a></li>
+                        <li  class="active"><a href="#trace" data-toggle="tab">流程跟踪</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane " id="approve">
+                            <div class="container container-approve">
+                                <div class="row approve-node">
+                                    <div class="row approve-section">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 approve-name">
+                                            <div class="approve-name-content">
+                                                <span>信息管理中心/业务经理</span>
+                                                <span style="text-align: center">刘璟</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 approve-value">
+                                            <div class="approve-value-content">
+                                                <p>同意</p>
+                                                <span class="sign">刘璟</span>
+                                                <span class="lync-status-icon away"></span>
+                                                <span class="lync-status-icon awayoof"></span>
+                                                <span class="lync-status-icon blocked"></span>
+                                                <span class="lync-status-icon busy"></span>
+                                                <span class="lync-status-icon busyoof"></span>
+                                                <span class="lync-status-icon dnd"></span>
+                                                <span class="lync-status-icon dndoof"></span>
+                                                <span class="lync-status-icon hdr"></span>
+                                                <span class="lync-status-icon idle"></span>
+                                                <span class="lync-status-icon idlebusy"></span>
+                                                <span class="lync-status-icon idlebusyoof"></span>
+                                                <span class="lync-status-icon dileoof"></span>
+                                                <span class="lync-status-icon off"></span>
+                                                <span class="lync-status-icon offoof"></span>
+                                                <span class="lync-status-icon on"></span>
+                                                <span class="lync-status-icon onoof"></span><br />
+                                                <span class="sign">2013.10.29 10:00:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row approve-section">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 approve-name">
+                                            <div class="approve-name-content">
+                                                <span>信息管理中心/业务经理</span>
+                                                <span>恒星</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 approve-value" >
+                                            <div class="approve-value-content">
+                                                <p>同意</p>
+                                                <span class="sign">恒星</span>
+                                                <span class="lync-status-icon away"></span>
+                                                <span class="lync-status-icon awayoof"></span>
+                                                <span class="lync-status-icon blocked"></span>
+                                                <span class="lync-status-icon busy"></span>
+                                                <span class="lync-status-icon busyoof"></span>
+                                                <span class="lync-status-icon dnd"></span>
+                                                <span class="lync-status-icon dndoof"></span>
+                                                <span class="lync-status-icon hdr"></span>
+                                                <span class="lync-status-icon idle"></span>
+                                                <span class="lync-status-icon idlebusy"></span>
+                                                <span class="lync-status-icon idlebusyoof"></span>
+                                                <span class="lync-status-icon dileoof"></span>
+                                                <span class="lync-status-icon off"></span>
+                                                <span class="lync-status-icon offoof"></span>
+                                                <span class="lync-status-icon on"></span>
+                                                <span class="lync-status-icon onoof"></span>
+                                                <br />
+                                                <span class="sign">2013.10.29 10:30:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row approve-section">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 approve-name">
+                                            <div class="btn-group">
+                                                <a class="btn btn-xs btn-success">
+                                                    <i class="icon-plus bigger-120"></i>
+                                                </a>
+
+                                                <a class="btn btn-xs btn-info">
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </a>
+
+                                                <a class="btn btn-xs btn-danger">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 approve-value" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row approve-node">
+                                    <div class="row approve-section">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 approve-name">
+                                            <div class="approve-name-content">
+                                                <span>信息管理中心/业务经理</span>
+                                                <span>袁旭</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 approve-value" >
+                                            <div class="approve-value-content">
+                                                <p>
+                                                    1. 界面使用字体，微软雅黑与宋体，现在二者均有，需验证mac 上的字体显示
+                                                    2. 导航条，导航栏目确认
+                                                    3. 对资源进行随机抽帧10张，方便用户了解大体内容
+	                                                    随机抽取恐怕无法了解内容，可以让管理员进行抽取？
+                                                    4. 不做水印处理？
+	                                                    现阶段内网用户访问，但内网用户获取后有可能流出
+	                                                    增加水印仅能在转码时操作，如果现在不加，将来再重新过一次所有视频
+                                                    5. 是否需要增加关键字设置
+                                                    6.针对已审核通过的视频的权限：预览、下载、编辑、删除、是否展示
+                                                    7.针对每个资源除密级外，还需要考虑设设定在某一个页面上是否展示（多个页面如何控制）
+                                                    8.资源统计，按 多类型、公司、等维度进行统计
+                                                    9. 资源类型需要可以维护
+                                                    10. 搜索结果，相关资料暂时不做
+                                                    11.资源编目，热门资源按照 业务时间进行展示，并增加是否在首页显示，默认为选中状态
+                                                    12. 孟令宏提供一份资源筛选的工作量估算
+
+                                                </p>
+                                                <span class="sign">袁旭</span>
+                                                <span class="lync-status-icon away"></span>
+                                                <span class="lync-status-icon awayoof"></span>
+                                                <span class="lync-status-icon blocked"></span>
+                                                <span class="lync-status-icon busy"></span>
+                                                <span class="lync-status-icon busyoof"></span>
+                                                <span class="lync-status-icon dnd"></span>
+                                                <span class="lync-status-icon dndoof"></span>
+                                                <span class="lync-status-icon hdr"></span>
+                                                <span class="lync-status-icon idle"></span>
+                                                <span class="lync-status-icon idlebusy"></span>
+                                                <span class="lync-status-icon idlebusyoof"></span>
+                                                <span class="lync-status-icon dileoof"></span>
+                                                <span class="lync-status-icon off"></span>
+                                                <span class="lync-status-icon offoof"></span>
+                                                <span class="lync-status-icon on"></span>
+                                                <span class="lync-status-icon onoof"></span>
+                                                <br />
+                                                <span class="sign">2013.10.29 10:30:00</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row approve-section">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 approve-name">
+                                            <div class="approve-name-content">
+                                                <span>信息管理中心/业务经理</span>
+                                                <span>万洪武</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 approve-value">
+                                            <div class="approve-value-content">
+                                                <p>1. 界面使用字体，微软雅黑与宋体，现在二者均有，需验证mac 上的字体显示
+                                                    2. 导航条，导航栏目确认
+                                                    3. 对资源进行随机抽帧10张，方便用户了解大体内容
+	                                                    随机抽取恐怕无法了解内容，可以让管理员进行抽取？
+                                                    4. 不做水印处理？
+	                                                    现阶段内网用户访问，但内网用户获取后有可能流出
+	                                                    增加水印仅能在转码时操作，如果现在不加，将来再重新过一次所有视频
+                                                    5. 是否需要增加关键字设置
+                                                    6.针对已审核通过的视频的权限：预览、下载、编辑、删除、是否展示
+                                                    7.针对每个资源除密级外，还需要考虑设设定在某一个页面上是否展示（多个页面如何控制）
+                                                    8.资源统计，按 多类型、公司、等维度进行统计
+                                                    9. 资源类型需要可以维护
+                                                    10. 搜索结果，相关资料暂时不做
+                                                    11.资源编目，热门资源按照 业务时间进行展示，并增加是否在首页显示，默认为选中状态
+                                                    12. 孟令宏提供一份资源筛选的工作量估算</p>
+                                                <span class="sign">万洪武</span><br />
+                                                <span class="sign">2013.10.29 10:30:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row approve-section">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 approve-name">
+                                            <div class="approve-name-content">
+                                                <span>信息管理中心/业务经理</span>
+                                                <span>万洪武</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 approve-value">
+                                            <div class="approve-value-content">
+                                                <p>同意</p>
+                                                <span class="sign">万洪武</span>
+                                                <span class="lync-status-icon away"></span>
+                                                <span class="lync-status-icon awayoof"></span>
+                                                <span class="lync-status-icon blocked"></span>
+                                                <span class="lync-status-icon busy"></span>
+                                                <span class="lync-status-icon busyoof"></span>
+                                                <span class="lync-status-icon dnd"></span>
+                                                <span class="lync-status-icon dndoof"></span>
+                                                <span class="lync-status-icon hdr"></span>
+                                                <span class="lync-status-icon idle"></span>
+                                                <span class="lync-status-icon idlebusy"></span>
+                                                <span class="lync-status-icon idlebusyoof"></span>
+                                                <span class="lync-status-icon dileoof"></span>
+                                                <span class="lync-status-icon off"></span>
+                                                <span class="lync-status-icon offoof"></span>
+                                                <span class="lync-status-icon on"></span>
+                                                <span class="lync-status-icon onoof"></span>
+                                                <br />
+                                                <span class="sign">2013.10.29 10:30:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row approve-section">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 approve-name">
+                                            <div class="btn-group">
+                                                <a class="btn btn-xs btn-success">
+                                                    <i class="icon-plus bigger-120"></i>
+                                                </a>
+
+                                                <a class="btn btn-xs btn-info">
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </a>
+
+                                                <a class="btn btn-xs btn-danger">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 " >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane active" id="trace">
+                            <div class="container">
+                                <!--<div class="approve-trace">
+                                    <ul class="process-trace">
+                                        <li>
+                                            <div class="trace-node">
+                                                <div class="title">起草</div>
+                                                <div class="content">
+                                                    <span class="lync-status-icon away"></span>
+                                                    <span >袁旭</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="trace-transition">
+                                                <div class="line"></div>
+                                                <div class="arrow"></div>
+                                            </div>
+                                        </li>
+                                         <li>
+                                            <div class="trace-node">
+                                                <div class="title">审批</div>
+                                                 <div class="content">
+                                                    <span class="lync-status-icon away"></span>
+                                                    <span>袁旭</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                         <li>
+                                            <div class="trace-node">
+                                                <div class="title">审批</div>
+                                                 <div class="content">
+                                                    <span class="lync-status-icon away"></span>
+                                                    <span>袁旭</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                         <li>
+                                            <div class="trace-node">
+                                                <div class="title">审批</div>
+                                                 <div class="content">
+                                                    <span class="lync-status-icon away"></span>
+                                                    <span>袁旭</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                         <li>
+                                            <div class="trace-node">
+                                                <div class="title">完成</div>
+                                                 <div class="content">
+                                                    <span class="lync-status-icon away"></span>
+                                                    <span>袁旭</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container container-footer">
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿/******************************************************************************/
+@charset "utf-8";
+* { margin: 0; padding: 0; }
+body { color: #333; font-size: 12px; font-family: "微软雅黑",Arial, Helvetica, sans-serif; }
+table { border-collapse: collapse; border: 0; }
+img { border: 0; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+/******************************************************************************/
+.displayNone { display: none; }
+.displayBlock { display: block !important; }
+.clear { clear: both; }
+.w100 { width: 100px !important; }
+.w150 { width: 150px !important; }
+.w200 { width: 200px !important; }
+.w250 { width: 250px !important; }
+.w300 { width: 300px !important; }
+/******************************************************************************/
+/***按钮和文本框等控件样式***/
+.button1 { width: 120px; height: 30px; border: none; font-size: 14px; background-color: #fc8f60; color: #ffffff; }
+.button1:hover { background-color: #f37944; }
+.button2 { width: 120px; height: 30px; border: none; font-size: 14px; background-color: #999; color: #ffffff; }
+.button2:hover { background-color: #aaaaaa; }
+
+.button_search { background: url(../images/c_ico20.png) center no-repeat; background-color: #626262; width: 30px; height: 30px; border: none; cursor: pointer; }
+.button_search:hover { background-color: #cccccc; }
+
+.input_text, .input_textarea { height: 25px; line-height: 25px; border: solid 1px #828282; padding-left: 3px; }
+.input_text.required, .input_textarea.required { border-left: solid 3px #fc8f60; padding-left: 1px; }
+.input_text:hover, .input_textarea:hover { border: solid 1px #41acdf; }
+.input_text.required:hover, .input_textarea.required:hover { border: solid 1px #41acdf; border-left: solid 3px #fc8f60; }
+.input_textarea { height: 100px; }
+.input_select { height: 27px; line-height: 27px; }
+/******************************************************************************/
+.mBox { }
+
+/******************************************************************************/

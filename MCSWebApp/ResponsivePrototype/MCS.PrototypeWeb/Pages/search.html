@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>查询</title>
+    <link href="../Resources/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../Resources/Font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../Resources/Styles/layout.css" rel="stylesheet" />
+    <link href="../Resources/Styles/elements.css" rel="stylesheet" />
+
+    <script src="../Resources/Jquery/jquery-2.0.3.js" type="text/javascript"></script>
+    <script src="../Resources/Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+</head>
+<body>
+    <div style="margin: 100px 50px 0px 50px">
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="input-group">
+                            <span class="input-icon" >
+                                <input type="text" class="form-control" style="padding-left:30px;border-top-left-radius:4px; border-bottom-left-radius:4px" />
+                                <i class="icon-search nav-search-icon"></i>
+                            </span>
+                            <span class="input-group-addon" style="border-left: 0px">
+                                <a href="#">查询</a>
+                            </span>
+                            <span class="input-group-addon">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">高级查询
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-2 col-sm-2 form-table-name">
+                                    <label for="txtRequirement">需求名称</label>
+                                </div>
+                                <div class="col-lg-5 col-md-4 col-sm-4 form-table-value">
+                                    <input type="text" class="form-control" id="txtRequirement" placeholder="需求名称" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br />
+
+    </div>
+</body>
+</html>

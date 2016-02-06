@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="connectSAPTEST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sappara" type="tns:SAPPara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SAPPara">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationServer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppServerService" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Client" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogonGroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageServerHost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageServerService" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="connectSAPTESTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="connectSAPTESTResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityDefine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityDefineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityDefineResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param" type="tns:InstanceParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="sapPara" type="tns:SAPPara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InstanceParam">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SapType" type="tns:InType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Values" type="tns:ArrayOfSapValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="InType">
+        <s:restriction base="s:string">
+          <s:enumeration value="StandardInterface" />
+          <s:enumeration value="CustomInterface" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfSapValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SapValue" nillable="true" type="tns:SapValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SapValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteSAPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sapresult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SAP_RFCParams_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFCName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sappara" type="tns:SAPPara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SAP_RFCParams_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SAP_RFCParams_GetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSAPRFC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rfcFunctionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instanceParam" type="tns:InstanceParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="sapParam" type="tns:SAPPara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSAPRFCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteSAPRFCResult" type="tns:InstanceParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SAP_TableFiled_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sappara" type="tns:SAPPara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SAP_TableFiled_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SAP_TableFiled_GetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadTableData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rtp" type="tns:ReadTableParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="sappara" type="tns:SAPPara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReadTableParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WhereClause" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowSkip" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PackageSize" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fields" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadTableDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadTableDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadTableAllDataSplit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fields" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="whereClause" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowSkip" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sappara" type="tns:SAPPara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadTableAllDataSplitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadTableAllDataSplitResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="isEnd" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="connectSAPTESTSoapIn">
+    <wsdl:part name="parameters" element="tns:connectSAPTEST" />
+  </wsdl:message>
+  <wsdl:message name="connectSAPTESTSoapOut">
+    <wsdl:part name="parameters" element="tns:connectSAPTESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDefineSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityDefine" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDefineSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityDefineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSAP" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SAP_RFCParams_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:SAP_RFCParams_Get" />
+  </wsdl:message>
+  <wsdl:message name="SAP_RFCParams_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:SAP_RFCParams_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSAPRFCSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSAPRFC" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSAPRFCSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSAPRFCResponse" />
+  </wsdl:message>
+  <wsdl:message name="SAP_TableFiled_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:SAP_TableFiled_Get" />
+  </wsdl:message>
+  <wsdl:message name="SAP_TableFiled_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:SAP_TableFiled_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadTableDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadTableData" />
+  </wsdl:message>
+  <wsdl:message name="ReadTableDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadTableDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadTableAllDataSplitSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadTableAllDataSplit" />
+  </wsdl:message>
+  <wsdl:message name="ReadTableAllDataSplitSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadTableAllDataSplitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDefineHttpGetIn">
+    <wsdl:part name="tCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDefineHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDefineHttpPostIn">
+    <wsdl:part name="tCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDefineHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceConnectSAPSoap">
+    <wsdl:operation name="connectSAPTEST">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 连接SAP测试</wsdl:documentation>
+      <wsdl:input message="tns:connectSAPTESTSoapIn" />
+      <wsdl:output message="tns:connectSAPTESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDefine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据tCode获取实体信息</wsdl:documentation>
+      <wsdl:input message="tns:GetEntityDefineSoapIn" />
+      <wsdl:output message="tns:GetEntityDefineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 执行SAPTcode</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteSAPSoapIn" />
+      <wsdl:output message="tns:ExecuteSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SAP_RFCParams_Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取RFC参数列表</wsdl:documentation>
+      <wsdl:input message="tns:SAP_RFCParams_GetSoapIn" />
+      <wsdl:output message="tns:SAP_RFCParams_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSAPRFC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 执行SAPRFC</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteSAPRFCSoapIn" />
+      <wsdl:output message="tns:ExecuteSAPRFCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SAP_TableFiled_Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 读取SAP表结构</wsdl:documentation>
+      <wsdl:input message="tns:SAP_TableFiled_GetSoapIn" />
+      <wsdl:output message="tns:SAP_TableFiled_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTableData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 读取SAP表数据</wsdl:documentation>
+      <wsdl:input message="tns:ReadTableDataSoapIn" />
+      <wsdl:output message="tns:ReadTableDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTableAllDataSplit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">分批读取SAP表所有数据</wsdl:documentation>
+      <wsdl:input message="tns:ReadTableAllDataSplitSoapIn" />
+      <wsdl:output message="tns:ReadTableAllDataSplitSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceConnectSAPHttpGet">
+    <wsdl:operation name="GetEntityDefine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据tCode获取实体信息</wsdl:documentation>
+      <wsdl:input message="tns:GetEntityDefineHttpGetIn" />
+      <wsdl:output message="tns:GetEntityDefineHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceConnectSAPHttpPost">
+    <wsdl:operation name="GetEntityDefine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据tCode获取实体信息</wsdl:documentation>
+      <wsdl:input message="tns:GetEntityDefineHttpPostIn" />
+      <wsdl:output message="tns:GetEntityDefineHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceConnectSAPSoap" type="tns:WebServiceConnectSAPSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="connectSAPTEST">
+      <soap:operation soapAction="http://tempuri.org/connectSAPTEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDefine">
+      <soap:operation soapAction="http://tempuri.org/GetEntityDefine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSAP">
+      <soap:operation soapAction="http://tempuri.org/ExecuteSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SAP_RFCParams_Get">
+      <soap:operation soapAction="http://tempuri.org/SAP_RFCParams_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSAPRFC">
+      <soap:operation soapAction="http://tempuri.org/ExecuteSAPRFC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SAP_TableFiled_Get">
+      <soap:operation soapAction="http://tempuri.org/SAP_TableFiled_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTableData">
+      <soap:operation soapAction="http://tempuri.org/ReadTableData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTableAllDataSplit">
+      <soap:operation soapAction="http://tempuri.org/ReadTableAllDataSplit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceConnectSAPSoap12" type="tns:WebServiceConnectSAPSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="connectSAPTEST">
+      <soap12:operation soapAction="http://tempuri.org/connectSAPTEST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDefine">
+      <soap12:operation soapAction="http://tempuri.org/GetEntityDefine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSAP">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SAP_RFCParams_Get">
+      <soap12:operation soapAction="http://tempuri.org/SAP_RFCParams_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSAPRFC">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteSAPRFC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SAP_TableFiled_Get">
+      <soap12:operation soapAction="http://tempuri.org/SAP_TableFiled_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTableData">
+      <soap12:operation soapAction="http://tempuri.org/ReadTableData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTableAllDataSplit">
+      <soap12:operation soapAction="http://tempuri.org/ReadTableAllDataSplit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceConnectSAPHttpGet" type="tns:WebServiceConnectSAPHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetEntityDefine">
+      <http:operation location="/GetEntityDefine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceConnectSAPHttpPost" type="tns:WebServiceConnectSAPHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetEntityDefine">
+      <http:operation location="/GetEntityDefine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceConnectSAP">
+    <wsdl:port name="WebServiceConnectSAPSoap" binding="tns:WebServiceConnectSAPSoap">
+      <soap:address location="http://localhost/WebServiceConnectSAPWithBizTalk/WebServiceConnectSAP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceConnectSAPSoap12" binding="tns:WebServiceConnectSAPSoap12">
+      <soap12:address location="http://localhost/WebServiceConnectSAPWithBizTalk/WebServiceConnectSAP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceConnectSAPHttpGet" binding="tns:WebServiceConnectSAPHttpGet">
+      <http:address location="http://localhost/WebServiceConnectSAPWithBizTalk/WebServiceConnectSAP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceConnectSAPHttpPost" binding="tns:WebServiceConnectSAPHttpPost">
+      <http:address location="http://localhost/WebServiceConnectSAPWithBizTalk/WebServiceConnectSAP.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

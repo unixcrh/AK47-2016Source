@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C4578CE6-E2B5-4537-BDB3-A5C49BABE6AA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCS.PrototypeWeb</RootNamespace>
+    <AssemblyName>MCS.PrototypeWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.html" />
+    <Content Include="index.html" />
+    <Content Include="Pages\datetimepicker.html" />
+    <Content Include="Pages\Elements\arrow.html" />
+    <Content Include="Pages\Elements\menu.html" />
+    <Content Include="Pages\Elements\treeview.html" />
+    <Content Include="Pages\Elements\widget.html" />
+    <Content Include="Pages\Elements\workstation.html" />
+    <Content Include="Pages\form.html" />
+    <Content Include="Pages\learning.html" />
+    <Content Include="Pages\login.html" />
+    <Content Include="Pages\logout.html" />
+    <Content Include="Pages\modalbox.html" />
+    <Content Include="Pages\modalbox\leftrightlayout.html" />
+    <Content Include="Pages\Elements\table.html" />
+    <Content Include="Pages\oguselecter.html" />
+    <Content Include="Pages\search.html" />
+    <Content Include="Pages\Server\GridView.aspx" />
+    <Content Include="Resources\Bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Resources\Bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Resources\Bootstrap\css\bootstrap.css" />
+    <Content Include="Resources\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Resources\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resources\Bootstrap\js\bootstrap.js" />
+    <Content Include="Resources\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Resources\Bootstrap\plugin\datetimepicker\css\bootstrap-daterangepicker.css" />
+    <Content Include="Resources\Bootstrap\plugin\datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="Resources\Bootstrap\plugin\datetimepicker\js\bootstrap-daterangepicker.js" />
+    <Content Include="Resources\Bootstrap\plugin\datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Resources\Bootstrap\plugin\datetimepicker\moment.min.js" />
+    <Content Include="Resources\Bootstrap\plugin\treeview\fuelux.tree.js" />
+    <Content Include="Resources\Bootstrap\plugin\treeview\fuelux.tree.min.js" />
+    <Content Include="Resources\Font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Resources\Font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Resources\Font-awesome\css\font-awesome.css" />
+    <Content Include="Resources\Font-awesome\css\font-awesome.min.css" />
+    <Content Include="Resources\Font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="Resources\Images\activity.gif" />
+    <Content Include="Resources\Images\anchor.gif" />
+    <Content Include="Resources\Images\btnArrow.gif" />
+    <Content Include="Resources\Images\btnArrow.png" />
+    <Content Include="Resources\Images\cancelled.gif" />
+    <Content Include="Resources\Images\checkUser.gif" />
+    <Content Include="Resources\Images\completeActivity.gif" />
+    <Content Include="Resources\Images\delay.gif" />
+    <Content Include="Resources\Images\excel.gif" />
+    <Content Include="Resources\Images\group.gif" />
+    <Content Include="Resources\Images\hourglass.gif" />
+    <Content Include="Resources\Images\initialActivity.gif" />
+    <Content Include="Resources\Images\ou.gif" />
+    <Content Include="Resources\Images\roles.gif" />
+    <Content Include="Resources\Images\ucStatus.png" />
+    <Content Include="Resources\Images\uc_offline.gif" />
+    <Content Include="Resources\Images\user.gif" />
+    <Content Include="Resources\Images\user.jpg" />
+    <Content Include="Resources\Images\word.gif" />
+    <Content Include="Resources\Jquery-ui\css\jquery-ui-1.10.0.custom.css" />
+    <Content Include="Resources\Jquery-ui\css\jquery-ui-1.10.0.custom.min.css" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="Resources\Jquery-ui\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Resources\Jquery-ui\index.html" />
+    <Content Include="Resources\Jquery-ui\js\jquery-ui-1.10.0.custom.js" />
+    <Content Include="Resources\Jquery-ui\js\jquery-ui-1.10.0.custom.min.js" />
+    <Content Include="Resources\Jquery\jquery-1.10.2.js" />
+    <Content Include="Resources\Jquery\jquery-1.10.2.min.js" />
+    <Content Include="Resources\Jquery\jquery-2.0.3.js" />
+    <Content Include="Resources\Jquery\jquery-2.0.3.min.js" />
+    <Content Include="Resources\Jquery\jquery-migrate-1.2.1.js" />
+    <Content Include="Resources\Jquery\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Resources\Scripts\ace-extra.min.js" />
+    <Content Include="Resources\Scripts\ace.js" />
+    <Content Include="Resources\Scripts\index.js" />
+    <Content Include="Resources\Scripts\modalbox.js" />
+    <Content Include="Resources\Scripts\sidemenu.js" />
+    <Content Include="Resources\Scripts\tree.js" />
+    <Content Include="Resources\Styles\badge.css" />
+    <Content Include="Resources\Styles\button.css" />
+    <Content Include="Resources\Styles\color.css" />
+    <Content Include="Resources\Styles\dropdown.css" />
+    <Content Include="Resources\Styles\elements.css" />
+    <Content Include="Resources\Styles\form.css" />
+    <Content Include="Resources\Styles\layout.css" />
+    <Content Include="Resources\Styles\modalbox.css" />
+    <Content Include="Resources\Styles\oguselecter.css" />
+    <Content Include="Resources\Styles\poptip.css" />
+    <Content Include="Resources\Styles\progress.css" />
+    <Content Include="Resources\Styles\search.css" />
+    <Content Include="Resources\Styles\table.css" />
+    <Content Include="Resources\Styles\treeview.css" />
+    <Content Include="Resources\Styles\widget.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\Server\GridView.aspx.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Server\GridView.aspx.designer.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resources\Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Resources\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Resources\Font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Resources\Font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Resources\Font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Resources\Font-awesome\font\FontAwesome.otf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\tmp\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3002</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/PrototypeWeb</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost/PrototypeWeb</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

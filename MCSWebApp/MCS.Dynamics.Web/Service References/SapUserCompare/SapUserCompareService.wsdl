@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="LoadEntityPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="tns:SapUserCompareCustom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SapUserCompareCustom">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:TB_SapUserCompare">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Orderby" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDesc" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TB_SapUserCompare">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Guid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="UepId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UepName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapPassWord" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Role" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapserversSystem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapserversApplicationserver" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapserversSystemnumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapserversClient" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapserversUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapserversPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SapserversLanguage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoadEntityPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadEntityPageResult" type="tns:ArrayOfTB_SapUserCompare" />
+            <s:element minOccurs="1" maxOccurs="1" name="total" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTB_SapUserCompare">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TB_SapUserCompare" nillable="true" type="tns:TB_SapUserCompare" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoadEntityPageBySapUserAndConnect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="tns:SapUserCompareCustom" />
+            <s:element minOccurs="0" maxOccurs="1" name="con" type="tns:SapConnection" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SapConnection">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="System" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationServer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Client" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoadEntityPageBySapUserAndConnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadEntityPageBySapUserAndConnectResult" type="tns:ArrayOfTB_SapUserCompare" />
+            <s:element minOccurs="1" maxOccurs="1" name="total" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSapConnectionByUepId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSapConnectionByUepIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSapConnectionByUepIdResult" type="tns:SapConnection" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSapConnectionByUepIdAndSqlCon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="con" type="tns:SapConnection" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSapConnectionByUepIdAndSqlConResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSapConnectionByUepIdAndSqlConResult" type="tns:SapConnection" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadEntityPageSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadEntityPage" />
+  </wsdl:message>
+  <wsdl:message name="LoadEntityPageSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadEntityPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadEntityPageBySapUserAndConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadEntityPageBySapUserAndConnect" />
+  </wsdl:message>
+  <wsdl:message name="LoadEntityPageBySapUserAndConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadEntityPageBySapUserAndConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSapConnectionByUepIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSapConnectionByUepId" />
+  </wsdl:message>
+  <wsdl:message name="GetSapConnectionByUepIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSapConnectionByUepIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSapConnectionByUepIdAndSqlConSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSapConnectionByUepIdAndSqlCon" />
+  </wsdl:message>
+  <wsdl:message name="GetSapConnectionByUepIdAndSqlConSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSapConnectionByUepIdAndSqlConResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SapUserCompareServiceSoap">
+    <wsdl:operation name="LoadEntityPage">
+      <wsdl:input message="tns:LoadEntityPageSoapIn" />
+      <wsdl:output message="tns:LoadEntityPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadEntityPageBySapUserAndConnect">
+      <wsdl:input message="tns:LoadEntityPageBySapUserAndConnectSoapIn" />
+      <wsdl:output message="tns:LoadEntityPageBySapUserAndConnectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSapConnectionByUepId">
+      <wsdl:input message="tns:GetSapConnectionByUepIdSoapIn" />
+      <wsdl:output message="tns:GetSapConnectionByUepIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSapConnectionByUepIdAndSqlCon">
+      <wsdl:input message="tns:GetSapConnectionByUepIdAndSqlConSoapIn" />
+      <wsdl:output message="tns:GetSapConnectionByUepIdAndSqlConSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SapUserCompareServiceHttpGet" />
+  <wsdl:portType name="SapUserCompareServiceHttpPost" />
+  <wsdl:binding name="SapUserCompareServiceSoap" type="tns:SapUserCompareServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadEntityPage">
+      <soap:operation soapAction="http://tempuri.org/LoadEntityPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadEntityPageBySapUserAndConnect">
+      <soap:operation soapAction="http://tempuri.org/LoadEntityPageBySapUserAndConnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSapConnectionByUepId">
+      <soap:operation soapAction="http://tempuri.org/GetSapConnectionByUepId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSapConnectionByUepIdAndSqlCon">
+      <soap:operation soapAction="http://tempuri.org/GetSapConnectionByUepIdAndSqlCon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SapUserCompareServiceSoap12" type="tns:SapUserCompareServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadEntityPage">
+      <soap12:operation soapAction="http://tempuri.org/LoadEntityPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadEntityPageBySapUserAndConnect">
+      <soap12:operation soapAction="http://tempuri.org/LoadEntityPageBySapUserAndConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSapConnectionByUepId">
+      <soap12:operation soapAction="http://tempuri.org/GetSapConnectionByUepId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSapConnectionByUepIdAndSqlCon">
+      <soap12:operation soapAction="http://tempuri.org/GetSapConnectionByUepIdAndSqlCon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SapUserCompareServiceHttpGet" type="tns:SapUserCompareServiceHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="SapUserCompareServiceHttpPost" type="tns:SapUserCompareServiceHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="SapUserCompareService">
+    <wsdl:port name="SapUserCompareServiceSoap" binding="tns:SapUserCompareServiceSoap">
+      <soap:address location="http://localhost/MCSWebApp/PetroChina.UEP.Web/WebService/SapUserCompareService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SapUserCompareServiceSoap12" binding="tns:SapUserCompareServiceSoap12">
+      <soap12:address location="http://localhost/MCSWebApp/PetroChina.UEP.Web/WebService/SapUserCompareService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SapUserCompareServiceHttpGet" binding="tns:SapUserCompareServiceHttpGet">
+      <http:address location="http://localhost/MCSWebApp/PetroChina.UEP.Web/WebService/SapUserCompareService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SapUserCompareServiceHttpPost" binding="tns:SapUserCompareServiceHttpPost">
+      <http:address location="http://localhost/MCSWebApp/PetroChina.UEP.Web/WebService/SapUserCompareService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
