@@ -51,9 +51,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AspNet.ScriptManager.jQuery">
-      <HintPath>C:\Users\Administrator\Desktop\images\AspNet.ScriptManager.jQuery.dll</HintPath>
-    </Reference>
     <Reference Include="MCS.Library, Version=1.2.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Bin\MCS.Library.dll</HintPath>
