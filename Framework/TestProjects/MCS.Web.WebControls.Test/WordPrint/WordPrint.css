@@ -1,0 +1,15 @@
+.CssClass_Demo1
+{
+	font-size:large;
+	font-weight:bold;
+	color:Red;
+	background-color:Green;
+	width:70px;
+}
+.CssClass_Demo2
+{
+	font-style:italic;
+	color:Blue;
+	background-color:Yellow;
+	width:140px;
+}

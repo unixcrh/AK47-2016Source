@@ -1,0 +1,93 @@
+.CssClass_Demo1 
+{
+	font-weight:bold;
+    background-color:Red;
+}
+
+.CssClass_Demo2
+{
+	font-style:italic;
+	color:Gray;
+	background-color:Green;
+}
+
+.ItemCssClass_Demo1 
+{
+	height:25px;
+	font-size:14px;
+	font-weight:bold;
+	color:Silver;
+    background-color:Fuchsia;
+}
+
+.ItemCssClass_Demo2
+{
+	height:25px;
+	font-size:14px;
+	font-style:italic;
+	color:Red;
+	background-color:Blue;
+}
+
+.HoverItemCssClass_Demo1 
+{
+	height:25px;
+	font-size:14px;
+	font-weight:bold;
+	color:Red;
+    background-color:Lime;
+}
+
+.HoverItemCssClass_Demo2
+{
+	height:25px;
+	font-size:14px;
+	font-style:italic;
+	color:Blue;
+	background-color:Yellow;
+}
+
+.SelectedItemCssClass_Demo1 
+{
+	height:25px;
+	font-size:14px;
+	font-weight:bold;
+	color:Red;
+    background-color:Lime;
+}
+
+.SelectedItemCssClass_Demo2
+{
+	height:25px;
+	font-size:14px;
+	color:Gray;
+	background-color:Green;
+}
+
+.SeparatorCssClass_Demo1 
+{
+	color:Red;
+	background-color:Red;
+	height:2px
+}
+
+.SeparatorCssClass_Demo2
+{
+	color:Fuchsia;
+	background-color:Fuchsia;
+	width:55px;
+	height:5px
+}
+
+.ImageColCssClass_Demo1 
+{
+	border-bottom-style:inset;
+	border-bottom-width:thick;
+	border-bottom-color:Red;
+}
+
+.ImageColCssClass_Demo2
+{
+	background-color:Green;
+	width:5px;
+}

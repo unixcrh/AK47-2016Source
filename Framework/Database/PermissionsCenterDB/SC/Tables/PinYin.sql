@@ -1,0 +1,12 @@
+﻿CREATE TABLE [SC].[PinYin]
+(
+	[PinYin] NVARCHAR(255) NOT NULL , 
+    [HZ] NVARCHAR(128) NOT NULL, 
+    [Weight] INT NULL DEFAULT 0, 
+    CONSTRAINT [PK_PinYin] PRIMARY KEY ([PinYin], [HZ])
+)
+
+GO
+CREATE INDEX [IX_PinYin_HZ] ON [SC].[PinYin] ([HZ])
+
+GO

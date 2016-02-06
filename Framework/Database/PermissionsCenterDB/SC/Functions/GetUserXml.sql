@@ -1,0 +1,25 @@
+﻿/* 获取用户xml数据 */
+CREATE FUNCTION [dbo].[GetUserXml]
+(
+	@MDP_GUID NVARCHAR(38)
+)
+RETURNS XML
+AS
+BEGIN
+	DECLARE @result XML
+
+	SELECT @result = 
+		(SELECT EMPLID AS [ID]
+		,ISNULL(ISNULL(LAST_NAME,'')+ISNULL(FIRST_NAME,''),HX_OPRID) AS Name
+		,LAST_NAME+FIRST_NAME AS DisplayName
+		,LAST_NAME AS LastName
+		,FIRST_NAME AS FirstName
+		,HX_OPRID as CodeName
+		,EMAIL_ADDR as Mail 
+		,HX_CELL_PHONE as MP
+		,HX_BUSN_PHONE as WP
+		,ADDRESS1 as [Address]
+	FROM MDM.PERS_ALL AS [Object] WHERE MDP_GUID = @MDP_GUID FOR XML AUTO)
+
+	RETURN @result
+END

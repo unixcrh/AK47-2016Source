@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="994fb4a2-a43f-4599-8cfa-2c2fffa2a5b0" ChangeDateTime="04/23/2014 03:05:27">
+    <Property Name="ElementName" Value="[DE].[ETL_ErrorLogMiddleTab].[IsSuccecess]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[DE].[ETL_ErrorLogMiddleTab]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsSuccess" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7a309e76-8e1c-4e09-82d9-a24d8f84038d" ChangeDateTime="10/15/2014 09:56:11">
+    <Property Name="ElementName" Value="[DE].[ETL_JobAndAutoMapping].[Is]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[DE].[ETL_JobAndAutoMapping]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsIncrement" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="825f85a3-bb85-4f0d-829c-1f05c40afce8" ChangeDateTime="05/19/2015 02:12:17">
+    <Property Name="ElementName" Value="[DE].[ETLEntity_PropertiesMapping].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[DE].[ETLEntity_PropertiesMapping]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ETLEntityID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="821c1901-9dfb-4d2a-8155-1bc41b7d84be" ChangeDateTime="07/19/2015 15:49:35">
+    <Property Name="ElementName" Value="[DE].[EntityInstance].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[DE].[EntityInstance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+</Operations>

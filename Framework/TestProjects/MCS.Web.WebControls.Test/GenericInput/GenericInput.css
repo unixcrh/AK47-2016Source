@@ -1,0 +1,46 @@
+.CssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	height:100px;
+    background-color:Red;
+}
+
+.CssClass_Demo2
+{
+	font-style:italic;
+	color:Gray;
+	background-color:Green;
+}
+
+.ItemCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Silver;
+	height:50px;
+    background-color:Fuchsia;
+}
+
+.ItemCssClass_Demo2
+{
+	font-style:italic;
+	color:Red;
+	background-color:Blue;
+}
+
+.ItemHoverCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Silver;
+	height:50px;
+    background-color:Fuchsia;
+}
+
+.ItemHoverCssClass_Demo2
+{
+	font-style:italic;
+	color:Red;
+	background-color:Blue;
+}

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9AF25443-CD40-46FD-8EC0-0814D58BCEE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCS.Library.SOA.DataObjects.Dynamics</RootNamespace>
+    <AssemblyName>MCS.Library.SOA.DataObjects.Dynamics</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MCS.Library.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MCS.Library, Version=1.2.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.Data, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.OGUPermission, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.OGUPermission.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.Passport, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.SOA.DataObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.SOA.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Web.Library.Script.Json">
+      <HintPath>..\..\Bin\MCS.Web.Library.Script.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Constants.cs" />
+    <Compile Include="Actions\DEObjectSnapshotAction.cs" />
+    <Compile Include="Actions\DEObjectUpdateStatusAction.cs" />
+    <Compile Include="Actions\IDEObjectOperationAction.cs" />
+    <Compile Include="Actions\DEOperationSnapshotAction.cs" />
+    <Compile Include="Adapters\DECategoryAdapter.cs" />
+    <Compile Include="Adapters\DEConnectionDefine.cs" />
+    <Compile Include="Adapters\DEAclAdapter.cs" />
+    <Compile Include="Adapters\DEDynamicEntityFieldSnapShotAdapter.cs" />
+    <Compile Include="Adapters\DEDynamicEntitySnapshotSqlBuilder.cs" />
+    <Compile Include="Adapters\DEDynamicEntitySnapshotAdapterBase.cs" />
+    <Compile Include="Adapters\INVDynamicEntitySnapshotAdapter.cs" />
+    <Compile Include="Adapters\DEInstenceSnapshotAdapterBase.cs" />
+    <Compile Include="Adapters\DEInstenceSnapshotAdapter.cs" />
+    <Compile Include="Adapters\DESchemaObjectAdapter.cs" />
+    <Compile Include="Adapters\DESchemaObjectAdapterBase.cs" />
+    <Compile Include="Adapters\DEMemberRelationAdapter.cs" />
+    <Compile Include="Adapters\DESchemaObjectByIDCache.cs" />
+    <Compile Include="Adapters\DEInstenceOperationContext.cs" />
+    <Compile Include="Adapters\DESchemaObjectOperationContext.cs" />
+    <Compile Include="Adapters\DESnapshotBasicAdapter.cs" />
+    <Compile Include="Adapters\DEInstanceSnapshotSqlBuilder.cs" />
+    <Compile Include="Adapters\TypeEntityBAdapterBase.cs" />
+    <Compile Include="Adapters\DEDynamicEntityImportAdapter.cs" />
+    <Compile Include="Adapters\DEDynamicEntityAdapter.cs" />
+    <Compile Include="Configuration\ConvertUepFiledValueMapping.cs" />
+    <Compile Include="Configuration\LogCategoryConfigSection.cs" />
+    <Compile Include="Configuration\LogCategoryConfigurationElement.cs" />
+    <Compile Include="Configuration\PermissionBackwardCompatibilityConfigSection.cs" />
+    <Compile Include="Configuration\DEObjectOperationActionConfigurationElement.cs" />
+    <Compile Include="Configuration\DEObjectOperationActionSettings.cs" />
+    <Compile Include="Configuration\SAPFiledTypesMapping.cs" />
+    <Compile Include="Configuration\SAPLoginParams.cs" />
+    <Compile Include="Contracts\InstanceParams.cs" />
+    <Compile Include="Converters\DEEntityInstanceConverter.cs" />
+    <Compile Include="Converters\DynamicEntityConvert.cs" />
+    <Compile Include="Converters\DynamicEntityFieldConverter.cs" />
+    <Compile Include="Converters\EntityFieldValueConvert.cs" />
+    <Compile Include="Debugger\KeyValuePairs.cs" />
+    <Compile Include="Debugger\ListKeyAndValue.cs" />
+    <Compile Include="Debugger\ListRelations.cs" />
+    <Compile Include="Enums\DynamicEntityFieldTypeEnum.cs" />
+    <Compile Include="Enums\FieldTypeEnum.cs" />
+    <Compile Include="Enums\ParamDirectionEnum.cs" />
+    <Compile Include="Executors\DEExecutorBase.cs" />
+    <Compile Include="Executors\DEInstenceExecutor.cs" />
+    <Compile Include="Executors\DEInstenceExecutorBase.cs" />
+    <Compile Include="Executors\DEObjectExecutor.cs" />
+    <Compile Include="Executors\DEStatusCheckException.cs" />
+    <Compile Include="Executors\DEExecutorContextInfo.cs" />
+    <Compile Include="Executors\DEMemberRelativeExecutor.cs" />
+    <Compile Include="Executors\DEMemberRelativeExecutorBase.cs" />
+    <Compile Include="Executors\DEMemberCollectionRelativeExecutorBase.cs" />
+    <Compile Include="Executors\DEMemberCollectionRelativeExecutor.cs" />
+    <Compile Include="Facade\IDEObjectOperations.cs" />
+    <Compile Include="Facade\IDEQueryOperations.cs" />
+    <Compile Include="Facade\DEObjectOperations.cs" />
+    <Compile Include="Instance\Actions\ISchemaObjectUpdateAction.cs" />
+    <Compile Include="Instance\Actions\SCInstanceActionContext.cs" />
+    <Compile Include="Instance\Configuration\EntityInstanceUpdateActionConfigurationElement.cs" />
+    <Compile Include="Instance\Configuration\EntityInstanceUpdateActionSettings.cs" />
+    <Compile Include="Instance\DEEntityInstance.cs" />
+    <Compile Include="Instance\DEEntityInstanceBase.cs" />
+    <Compile Include="Instance\DEInstanceCollectionBase.cs" />
+    <Compile Include="Instance\DEInstanceAdapter.cs" />
+    <Compile Include="Instance\DEInstanceAdapterBase.cs" />
+    <Compile Include="Instance\Executors\DEEntityInstanceExecutor.cs" />
+    <Compile Include="Instance\NoVersionedEntityInstanceObjectBase.cs" />
+    <Compile Include="Instance\EntityInstanceUpdateSqlBuilder.cs" />
+    <Compile Include="Instance\NoVersionStrategyUpdateSqlBuilder.cs" />
+    <Compile Include="Instance\EntityInstanceUpdateStatusSqlBuilder.cs" />
+    <Compile Include="Instance\Validator\DEEntityInstanceLengthValidator.cs" />
+    <Compile Include="Instance\Validator\DEEntityInstanceTypeValidator.cs" />
+    <Compile Include="Instance\Validator\DEEntityInstanceValidator.cs" />
+    <Compile Include="Instance\Validator\DEInstancePropertyValidatorContext.cs" />
+    <Compile Include="Instance\ValueDefine\EntityFieldValue.cs" />
+    <Compile Include="Instance\ValueDefine\EntityFieldValueCollection.cs" />
+    <Compile Include="Instance\ValueDefine\Interfaces.cs" />
+    <Compile Include="Locks\SCCheckLockException.cs" />
+    <Compile Include="Locks\SCCheckLockResult.cs" />
+    <Compile Include="Locks\SCCheckLockStatus.cs" />
+    <Compile Include="Locks\SCDataOperationLockContext.cs" />
+    <Compile Include="Locks\SCLock.cs" />
+    <Compile Include="Locks\SCLockAdapter.cs" />
+    <Compile Include="Locks\SCLockSettings.cs" />
+    <Compile Include="Locks\SCLockType.cs" />
+    <Compile Include="Logs\LogCategory.cs" />
+    <Compile Include="Logs\DEOperationLog.cs" />
+    <Compile Include="Logs\DEOperationLogAdapter.cs" />
+    <Compile Include="Logs\DEOperationLogExtensions.cs" />
+    <Compile Include="Objects\DECategory.cs" />
+    <Compile Include="Objects\DEBase.cs" />
+    <Compile Include="Objects\DynamicEntity.cs" />
+    <Compile Include="Objects\DynamicEntityField.cs" />
+    <Compile Include="Adapters\QueryCondtionEntityBase.cs" />
+    <Compile Include="Objects\EntityMapping.cs" />
+    <Compile Include="Objects\RecordResult.cs" />
+    <Compile Include="Objects\ValidatorDefine.cs" />
+    <Compile Include="Objects\VersionedEntityBase.cs" />
+    <Compile Include="Objects\OuterEntity.cs" />
+    <Compile Include="Objects\OuterEntityField.cs" />
+    <Compile Include="Organizations\DEMemberRelation.cs" />
+    <Compile Include="Organizations\DESimpleRelationBase.cs" />
+    <Compile Include="Organizations\DEGenericObject.cs" />
+    <Compile Include="Others\ConditionCommon.cs" />
+    <Compile Include="Others\ConvertUEPFiledValue.cs" />
+    <Compile Include="Others\GetConvertUEPFiledValue.cs" />
+    <Compile Include="Others\GetUepTypeLength.cs" />
+    <Compile Include="Others\SapFeiledLengthMapping.cs" />
+    <Compile Include="Others\SqlStringHelper.cs" />
+    <Compile Include="Permissions\DEAclContainer.cs" />
+    <Compile Include="Permissions\DEAclItem.cs" />
+    <Compile Include="Permissions\DEAclPermissionCheckException.cs" />
+    <Compile Include="Permissions\DEAclPermissionItem.cs" />
+    <Compile Include="Permissions\DEContainerAndPermission.cs" />
+    <Compile Include="Permissions\DEPrincipalCache.cs" />
+    <Compile Include="Permissions\DEPrincipalExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schemas\Constants.cs" />
+    <Compile Include="Schemas\DESchemaDefine.cs" />
+    <Compile Include="Schemas\DESchemaObjectBase.cs" />
+    <Compile Include="Schemas\DESchemaObjectCollectionBase.cs" />
+    <Compile Include="Schemas\DESchemaDefineCollection.cs" />
+    <Compile Include="Schemas\DESchemaOperationDefine.cs" />
+    <Compile Include="Schemas\DynamicExtensions.cs" />
+    <Compile Include="Schemas\Interfaces.cs" />
+    <Compile Include="Schemas\SchemaExtensions.cs" />
+    <Compile Include="Validator\CodeNameValidator.cs" />
+    <Compile Include="Validator\DESchemaPropertyValidatorContext.cs" />
+    <Compile Include="Validator\DESchemaObjectValidator.cs" />
+    <Compile Include="Validator\DESchemaPropertyValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MCS.Library.snk" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MCS.Library.SOA.DataObjects.Schemas\MCS.Library.SOA.DataObjects.Schemas.csproj">
+      <Project>{fd70412a-fd7f-4b8e-918a-ea56dc541ab8}</Project>
+      <Name>MCS.Library.SOA.DataObjects.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>IF NOT EXIST "$(ProjectDir)..\..\Bin" MD "$(ProjectDir)..\..\Bin"
+IF EXIST "$(ProjectDir)..\..\Bin\$(TargetFileName)" DEL "$(ProjectDir)..\..\Bin\$(TargetFileName)"
+IF EXIST "$(ProjectDir)..\..\Bin\$(TargetName).pdb" DEL "$(ProjectDir)..\..\Bin\$(TargetName).pdb"
+IF EXIST "$(ProjectDir)..\..\Bin\$(TargetName).xml" DEL "$(ProjectDir)..\..\Bin\$(TargetName).xml"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)"  "$(ProjectDir)..\..\Bin" /Y /D /R
+IF EXIST "$(TargetDir)$(TargetName).pdb" XCOPY "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\Bin" /Y /D /R
+IF EXIST "$(TargetDir)$(TargetName).xml"  XCOPY "$(TargetDir)$(TargetName).xml" "$(ProjectDir)..\..\Bin" /Y /D /R</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+
+.sampleControl
+{
+    border:solid 1px #cccccc;
+}
+
+.sampleControl .input
+{
+    border:solid 1px #00ffff;
+    font-size:18px;	
+}
+
+.sampleControl .button
+{
+    width:150px;
+    height:60px;
+    font-size:16px;
+    font-family:@¡• È;
+}

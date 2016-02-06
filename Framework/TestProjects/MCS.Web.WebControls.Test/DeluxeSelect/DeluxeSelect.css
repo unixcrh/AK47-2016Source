@@ -1,0 +1,82 @@
+.SelectButtonCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Red;
+    background-color:Lime;
+}
+
+.SelectButtonCssClass_Demo2
+{
+	font-style:italic;
+	color:Gray;
+	background-color:white;
+}
+
+.MoveButtonCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Silver;
+    background-color:Lime;
+}
+
+.MoveButtonCssClass_Demo2
+{
+	font-style:italic;
+	color:Green;
+	background-color:white;
+}
+
+.SelectedListCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Red;
+    background-color:Lime;
+    width:170px;
+    height:270px;
+}
+
+.SelectedListCssClass_Demo2
+{
+	font-style:italic;
+	color:Gray;
+	background-color:white;
+	width:70px;
+	height:170px;
+}
+
+.CandidateListCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Blue;
+    background-color:Lime;
+    width:170px;
+    height:270px;
+}
+
+.CandidateListCssClass_Demo2
+{
+	font-style:italic;
+	color:Yellow;
+	background-color:white;
+	width:70px;
+	height:170px;
+}
+
+.ButtonCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Red;
+    background-color:Lime;
+}
+
+.ButtonCssClass_Demo2
+{
+	font-style:italic;
+	color:Blue;
+	background-color:white;
+}

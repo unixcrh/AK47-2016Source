@@ -1,0 +1,143 @@
+/************ PopupCalendar Related Styles ***********************/
+.PopupCalendarCssClass_Demo1 .ajax__calendar_container {
+    border:2px solid #646464;
+    background-color:Lime;
+    color: red;
+}
+.PopupCalendarCssClass_Demo1 .ajax__calendar_other .ajax__calendar_day,
+.PopupCalendarCssClass_Demo1 .ajax__calendar_other .ajax__calendar_year {
+    color: Red;
+}
+.PopupCalendarCssClass_Demo1 .ajax__calendar_hover .ajax__calendar_day,
+.PopupCalendarCssClass_Demo1 .ajax__calendar_hover .ajax__calendar_month,
+.PopupCalendarCssClass_Demo1 .ajax__calendar_hover .ajax__calendar_year {
+    color: Green;
+}
+.PopupCalendarCssClass_Demo1 .ajax__calendar_active .ajax__calendar_day,
+.PopupCalendarCssClass_Demo1 .ajax__calendar_active .ajax__calendar_month,
+.PopupCalendarCssClass_Demo1 .ajax__calendar_active .ajax__calendar_year {
+    color: Yellow;
+    font-weight:bold;
+}
+
+.PopupCalendarCssClass_Demo2 .ajax__calendar_container {
+    border:1px solid #646464;
+    background-color:Blue;
+    color: red;
+}
+.PopupCalendarCssClass_Demo2 .ajax__calendar_other .ajax__calendar_day,
+.PopupCalendarCssClass_Demo2 .ajax__calendar_other .ajax__calendar_year {
+    color: black;
+}
+.PopupCalendarCssClass_Demo2 .ajax__calendar_hover .ajax__calendar_day,
+.PopupCalendarCssClass_Demo2 .ajax__calendar_hover .ajax__calendar_month,
+.PopupCalendarCssClass_Demo2 .ajax__calendar_hover .ajax__calendar_year {
+    color: black;
+}
+.PopupCalendarCssClass_Demo2 .ajax__calendar_active .ajax__calendar_day,
+.PopupCalendarCssClass_Demo2 .ajax__calendar_active .ajax__calendar_month,
+.PopupCalendarCssClass_Demo2 .ajax__calendar_active .ajax__calendar_year {
+    color: black;
+    font-weight:bold;
+}
+
+.DateTextCssClass_Demo1 
+{
+	font-size:larger;
+	font-weight:bold;
+	color:Red;
+    background-color:Lime;
+}
+.DateTextCssClass_Demo2
+{
+	font-style:italic;
+	color:Gray;
+	background-color:white;
+}
+
+.OnFocusDateCssClass_Demo1
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+.OnFocusDateCssClass_Demo2
+{
+	color:Red;
+	font-weight:bolder;
+	background-color:Gray;
+}
+
+.OnInvalidDateCssClass_Demo1
+{
+	font-style:inherit;
+	color:Red;
+    background-color:Gray;
+}
+.OnInvalidDateCssClass_Demo2
+{
+	font-style:oblique;
+	color:Blue;
+    background-color:Purple;
+}
+
+.DateImageCssClass_Demo1 
+{
+	 width:80px;
+	 background-color:Green;
+}
+
+.DateImageCssClass_Demo2
+{
+	font-style:italic;
+	color:Lime;
+	background-color:Red;
+}
+
+/************ MaskedEdit Related Styles ***********************/
+.ButtonCss_Demo1
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.ButtonCss_Demo2
+{
+	font-style:italic;
+	font-weight:bold;
+    background-color:Aqua;
+    color:Red;
+}
+.TimeTextCss_Demo1
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.TimeTextCss_Demo2
+{
+	font-style:italic;
+	font-weight:bold;
+    background-color:Aqua;
+    color:Red;
+}
+.OnTimeFocusCssClass_Demo1
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+.OnTimeFocusCssClass_Demo2
+{
+	color:Red;
+	font-weight:bolder;
+	background-color:Gray;
+}
+.OnTimeInvalidCssClass_Demo1
+{
+	font-style:inherit;
+	color:Red;
+    background-color:Gray;
+}
+.OnTimeInvalidCssClass_Demo2
+{
+	font-style:oblique;
+	color:Blue;
+    background-color:Purple;
+}

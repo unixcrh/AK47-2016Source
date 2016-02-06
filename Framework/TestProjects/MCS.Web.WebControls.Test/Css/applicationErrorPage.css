@@ -1,0 +1,25 @@
+﻿body
+{
+	background-color: #002870;
+}
+
+.messageContainer
+{
+	background-color: white;
+	width: 640px;
+	height: 640px;
+}
+
+.messageHeader
+{
+	text-align: left;
+	background-color: #005BAC;
+}
+
+.messageBanner
+{
+}
+
+.messageContent
+{
+}

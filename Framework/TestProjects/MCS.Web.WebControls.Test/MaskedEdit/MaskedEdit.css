@@ -1,0 +1,47 @@
+﻿.ButtonCss_Demo1
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.ButtonCss_Demo2
+{
+	font-style:italic;
+	font-weight:bold;
+    background-color:Aqua;
+    color:Red;
+}
+.TextCss_Demo1
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.TextCss_Demo2
+{
+	font-style:italic;
+	font-weight:bold;
+    background-color:Aqua;
+    color:Red;
+}
+.OnFocusCssClass_Demo1
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+.OnFocusCssClass_Demo2
+{
+	color:Red;
+	font-weight:bolder;
+	background-color:Gray;
+}
+.OnInvalidCssClass_Demo1
+{
+	font-style:inherit;
+	color:Red;
+    background-color:Gray;
+}
+.OnInvalidCssClass_Demo2
+{
+	font-style:oblique;
+	color:Blue;
+    background-color:Purple;
+}

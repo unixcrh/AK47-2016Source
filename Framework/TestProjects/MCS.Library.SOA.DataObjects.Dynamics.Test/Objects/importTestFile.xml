@@ -1,0 +1,32 @@
+﻿<DynamicEntities>
+  <Entity SchemaType='DynamicEntity' ID='6512c32d-b3a8-4891-bac2-e69bfb8839a3' CodeName='/集团公司/管道板块/运输/销售单明细' Name='销售单明细' Description='销售单明细' SortNo='1' CategoryID='48BE753C-630D-42F4-A02D-D2B50818F817'>
+    <Fields>
+      <Field SchemaType='DynamicEntityField' ID='d9c58562-bb77-495d-9849-c6659c1494b2' CodeName='物料名称' Name='物料名称' Description='' SortNo='0' Length='255' FieldType='String' ReferenceEntityCodeName='' DefaultValue='' />
+      <Field SchemaType='DynamicEntityField' ID='8c59763b-7be4-4334-898b-1b6b7950e381' CodeName='物料数量' Name='物料数量' Description='' SortNo='1' Length='4' FieldType='Int' ReferenceEntityCodeName='' DefaultValue='' />
+      <Field SchemaType='DynamicEntityField' ID='466af2af-ed8c-4de6-a01f-cdd313ffcd76' CodeName='单价' Name='单价' Description='' SortNo='2' Length='18' FieldType='Decimal' ReferenceEntityCodeName='' DefaultValue='' />
+    </Fields>
+    <OuterEntities>
+      <OuterEntity SchemaType='OuterEntity' ID='6ec461e5-e0f2-4ccd-aa4d-2e3cf3e9ea68' CodeName='' Name='Tcode_test_Item' Description='' SortNo='' CustomType='StandardInterface'>
+        <OuterFields>
+          <OuterField SchemaType='OuterEntityField' ID='13a4a795-b96b-43dc-9177-c94b6713b131' CodeName='' Name='物料名称_Mapping' Description='' SortNo='' MappingFieldID='d9c58562-bb77-495d-9849-c6659c1494b2' />
+          <OuterField SchemaType='OuterEntityField' ID='be1528d2-74dc-4632-8f68-8a87a9687212' CodeName='' Name='单价_Mapping' Description='' SortNo='' MappingFieldID='466af2af-ed8c-4de6-a01f-cdd313ffcd76' />
+          <OuterField SchemaType='OuterEntityField' ID='f0603a84-7103-4542-aa5d-2aad2f8dad28' CodeName='' Name='物料数量_Mapping' Description='' SortNo='' MappingFieldID='8c59763b-7be4-4334-898b-1b6b7950e381' />
+        </OuterFields>
+      </OuterEntity>
+    </OuterEntities>
+  </Entity>
+  <Entity SchemaType='DynamicEntity' ID='04eaf2d0-0455-41ba-bccb-ba2fee11125b' CodeName='/集团公司/管道板块/运输/销售单' Name='销售单' Description='销售单' SortNo='0' CategoryID='48BE753C-630D-42F4-A02D-D2B50818F817'>
+    <Fields>
+      <Field SchemaType='DynamicEntityField' ID='b76bf66d-3388-4e33-a7dc-af6b6fb16966' CodeName='总金额' Name='总金额' Description='' SortNo='0' Length='18' FieldType='Decimal' ReferenceEntityCodeName='' DefaultValue='' />
+      <Field SchemaType='DynamicEntityField' ID='c91ae5ca-fc42-485d-85a8-c2f9dec71550' CodeName='销售明细' Name='销售明细' Description='' SortNo='1' Length='999' FieldType='Collection' ReferenceEntityCodeName='/集团公司/管道板块/运输/销售单明细' DefaultValue='' />
+    </Fields>
+    <OuterEntities>
+      <OuterEntity SchemaType='OuterEntity' ID='def2f3f9-ac31-4da4-a935-cde68337e6c4' CodeName='' Name='Tcode_test' Description='' SortNo='' CustomType='StandardInterface'>
+        <OuterFields>
+          <OuterField SchemaType='OuterEntityField' ID='20db4fee-7f5f-4ba1-a52d-44c2d2f3b4b5' CodeName='' Name='总金额_Mapping' Description='' SortNo='' MappingFieldID='b76bf66d-3388-4e33-a7dc-af6b6fb16966' />
+          <OuterField SchemaType='OuterEntityField' ID='d98147f3-adce-4f1e-b0de-bb137cf6f47e' CodeName='' Name='Tcode_test_Item' Description='' SortNo='' MappingFieldID='c91ae5ca-fc42-485d-85a8-c2f9dec71550' />
+        </OuterFields>
+      </OuterEntity>
+    </OuterEntities>
+  </Entity>
+</DynamicEntities>

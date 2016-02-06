@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AdministrativeUnitDB", "AdministrativeUnitDB\AdministrativeUnitDB.sqlproj", "{0BD981B6-6597-4867-90E8-3FC30038C05E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataAccessTest", "DataAccessTest\DataAccessTest.sqlproj", "{94C85EED-A301-4646-8CF9-B3ABD3E1529C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HB2008ParamsDB", "HB2008ParamsDB\HB2008ParamsDB.sqlproj", "{CFBF2842-7651-4579-9EA7-5C64AF01887C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MCSWorkflowDB", "MCSWorkflowDB\MCSWorkflowDB.sqlproj", "{F3B77212-935C-4F10-B29D-B272B00FF90E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PermissionsCenterDB", "PermissionsCenterDB\PermissionsCenterDB.sqlproj", "{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WeChatInfo", "WeChatInfo\WeChatInfo.sqlproj", "{61571C67-A932-4281-8FA0-3DBC9C72FF22}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://code.cfldcn.com:8080/tfs/base
+		SccProjectUniqueName0 = AdministrativeUnitDB\\AdministrativeUnitDB.sqlproj
+		SccProjectName0 = AdministrativeUnitDB
+		SccLocalPath0 = AdministrativeUnitDB
+		SccProjectUniqueName1 = DataAccessTest\\DataAccessTest.sqlproj
+		SccProjectName1 = DataAccessTest
+		SccLocalPath1 = DataAccessTest
+		SccProjectUniqueName2 = HB2008ParamsDB\\HB2008ParamsDB.sqlproj
+		SccProjectName2 = HB2008ParamsDB
+		SccLocalPath2 = HB2008ParamsDB
+		SccProjectUniqueName3 = MCSWorkflowDB\\MCSWorkflowDB.sqlproj
+		SccProjectName3 = MCSWorkflowDB
+		SccLocalPath3 = MCSWorkflowDB
+		SccProjectUniqueName4 = PermissionsCenterDB\\PermissionsCenterDB.sqlproj
+		SccProjectName4 = PermissionsCenterDB
+		SccLocalPath4 = PermissionsCenterDB
+		SccProjectUniqueName5 = WeChatInfo\\WeChatInfo.sqlproj
+		SccProjectName5 = WeChatInfo
+		SccLocalPath5 = WeChatInfo
+		SccLocalPath6 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Without Fulltext Search|Any CPU = Debug Without Fulltext Search|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Debug Without Fulltext Search|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Debug Without Fulltext Search|Any CPU.Build.0 = Debug|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Debug Without Fulltext Search|Any CPU.Deploy.0 = Debug|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BD981B6-6597-4867-90E8-3FC30038C05E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Debug Without Fulltext Search|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Debug Without Fulltext Search|Any CPU.Build.0 = Debug|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Debug Without Fulltext Search|Any CPU.Deploy.0 = Debug|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C85EED-A301-4646-8CF9-B3ABD3E1529C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Debug Without Fulltext Search|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Debug Without Fulltext Search|Any CPU.Build.0 = Debug|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Debug Without Fulltext Search|Any CPU.Deploy.0 = Debug|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBF2842-7651-4579-9EA7-5C64AF01887C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Debug Without Fulltext Search|Any CPU.ActiveCfg = Debug Without Fulltext Search|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Debug Without Fulltext Search|Any CPU.Build.0 = Debug Without Fulltext Search|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Debug Without Fulltext Search|Any CPU.Deploy.0 = Debug Without Fulltext Search|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B77212-935C-4F10-B29D-B272B00FF90E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Debug Without Fulltext Search|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Debug Without Fulltext Search|Any CPU.Build.0 = Debug|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Debug Without Fulltext Search|Any CPU.Deploy.0 = Debug|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CD5E2A-DAB6-468B-8DB6-A3C41AA05847}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Debug Without Fulltext Search|Any CPU.ActiveCfg = Debug|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Debug Without Fulltext Search|Any CPU.Build.0 = Debug|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Debug Without Fulltext Search|Any CPU.Deploy.0 = Debug|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61571C67-A932-4281-8FA0-3DBC9C72FF22}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+﻿CREATE TABLE [SC].[ToDoJobList]
+(
+	[ID] INT NOT NULL  IDENTITY, 
+    [SourceID] NVARCHAR(36) NULL, 
+    [CreateTime] DATETIME NULL DEFAULT GETDATE(), 
+    [ExecuteTime] DATETIME NULL, 
+    [Type] NVARCHAR(64) NULL, 
+	[Description] NVARCHAR(255) NULL,
+    [Data] NVARCHAR(MAX) NULL, 
+    PRIMARY KEY ([ID] DESC)
+)
+
+GO
