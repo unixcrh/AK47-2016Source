@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WorkflowDesigner</RootNamespace>
     <AssemblyName>WorkflowDesigner</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <SilverlightApplicationList>
     </SilverlightApplicationList>
     <SccProjectName>SAK</SccProjectName>
@@ -24,6 +24,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,6 +96,7 @@
       <HintPath>..\..\Bin\MCS.Web.WebControls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -103,16 +106,14 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -512,7 +513,6 @@
     </Compile>
     <Compile Include="PlanScheduleDialog\JobList.aspx.cs">
       <DependentUpon>JobList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PlanScheduleDialog\JobList.aspx.designer.cs">
       <DependentUpon>JobList.aspx</DependentUpon>
@@ -529,7 +529,6 @@
     </Compile>
     <Compile Include="PlanScheduleDialog\ScheduleList.aspx.cs">
       <DependentUpon>ScheduleList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PlanScheduleDialog\ScheduleList.aspx.designer.cs">
       <DependentUpon>ScheduleList.aspx</DependentUpon>
@@ -682,7 +681,6 @@
     <Compile Include="ModalDialog\ProcessDescriptorInfoQuery.cs" />
     <Compile Include="ModalDialog\WfProcessDescriptorInformationList.aspx.cs">
       <DependentUpon>WfProcessDescriptorInformationList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ModalDialog\WfProcessDescriptorInformationList.aspx.designer.cs">
       <DependentUpon>WfProcessDescriptorInformationList.aspx</DependentUpon>
