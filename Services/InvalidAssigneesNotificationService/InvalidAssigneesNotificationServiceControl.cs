@@ -11,6 +11,7 @@ using MCS.Library.Core;
 using MCS.Library.Passport;
 using MCS.Library.OGUPermission;
 using MCS.Library.SOA.DataObjects.Workflow;
+using MCS.Library.Data.Adapters;
 
 namespace InvalidAssigneesNotificationService
 {
@@ -25,7 +26,7 @@ namespace InvalidAssigneesNotificationService
 
 		private void BindGrid()
 		{
-			this.GV_InvalidAssigneesNotifications.DataSource = DbHelper.RunSqlReturnDS(InvalidAssigneesNotificationHelper.GetInvalidAssigneesNotificationsSQL).Tables[0];
+			this.GV_InvalidAssigneesNotifications.DataSource = DbHelper.RunSqlReturnDS(InvalidAssigneesNotificationHelper.GetInvalidAssigneesNotificationsSQL, ConnectionDefine.DBConnectionName).Tables[0];
 		}
 
 		private void Bt_Send_Click(object sender, EventArgs e)

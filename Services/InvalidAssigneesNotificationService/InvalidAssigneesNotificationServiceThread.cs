@@ -9,6 +9,7 @@ using MCS.Library.OGUPermission;
 using MCS.Library.Core;
 using MCS.Library.Data;
 using System.Transactions;
+using MCS.Library.Data.Adapters;
 
 namespace InvalidAssigneesNotificationService
 {
@@ -33,7 +34,7 @@ namespace InvalidAssigneesNotificationService
 		{
 			try
 			{
-				DataTable dt = DbHelper.RunSqlReturnDS(InvalidAssigneesNotificationHelper.GetInvalidAssigneesNotificationsSQL).Tables[0];
+				DataTable dt = DbHelper.RunSqlReturnDS(InvalidAssigneesNotificationHelper.GetInvalidAssigneesNotificationsSQL, ConnectionDefine.DBConnectionName).Tables[0];
 
 				if (dt.Rows.Count > 0)
 				{
