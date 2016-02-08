@@ -71,5 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DataAccessTest.publish.xml" />
+    <None Include="DataAccessTest.local.publish.xml" />
   </ItemGroup>
 </Project>

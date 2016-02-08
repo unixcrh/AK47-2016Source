@@ -44,6 +44,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MCS.Library">
+      <HintPath>..\..\..\Bin\MCS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.SOA.DataObjects">
+      <HintPath>..\..\..\Bin\MCS.Library.SOA.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Web.Library.Script.Json">
+      <HintPath>..\..\..\Bin\MCS.Web.Library.Script.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -71,13 +80,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="demos\firstChart.html" />
+    <Content Include="demos\graphDescription.xml" />
+    <Content Include="demos\ShowWorkflow.aspx" />
     <Content Include="demos\wfParser.js" />
+    <None Include="demos\workflowInfo.json" />
     <Content Include="Global.asax" />
     <Content Include="lib\go-debug.js" />
     <Content Include="lib\go.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="demos\ShowWorkflow.aspx.cs">
+      <DependentUpon>ShowWorkflow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demos\ShowWorkflow.aspx.designer.cs">
+      <DependentUpon>ShowWorkflow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

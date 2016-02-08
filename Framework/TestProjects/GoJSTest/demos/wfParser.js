@@ -27,6 +27,25 @@ wf.linkElapsedParser = function (v) {
     return result;
 }
 
+wf.nodeTypeParser = function (v) {
+    var result = "gray";
+
+    switch(v)
+    {
+        case "InitialActivity":
+            result = "yellow";
+            break;
+        case "CompletedActivity":
+            result = "blue";
+            break;
+        case "NormalActivity":
+            result = "silver";
+            break;
+    }
+
+    return result;
+}
+
 wf.returnLinkParser = function (v) {
     var result = null;
 
