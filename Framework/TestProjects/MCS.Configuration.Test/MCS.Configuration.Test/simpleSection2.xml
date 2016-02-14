@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<simpleSection name="Shen Rong">
+  <items>
+    <add name="Shi Lei" description="wife"/>
+  </items>
+</simpleSection>
