@@ -222,6 +222,7 @@
     <Compile Include="Configuration\Accessories\PathMatchStrategyContext.cs" />
     <Compile Include="Configuration\Accessories\BestFileNameMatchStrategy.cs" />
     <Compile Include="Configuration\AssemblyMappingSettings.cs" />
+    <Compile Include="Configuration\ConfigurationBroker_ExtraLoad.cs" />
     <Compile Include="Configuration\ConfigurationExceptions.cs" />
     <Compile Include="Configuration\ConfigurationExtension.cs" />
     <Compile Include="Configuration\DeluxeConfigurationSection.cs" />

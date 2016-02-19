@@ -45,13 +45,7 @@ namespace MCS.Configuration.Test
         {
             XmlReader reader = XmlReader.Create(fileName);
 
-            reader.ReadToNextSibling(sectionName);
-
-            MethodInfo mi = typeof(SimpleSection).GetMethod("DeserializeElement", BindingFlags.Instance | BindingFlags.NonPublic);
-
-            Assert.IsNotNull(mi);
-
-            mi.Invoke(section, new object[] { reader, false });
+            Assert.IsTrue(section.LoadSection(reader, sectionName, true));
         }
 
         private static SimpleSection GetSectionFromFile(string fileName, string sectionName)

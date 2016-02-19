@@ -46,7 +46,7 @@ namespace MCS.Library.Configuration
 	///     </list>
 	/// </remarks>
 	/// </summary>
-	public static class ConfigurationBroker
+	public static partial class ConfigurationBroker
 	{
 		#region private const and field
 		/// <summary>
