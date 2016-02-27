@@ -115,7 +115,7 @@ namespace MCS.Library.OGUPermission
 		{
 			ExceptionHelper.FalseThrow<ArgumentNullException>(identity != null, "identity");
 
-			return OguReaderServiceBroker.Instance.SignInCheck(identity.LogOnNameWithoutDomain, identity.Password);
+			return OguReaderServiceBroker.Instance.SignInCheck(identity.LogOnName, identity.Password);
 		}
 
 		/// <summary>
