@@ -1,4 +1,4 @@
-﻿/* 获取用户xml数据 */
+﻿/* 用于华夏幸福基业数据同步。获取用户xml数据 */
 CREATE FUNCTION [dbo].[GetUserXml]
 (
 	@MDP_GUID NVARCHAR(38)

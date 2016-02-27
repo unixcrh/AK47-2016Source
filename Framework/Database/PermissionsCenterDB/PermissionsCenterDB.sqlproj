@@ -185,6 +185,10 @@
     <Build Include="SC\Functions\GetOrgTreeXml.sql" />
     <Build Include="SC\Functions\GetOrganizationXml.sql" />
     <Build Include="SC\Procedures\ClearHistoryData.sql" />
+    <Build Include="SC\Functions\GetSchemaOrganizationXml.sql" />
+    <Build Include="SC\Functions\GetSchemaUserXml.sql" />
+    <Build Include="SC\Functions\GetSchemaRelationXml.sql" />
+    <Build Include="SC\Procedures\InitAllUsersPassword.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PermissionsCenterDB.local.UnitTest.publish.xml" />
@@ -198,6 +202,7 @@
     <Build Include="SC\Tables\SchemaRoleSnapshot_Properties.sql" />
     <None Include="PermissionsCenterDB.CFLD.130.publish.xml" />
     <None Include="PermissionsCenterDB.CFLD.130.UnitTest.publish.xml" />
+    <None Include="PermissionsCenterDB.XUEDA.local.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="PermissionsCenterDB.refactorlog" />

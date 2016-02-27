@@ -18,7 +18,8 @@ BEGIN
 
 	DECLARE @root NVARCHAR(36)
 
-	SET @root = LOWER(CAST(NEWID() AS NVARCHAR(36)))
+	--SET @root = LOWER(CAST(NEWID() AS NVARCHAR(36)))
+	SET @root = 'db2a0dce-bcc2-473a-9cda-4c4046b143ff'
 
 	DECLARE @roleID NVARCHAR(36)
 

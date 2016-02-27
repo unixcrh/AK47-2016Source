@@ -1,4 +1,4 @@
-﻿/* 获取组织机构树xml数据 */
+﻿/*用于华夏幸福基业数据同步。 获取组织机构树xml数据 */
 CREATE FUNCTION [dbo].[GetOrgTreeXml]
 (
 	@MDP_GUID NVARCHAR(38)
