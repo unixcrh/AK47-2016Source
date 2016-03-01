@@ -189,24 +189,13 @@ namespace MCS.Web.WebControls
             DropDownList dr = new DropDownList();
             dr.DataTextField = config.BindingText;
             dr.DataValueField = config.BindingValue;
-            dr.DataSource = GenerateDropDownListSourceByConfiguration(config);
+            dr.DataSource = config.GenerateDataSource();
             dr.DataBind();
 
             foreach (ListItem item in dr.Items)
                 result.Items.Add(new EnumItemPropertyDescription(item));
 
             return result;
-        }
-
-        private static object GenerateDropDownListSourceByConfiguration(DropdownPropertyDataSourceConfigurationElement config)
-        {
-            Type type = config.GetTypeInfo();
-
-            MethodInfo mi = type.GetMethod(config.Method);
-
-            (mi != null).FalseThrow("不能在类型{0}中找到方法{1}", type.FullName, config.Method);
-
-            return mi.Invoke(config.CreateInstance(), new object[] { });
         }
     }
 }

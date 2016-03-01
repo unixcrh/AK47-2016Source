@@ -229,6 +229,8 @@
     <Compile Include="Opinion\OpinionInputDialog.cs" />
     <Compile Include="Opinion\OpinionInputDialogParams.cs" />
     <Compile Include="PropertyEditorBase\ClientPropertyEditorControlBaseResources.cs" />
+    <Compile Include="PropertyEditorBase\DropdownListEditor\InlineDataSourceItem.cs" />
+    <Compile Include="PropertyEditorBase\DropdownListEditor\InlineDropdownPropertyDataSource.cs" />
     <Compile Include="PropertyEditorBase\OguGroupCollectionValueToPropertyValueConverter.cs" />
     <Compile Include="PropertyEditorBase\OguGroupValueToPropertyValueConverter.cs" />
     <Compile Include="PropertyEditorBase\OguObjectValueToPropertyValue.cs" />
