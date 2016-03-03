@@ -264,10 +264,6 @@
     <None Include="MCSWorkflowDB.local.simulation.publish.xml" />
     <None Include="MCSWorkflowDB.local.archive.publish.xml" />
     <None Include="Assemblies\MCS.SqlServer.Compression.dll" />
-    <None Include="MCSWorkflowDB.CFLD.130.publish.xml" />
-    <None Include="MCSWorkflowDB.CFLD.130_Simulation.publish.xml" />
-    <None Include="MCSWorkflowDB.CFLD.130_Archive.publish.xml" />
-    <None Include="MCSWorkflowDB.CFLD.139.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />

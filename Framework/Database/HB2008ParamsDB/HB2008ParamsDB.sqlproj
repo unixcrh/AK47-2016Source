@@ -142,8 +142,6 @@
   <ItemGroup>
     <None Include="HB2008ParamsDB.local.UnitTest.publish.xml" />
     <None Include="HB2008ParamsDB.local.publish.xml" />
-    <None Include="HB2008ParamsDB.CFLD.130.publish.xml" />
-    <None Include="HB2008ParamsDB.CFLD.139.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="HB2008ParamsDB.refactorlog" />

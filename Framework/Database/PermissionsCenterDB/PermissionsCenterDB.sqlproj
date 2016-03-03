@@ -200,8 +200,6 @@
     <Build Include="SC\Tables\SchemaObject_Properties.sql" />
     <Build Include="SC\Tables\SchemaOrganizationSnapshot_Properties.sql" />
     <Build Include="SC\Tables\SchemaRoleSnapshot_Properties.sql" />
-    <None Include="PermissionsCenterDB.CFLD.130.publish.xml" />
-    <None Include="PermissionsCenterDB.CFLD.130.UnitTest.publish.xml" />
     <None Include="PermissionsCenterDB.XUEDA.local.publish.xml" />
   </ItemGroup>
   <ItemGroup>

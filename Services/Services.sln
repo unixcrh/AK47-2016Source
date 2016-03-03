@@ -113,4 +113,31 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.1.56.70:8080/tfs/pptsv2.0
+		SccProjectUniqueName0 = MCS.Services.Messages\\MCS.Services.Messages.csproj
+		SccProjectName0 = MCS.Services.Messages
+		SccLocalPath0 = MCS.Services.Messages
+		SccProjectUniqueName1 = MCSPendingActService\\MCSPendingActService.csproj
+		SccProjectName1 = MCSPendingActService
+		SccLocalPath1 = MCSPendingActService
+		SccProjectUniqueName2 = MCSServiceMain\\MCSServiceMain.csproj
+		SccProjectName2 = MCSServiceMain
+		SccLocalPath2 = MCSServiceMain
+		SccProjectUniqueName3 = WfExtraBackgroundServices\\WfExtraBackgroundServices.csproj
+		SccProjectName3 = WfExtraBackgroundServices
+		SccLocalPath3 = WfExtraBackgroundServices
+		SccLocalPath4 = .
+		SccProjectUniqueName5 = ActivateWfProcessService\\ActivateWfProcessService.csproj
+		SccProjectName5 = ActivateWfProcessService
+		SccLocalPath5 = ActivateWfProcessService
+		SccProjectUniqueName6 = InvalidAssigneesNotificationService\\InvalidAssigneesNotificationService.csproj
+		SccProjectName6 = InvalidAssigneesNotificationService
+		SccLocalPath6 = InvalidAssigneesNotificationService
+		SccProjectUniqueName7 = MCS.Services.AD2Accredit\\MCS.Services.AD2Accredit.csproj
+		SccProjectName7 = MCS.Services.AD2Accredit
+		SccLocalPath7 = MCS.Services.AD2Accredit
+	EndGlobalSection
 EndGlobal
