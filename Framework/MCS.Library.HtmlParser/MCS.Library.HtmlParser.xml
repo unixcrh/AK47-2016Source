@@ -28,6 +28,24 @@
             Represents an HTML attribute.
             </summary>
         </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlAttribute.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another attribute. Comparison is based on attributes' name.
+            </summary>
+            <param name="obj">An attribute to compare with this instance.</param>
+            <returns>A 32-bit signed integer that indicates the relative order of the names comparison.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlAttribute.Clone">
+            <summary>
+            Creates a duplicate of this attribute.
+            </summary>
+            <returns>The cloned attribute.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlAttribute.Remove">
+            <summary>
+            Removes this attribute from it's parents collection
+            </summary>
+        </member>
         <member name="P:MCS.Library.HtmlParser.HtmlAttribute.Line">
             <summary>
             Gets the line number of this attribute in the document.
@@ -78,24 +96,6 @@
             Gets a valid XPath string that points to this Attribute
             </summary>
         </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlAttribute.CompareTo(System.Object)">
-            <summary>
-            Compares the current instance with another attribute. Comparison is based on attributes' name.
-            </summary>
-            <param name="obj">An attribute to compare with this instance.</param>
-            <returns>A 32-bit signed integer that indicates the relative order of the names comparison.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlAttribute.Clone">
-            <summary>
-            Creates a duplicate of this attribute.
-            </summary>
-            <returns>The cloned attribute.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlAttribute.Remove">
-            <summary>
-            Removes this attribute from it's parents collection
-            </summary>
-        </member>
         <member name="T:MCS.Library.HtmlParser.AttributeValueQuote">
             <summary>
             An Enum representing different types of Quotes used for surrounding attribute values
@@ -114,26 +114,6 @@
         <member name="T:MCS.Library.HtmlParser.HtmlAttributeCollection">
             <summary>
             Represents a combined list and collection of HTML nodes.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.Item(System.String)">
-            <summary>
-            Gets a given attribute from the list using its name.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.Count">
-            <summary>
-            Gets the number of elements actually contained in the list.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.IsReadOnly">
-            <summary>
-            Gets readonly status of colelction
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.Item(System.Int32)">
-            <summary>
-            Gets the attribute at the specified index.
             </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.HtmlAttributeCollection.Add(MCS.Library.HtmlParser.HtmlAttribute)">
@@ -277,495 +257,30 @@
             Clears the attribute collection
             </summary>
         </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.Item(System.String)">
+            <summary>
+            Gets a given attribute from the list using its name.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.Count">
+            <summary>
+            Gets the number of elements actually contained in the list.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.IsReadOnly">
+            <summary>
+            Gets readonly status of colelction
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlAttributeCollection.Item(System.Int32)">
+            <summary>
+            Gets the attribute at the specified index.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.HtmlCommentNode">
             <summary>
             Represents an HTML comment.
             </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlCommentNode.Comment">
-            <summary>
-            Gets or Sets the comment text of the node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlCommentNode.InnerHtml">
-            <summary>
-            Gets or Sets the HTML between the start and end tags of the object. In the case of a text node, it is equals to OuterHtml.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlCommentNode.OuterHtml">
-            <summary>
-            Gets or Sets the object and its content in HTML.
-            </summary>
-        </member>
-        <member name="T:MCS.Library.HtmlParser.HtmlDocument">
-            <summary>
-            Represents a complete HTML document.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionAddDebuggingAttributes">
-            <summary>
-            Adds Debugging attributes to node. Default is false.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionAutoCloseOnEnd">
-            <summary>
-            Defines if closing for non closed nodes must be done at the end or directly in the document.
-            Setting this to true can actually change how browsers render the page. Default is false.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionCheckSyntax">
-            <summary>
-            Defines if non closed nodes will be checked at the end of parsing. Default is true.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionComputeChecksum">
-            <summary>
-            Defines if a checksum must be computed for the document while parsing. Default is false.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionDefaultStreamEncoding">
-            <summary>
-            Defines the default stream encoding to use. Default is System.Text.Encoding.Default.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionExtractErrorSourceText">
-            <summary>
-            Defines if source text must be extracted while parsing errors.
-            If the document has a lot of errors, or cascading errors, parsing performance can be dramatically affected if set to true.
-            Default is false.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionExtractErrorSourceTextMaxLength">
-            <summary>
-            Defines the maximum length of source text or parse errors. Default is 100.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionFixNestedTags">
-            <summary>
-            Defines if LI, TR, TH, TD tags must be partially fixed when nesting errors are detected. Default is false.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputAsXml">
-            <summary>
-            Defines if output must conform to XML, instead of HTML.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputOptimizeAttributeValues">
-            <summary>
-            Defines if attribute value output must be optimized (not bound with double quotes if it is possible). Default is false.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputOriginalCase">
-            <summary>
-            Defines if name must be output with it's original case. Useful for asp.net tags and attributes
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputUpperCase">
-            <summary>
-            Defines if name must be output in uppercase. Default is false.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionReadEncoding">
-            <summary>
-            Defines if declared encoding must be read from the document.
-            Declared encoding is determined using the meta http-equiv="content-type" content="text/html;charset=XXXXX" html node.
-            Default is true.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionStopperNodeName">
-            <summary>
-            Defines the name of a node that will throw the StopperNodeException when found as an end node. Default is null.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionUseIdAttribute">
-            <summary>
-            Defines if the 'id' attribute must be specifically used. Default is true.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionWriteEmptyNodes">
-            <summary>
-            Defines if empty nodes must be written as closed during output. Default is false.
-            </summary>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.#ctor">
-            <summary>
-            Creates an instance of an HTML document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.CheckSum">
-            <summary>
-            Gets the document CRC32 checksum if OptionComputeChecksum was set to true before parsing, 0 otherwise.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.DeclaredEncoding">
-            <summary>
-            Gets the document's declared encoding.
-            Declared encoding is determined using the meta http-equiv="content-type" content="text/html;charset=XXXXX" html node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.DocumentNode">
-            <summary>
-            Gets the root node of the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.Encoding">
-            <summary>
-            Gets the document's output encoding.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.ParseErrors">
-            <summary>
-            Gets a list of parse errors found in the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.Remainder">
-            <summary>
-            Gets the remaining text.
-            Will always be null if OptionStopperNodeName is null.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.RemainderOffset">
-            <summary>
-            Gets the offset of Remainder in the original Html text.
-            If OptionStopperNodeName is null, this will return the length of the original Html text.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlDocument.StreamEncoding">
-            <summary>
-            Gets the document's stream encoding.
-            </summary>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.GetXmlName(System.String)">
-            <summary>
-            Gets a valid XML name.
-            </summary>
-            <param name="name">Any text.</param>
-            <returns>A string that is a valid XML name.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.HtmlEncode(System.String)">
-            <summary>
-            Applies HTML encoding to a specified string.
-            </summary>
-            <param name="html">The input string to encode. May not be null.</param>
-            <returns>The encoded string.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.IsWhiteSpace(System.Int32)">
-            <summary>
-            Determines if the specified character is considered as a whitespace character.
-            </summary>
-            <param name="c">The character to check.</param>
-            <returns>true if if the specified character is considered as a whitespace character.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateAttribute(System.String)">
-            <summary>
-            Creates an HTML attribute with the specified name.
-            </summary>
-            <param name="name">The name of the attribute. May not be null.</param>
-            <returns>The new HTML attribute.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateAttribute(System.String,System.String)">
-            <summary>
-            Creates an HTML attribute with the specified name.
-            </summary>
-            <param name="name">The name of the attribute. May not be null.</param>
-            <param name="value">The value of the attribute.</param>
-            <returns>The new HTML attribute.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateComment">
-            <summary>
-            Creates an HTML comment node.
-            </summary>
-            <returns>The new HTML comment node.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateComment(System.String)">
-            <summary>
-            Creates an HTML comment node with the specified comment text.
-            </summary>
-            <param name="comment">The comment text. May not be null.</param>
-            <returns>The new HTML comment node.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateElement(System.String)">
-            <summary>
-            Creates an HTML element node with the specified name.
-            </summary>
-            <param name="name">The qualified name of the element. May not be null.</param>
-            <returns>The new HTML node.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateTextNode">
-            <summary>
-            Creates an HTML text node.
-            </summary>
-            <returns>The new HTML text node.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateTextNode(System.String)">
-            <summary>
-            Creates an HTML text node with the specified text.
-            </summary>
-            <param name="text">The text of the node. May not be null.</param>
-            <returns>The new HTML text node.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncoding(System.IO.Stream)">
-            <summary>
-            Detects the encoding of an HTML stream.
-            </summary>
-            <param name="stream">The input stream. May not be null.</param>
-            <returns>The detected encoding.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncoding(System.IO.TextReader)">
-            <summary>
-            Detects the encoding of an HTML text provided on a TextReader.
-            </summary>
-            <param name="reader">The TextReader used to feed the HTML. May not be null.</param>
-            <returns>The detected encoding.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncodingHtml(System.String)">
-            <summary>
-            Detects the encoding of an HTML text.
-            </summary>
-            <param name="html">The input html text. May not be null.</param>
-            <returns>The detected encoding.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.GetElementbyId(System.String)">
-            <summary>
-            Gets the HTML node with the specified 'id' attribute value.
-            </summary>
-            <param name="id">The attribute id to match. May not be null.</param>
-            <returns>The HTML node with the matching id or null if not found.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream)">
-            <summary>
-            Loads an HTML document from a stream.
-            </summary>
-            <param name="stream">The input stream.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Boolean)">
-            <summary>
-            Loads an HTML document from a stream.
-            </summary>
-            <param name="stream">The input stream.</param>
-            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the stream.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Text.Encoding)">
-            <summary>
-            Loads an HTML document from a stream.
-            </summary>
-            <param name="stream">The input stream.</param>
-            <param name="encoding">The character encoding to use.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Text.Encoding,System.Boolean)">
-            <summary>
-            Loads an HTML document from a stream.
-            </summary>
-            <param name="stream">The input stream.</param>
-            <param name="encoding">The character encoding to use.</param>
-            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the stream.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Int32)">
-            <summary>
-            Loads an HTML document from a stream.
-            </summary>
-            <param name="stream">The input stream.</param>
-            <param name="encoding">The character encoding to use.</param>
-            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the stream.</param>
-            <param name="buffersize">The minimum buffer size.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.TextReader)">
-            <summary>
-            Loads the HTML document from the specified TextReader.
-            </summary>
-            <param name="reader">The TextReader used to feed the HTML data into the document. May not be null.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.LoadHtml(System.String)">
-            <summary>
-            Loads the HTML document from the specified string.
-            </summary>
-            <param name="html">String containing the HTML document to load. May not be null.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.Stream)">
-            <summary>
-            Saves the HTML document to the specified stream.
-            </summary>
-            <param name="outStream">The stream to which you want to save.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.Stream,System.Text.Encoding)">
-            <summary>
-            Saves the HTML document to the specified stream.
-            </summary>
-            <param name="outStream">The stream to which you want to save. May not be null.</param>
-            <param name="encoding">The character encoding to use. May not be null.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.StreamWriter)">
-            <summary>
-            Saves the HTML document to the specified StreamWriter.
-            </summary>
-            <param name="writer">The StreamWriter to which you want to save.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.TextWriter)">
-            <summary>
-            Saves the HTML document to the specified TextWriter.
-            </summary>
-            <param name="writer">The TextWriter to which you want to save. May not be null.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.Xml.XmlWriter)">
-            <summary>
-            Saves the HTML document to the specified XmlWriter.
-            </summary>
-            <param name="writer">The XmlWriter to which you want to save.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncodingAndLoad(System.String)">
-            <summary>
-            Detects the encoding of an HTML document from a file first, and then loads the file.
-            </summary>
-            <param name="path">The complete file path to be read.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncodingAndLoad(System.String,System.Boolean)">
-            <summary>
-            Detects the encoding of an HTML document from a file first, and then loads the file.
-            </summary>
-            <param name="path">The complete file path to be read. May not be null.</param>
-            <param name="detectEncoding">true to detect encoding, false otherwise.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncoding(System.String)">
-            <summary>
-            Detects the encoding of an HTML file.
-            </summary>
-            <param name="path">Path for the file containing the HTML document to detect. May not be null.</param>
-            <returns>The detected encoding.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String)">
-            <summary>
-            Loads an HTML document from a file.
-            </summary>
-            <param name="path">The complete file path to be read. May not be null.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Boolean)">
-            <summary>
-            Loads an HTML document from a file.
-            </summary>
-            <param name="path">The complete file path to be read. May not be null.</param>
-            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Text.Encoding)">
-            <summary>
-            Loads an HTML document from a file.
-            </summary>
-            <param name="path">The complete file path to be read. May not be null.</param>
-            <param name="encoding">The character encoding to use. May not be null.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Text.Encoding,System.Boolean)">
-            <summary>
-            Loads an HTML document from a file.
-            </summary>
-            <param name="path">The complete file path to be read. May not be null.</param>
-            <param name="encoding">The character encoding to use. May not be null.</param>
-            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Text.Encoding,System.Boolean,System.Int32)">
-            <summary>
-            Loads an HTML document from a file.
-            </summary>
-            <param name="path">The complete file path to be read. May not be null.</param>
-            <param name="encoding">The character encoding to use. May not be null.</param>
-            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
-            <param name="buffersize">The minimum buffer size.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.String)">
-            <summary>
-            Saves the mixed document to the specified file.
-            </summary>
-            <param name="filename">The location of the file where you want to save the document.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.String,System.Text.Encoding)">
-            <summary>
-            Saves the mixed document to the specified file.
-            </summary>
-            <param name="filename">The location of the file where you want to save the document. May not be null.</param>
-            <param name="encoding">The character encoding to use. May not be null.</param>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateNavigator">
-            <summary>
-            Creates a new XPathNavigator object for navigating this HTML document.
-            </summary>
-            <returns>An XPathNavigator object. The XPathNavigator is positioned on the root of the document.</returns>
-        </member>
-        <member name="T:MCS.Library.HtmlParser.HtmlElementFlag">
-            <summary>
-            Flags that describe the behavior of an Element node.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.CData">
-            <summary>
-            The node is a CDATA node.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.Empty">
-            <summary>
-            The node is empty. META or IMG are example of such nodes.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.Closed">
-            <summary>
-            The node will automatically be closed during parsing.
-            </summary>
-        </member>
-        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.CanOverlap">
-            <summary>
-            The node can overlap.
-            </summary>
-        </member>
-        <member name="T:MCS.Library.HtmlParser.HtmlEntity">
-            <summary>
-            A utility class to replace special characters by entities and vice-versa.
-            Follows HTML 4.0 specification found at http://www.w3.org/TR/html4/sgml/entities.html
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlEntity.EntityName">
-            <summary>
-            A collection of entities indexed by name.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlEntity.EntityValue">
-            <summary>
-            A collection of entities indexed by value.
-            </summary>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlEntity.DeEntitize(System.String)">
-            <summary>
-            Replace known entities by characters.
-            </summary>
-            <param name="text">The source text.</param>
-            <returns>The result text.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(MCS.Library.HtmlParser.HtmlNode)">
-            <summary>
-            Clone and entitize an HtmlNode. This will affect attribute values and nodes' text. It will also entitize all child nodes.
-            </summary>
-            <param name="node">The node to entitize.</param>
-            <returns>An entitized cloned node.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(System.String)">
-            <summary>
-            Replace characters above 127 by entities.
-            </summary>
-            <param name="text">The source text.</param>
-            <returns>The result text.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(System.String,System.Boolean)">
-            <summary>
-            Replace characters above 127 by entities.
-            </summary>
-            <param name="text">The source text.</param>
-            <param name="useNames">If set to false, the function will not use known entities name. Default is true.</param>
-            <returns>The result text.</returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(System.String,System.Boolean,System.Boolean)">
-            <summary>
-            Replace characters above 127 by entities.
-            </summary>
-            <param name="text">The source text.</param>
-            <param name="useNames">If set to false, the function will not use known entities name. Default is true.</param>
-            <param name="entitizeQuotAmpAndLtGt">If set to true, the [quote], [ampersand], [lower than] and [greather than] characters will be entitized.</param>
-            <returns>The result text</returns>
         </member>
         <member name="T:MCS.Library.HtmlParser.HtmlNode">
             <summary>
@@ -805,126 +320,6 @@
             <param name="type"></param>
             <param name="ownerdocument"></param>
             <param name="index"></param>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.Attributes">
-            <summary>
-            Gets the collection of HTML attributes for this node. May not be null.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.ChildNodes">
-            <summary>
-            Gets all the children of the node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.Closed">
-            <summary>
-            Gets a value indicating if this node has been closed or not.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.ClosingAttributes">
-            <summary>
-            Gets the collection of HTML attributes for the closing tag. May not be null.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.FirstChild">
-            <summary>
-            Gets the first child of the node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.HasAttributes">
-            <summary>
-            Gets a value indicating whether the current node has any attributes.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.HasChildNodes">
-            <summary>
-            Gets a value indicating whether this node has any child nodes.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.HasClosingAttributes">
-            <summary>
-            Gets a value indicating whether the current node has any attributes on the closing tag.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.Id">
-            <summary>
-            Gets or sets the value of the 'id' HTML attribute. The document must have been parsed using the OptionUseIdAttribute set to true.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.InnerHtml">
-            <summary>
-            Gets or Sets the HTML between the start and end tags of the object.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.InnerText">
-            <summary>
-            Gets or Sets the text between the start and end tags of the object.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.LastChild">
-            <summary>
-            Gets the last child of the node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.Line">
-            <summary>
-            Gets the line number of this node in the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.LinePosition">
-            <summary>
-            Gets the column number of this node in the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.Name">
-            <summary>
-            Gets or sets this node's name.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.NextSibling">
-            <summary>
-            Gets the HTML node immediately following this element.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.NodeType">
-            <summary>
-            Gets the type of this node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.OriginalName">
-            <summary>
-            The original unaltered name of the tag
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.OuterHtml">
-            <summary>
-            Gets or Sets the object and its content in HTML.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.OwnerDocument">
-            <summary>
-            Gets the <see cref="T:MCS.Library.HtmlParser.HtmlDocument"/> to which this node belongs.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.ParentNode">
-            <summary>
-            Gets the parent of this node (for nodes that can have parents).
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.PreviousSibling">
-            <summary>
-            Gets the node immediately preceding this node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.StreamPosition">
-            <summary>
-            Gets the stream position of this node in the document, relative to the start of the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNode.XPath">
-            <summary>
-            Gets a valid XPath string that points to this node
-            </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.HtmlNode.CanOverlapElement(System.String)">
             <summary>
@@ -1262,6 +657,611 @@
             <param name="xpath">The XPath expression. May not be null.</param>
             <returns>The first <see cref="T:MCS.Library.HtmlParser.HtmlNode"/> that matches the XPath query or a null reference if no matching node was found.</returns>
         </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.Attributes">
+            <summary>
+            Gets the collection of HTML attributes for this node. May not be null.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.ChildNodes">
+            <summary>
+            Gets all the children of the node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.Closed">
+            <summary>
+            Gets a value indicating if this node has been closed or not.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.ClosingAttributes">
+            <summary>
+            Gets the collection of HTML attributes for the closing tag. May not be null.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.FirstChild">
+            <summary>
+            Gets the first child of the node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.HasAttributes">
+            <summary>
+            Gets a value indicating whether the current node has any attributes.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.HasChildNodes">
+            <summary>
+            Gets a value indicating whether this node has any child nodes.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.HasClosingAttributes">
+            <summary>
+            Gets a value indicating whether the current node has any attributes on the closing tag.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.Id">
+            <summary>
+            Gets or sets the value of the 'id' HTML attribute. The document must have been parsed using the OptionUseIdAttribute set to true.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.InnerHtml">
+            <summary>
+            Gets or Sets the HTML between the start and end tags of the object.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.InnerText">
+            <summary>
+            Gets or Sets the text between the start and end tags of the object.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.LastChild">
+            <summary>
+            Gets the last child of the node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.Line">
+            <summary>
+            Gets the line number of this node in the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.LinePosition">
+            <summary>
+            Gets the column number of this node in the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.Name">
+            <summary>
+            Gets or sets this node's name.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.NextSibling">
+            <summary>
+            Gets the HTML node immediately following this element.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.NodeType">
+            <summary>
+            Gets the type of this node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.OriginalName">
+            <summary>
+            The original unaltered name of the tag
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.OuterHtml">
+            <summary>
+            Gets or Sets the object and its content in HTML.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.OwnerDocument">
+            <summary>
+            Gets the <see cref="T:MCS.Library.HtmlParser.HtmlDocument"/> to which this node belongs.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.ParentNode">
+            <summary>
+            Gets the parent of this node (for nodes that can have parents).
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.PreviousSibling">
+            <summary>
+            Gets the node immediately preceding this node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.StreamPosition">
+            <summary>
+            Gets the stream position of this node in the document, relative to the start of the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNode.XPath">
+            <summary>
+            Gets a valid XPath string that points to this node
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlCommentNode.Comment">
+            <summary>
+            Gets or Sets the comment text of the node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlCommentNode.InnerHtml">
+            <summary>
+            Gets or Sets the HTML between the start and end tags of the object. In the case of a text node, it is equals to OuterHtml.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlCommentNode.OuterHtml">
+            <summary>
+            Gets or Sets the object and its content in HTML.
+            </summary>
+        </member>
+        <member name="T:MCS.Library.HtmlParser.HtmlDocument">
+            <summary>
+            Represents a complete HTML document.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionAddDebuggingAttributes">
+            <summary>
+            Adds Debugging attributes to node. Default is false.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionAutoCloseOnEnd">
+            <summary>
+            Defines if closing for non closed nodes must be done at the end or directly in the document.
+            Setting this to true can actually change how browsers render the page. Default is false.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionCheckSyntax">
+            <summary>
+            Defines if non closed nodes will be checked at the end of parsing. Default is true.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionComputeChecksum">
+            <summary>
+            Defines if a checksum must be computed for the document while parsing. Default is false.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionDefaultStreamEncoding">
+            <summary>
+            Defines the default stream encoding to use. Default is System.Text.Encoding.Default.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionExtractErrorSourceText">
+            <summary>
+            Defines if source text must be extracted while parsing errors.
+            If the document has a lot of errors, or cascading errors, parsing performance can be dramatically affected if set to true.
+            Default is false.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionExtractErrorSourceTextMaxLength">
+            <summary>
+            Defines the maximum length of source text or parse errors. Default is 100.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionFixNestedTags">
+            <summary>
+            Defines if LI, TR, TH, TD tags must be partially fixed when nesting errors are detected. Default is false.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputAsXml">
+            <summary>
+            Defines if output must conform to XML, instead of HTML.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputOptimizeAttributeValues">
+            <summary>
+            Defines if attribute value output must be optimized (not bound with double quotes if it is possible). Default is false.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputOriginalCase">
+            <summary>
+            Defines if name must be output with it's original case. Useful for asp.net tags and attributes
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionOutputUpperCase">
+            <summary>
+            Defines if name must be output in uppercase. Default is false.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionReadEncoding">
+            <summary>
+            Defines if declared encoding must be read from the document.
+            Declared encoding is determined using the meta http-equiv="content-type" content="text/html;charset=XXXXX" html node.
+            Default is true.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionStopperNodeName">
+            <summary>
+            Defines the name of a node that will throw the StopperNodeException when found as an end node. Default is null.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionUseIdAttribute">
+            <summary>
+            Defines if the 'id' attribute must be specifically used. Default is true.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlDocument.OptionWriteEmptyNodes">
+            <summary>
+            Defines if empty nodes must be written as closed during output. Default is false.
+            </summary>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.#ctor">
+            <summary>
+            Creates an instance of an HTML document.
+            </summary>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.GetXmlName(System.String)">
+            <summary>
+            Gets a valid XML name.
+            </summary>
+            <param name="name">Any text.</param>
+            <returns>A string that is a valid XML name.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.HtmlEncode(System.String)">
+            <summary>
+            Applies HTML encoding to a specified string.
+            </summary>
+            <param name="html">The input string to encode. May not be null.</param>
+            <returns>The encoded string.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.IsWhiteSpace(System.Int32)">
+            <summary>
+            Determines if the specified character is considered as a whitespace character.
+            </summary>
+            <param name="c">The character to check.</param>
+            <returns>true if if the specified character is considered as a whitespace character.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateAttribute(System.String)">
+            <summary>
+            Creates an HTML attribute with the specified name.
+            </summary>
+            <param name="name">The name of the attribute. May not be null.</param>
+            <returns>The new HTML attribute.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateAttribute(System.String,System.String)">
+            <summary>
+            Creates an HTML attribute with the specified name.
+            </summary>
+            <param name="name">The name of the attribute. May not be null.</param>
+            <param name="value">The value of the attribute.</param>
+            <returns>The new HTML attribute.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateComment">
+            <summary>
+            Creates an HTML comment node.
+            </summary>
+            <returns>The new HTML comment node.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateComment(System.String)">
+            <summary>
+            Creates an HTML comment node with the specified comment text.
+            </summary>
+            <param name="comment">The comment text. May not be null.</param>
+            <returns>The new HTML comment node.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateElement(System.String)">
+            <summary>
+            Creates an HTML element node with the specified name.
+            </summary>
+            <param name="name">The qualified name of the element. May not be null.</param>
+            <returns>The new HTML node.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateTextNode">
+            <summary>
+            Creates an HTML text node.
+            </summary>
+            <returns>The new HTML text node.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateTextNode(System.String)">
+            <summary>
+            Creates an HTML text node with the specified text.
+            </summary>
+            <param name="text">The text of the node. May not be null.</param>
+            <returns>The new HTML text node.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncoding(System.IO.Stream)">
+            <summary>
+            Detects the encoding of an HTML stream.
+            </summary>
+            <param name="stream">The input stream. May not be null.</param>
+            <returns>The detected encoding.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncoding(System.IO.TextReader)">
+            <summary>
+            Detects the encoding of an HTML text provided on a TextReader.
+            </summary>
+            <param name="reader">The TextReader used to feed the HTML. May not be null.</param>
+            <returns>The detected encoding.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncodingHtml(System.String)">
+            <summary>
+            Detects the encoding of an HTML text.
+            </summary>
+            <param name="html">The input html text. May not be null.</param>
+            <returns>The detected encoding.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.GetElementbyId(System.String)">
+            <summary>
+            Gets the HTML node with the specified 'id' attribute value.
+            </summary>
+            <param name="id">The attribute id to match. May not be null.</param>
+            <returns>The HTML node with the matching id or null if not found.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream)">
+            <summary>
+            Loads an HTML document from a stream.
+            </summary>
+            <param name="stream">The input stream.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Boolean)">
+            <summary>
+            Loads an HTML document from a stream.
+            </summary>
+            <param name="stream">The input stream.</param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the stream.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Text.Encoding)">
+            <summary>
+            Loads an HTML document from a stream.
+            </summary>
+            <param name="stream">The input stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Loads an HTML document from a stream.
+            </summary>
+            <param name="stream">The input stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the stream.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Int32)">
+            <summary>
+            Loads an HTML document from a stream.
+            </summary>
+            <param name="stream">The input stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the stream.</param>
+            <param name="buffersize">The minimum buffer size.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.IO.TextReader)">
+            <summary>
+            Loads the HTML document from the specified TextReader.
+            </summary>
+            <param name="reader">The TextReader used to feed the HTML data into the document. May not be null.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.LoadHtml(System.String)">
+            <summary>
+            Loads the HTML document from the specified string.
+            </summary>
+            <param name="html">String containing the HTML document to load. May not be null.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.Stream)">
+            <summary>
+            Saves the HTML document to the specified stream.
+            </summary>
+            <param name="outStream">The stream to which you want to save.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.Stream,System.Text.Encoding)">
+            <summary>
+            Saves the HTML document to the specified stream.
+            </summary>
+            <param name="outStream">The stream to which you want to save. May not be null.</param>
+            <param name="encoding">The character encoding to use. May not be null.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.StreamWriter)">
+            <summary>
+            Saves the HTML document to the specified StreamWriter.
+            </summary>
+            <param name="writer">The StreamWriter to which you want to save.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.IO.TextWriter)">
+            <summary>
+            Saves the HTML document to the specified TextWriter.
+            </summary>
+            <param name="writer">The TextWriter to which you want to save. May not be null.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.Xml.XmlWriter)">
+            <summary>
+            Saves the HTML document to the specified XmlWriter.
+            </summary>
+            <param name="writer">The XmlWriter to which you want to save.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncodingAndLoad(System.String)">
+            <summary>
+            Detects the encoding of an HTML document from a file first, and then loads the file.
+            </summary>
+            <param name="path">The complete file path to be read.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncodingAndLoad(System.String,System.Boolean)">
+            <summary>
+            Detects the encoding of an HTML document from a file first, and then loads the file.
+            </summary>
+            <param name="path">The complete file path to be read. May not be null.</param>
+            <param name="detectEncoding">true to detect encoding, false otherwise.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.DetectEncoding(System.String)">
+            <summary>
+            Detects the encoding of an HTML file.
+            </summary>
+            <param name="path">Path for the file containing the HTML document to detect. May not be null.</param>
+            <returns>The detected encoding.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String)">
+            <summary>
+            Loads an HTML document from a file.
+            </summary>
+            <param name="path">The complete file path to be read. May not be null.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Boolean)">
+            <summary>
+            Loads an HTML document from a file.
+            </summary>
+            <param name="path">The complete file path to be read. May not be null.</param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Text.Encoding)">
+            <summary>
+            Loads an HTML document from a file.
+            </summary>
+            <param name="path">The complete file path to be read. May not be null.</param>
+            <param name="encoding">The character encoding to use. May not be null.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Loads an HTML document from a file.
+            </summary>
+            <param name="path">The complete file path to be read. May not be null.</param>
+            <param name="encoding">The character encoding to use. May not be null.</param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Load(System.String,System.Text.Encoding,System.Boolean,System.Int32)">
+            <summary>
+            Loads an HTML document from a file.
+            </summary>
+            <param name="path">The complete file path to be read. May not be null.</param>
+            <param name="encoding">The character encoding to use. May not be null.</param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+            <param name="buffersize">The minimum buffer size.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.String)">
+            <summary>
+            Saves the mixed document to the specified file.
+            </summary>
+            <param name="filename">The location of the file where you want to save the document.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.Save(System.String,System.Text.Encoding)">
+            <summary>
+            Saves the mixed document to the specified file.
+            </summary>
+            <param name="filename">The location of the file where you want to save the document. May not be null.</param>
+            <param name="encoding">The character encoding to use. May not be null.</param>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlDocument.CreateNavigator">
+            <summary>
+            Creates a new XPathNavigator object for navigating this HTML document.
+            </summary>
+            <returns>An XPathNavigator object. The XPathNavigator is positioned on the root of the document.</returns>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.CheckSum">
+            <summary>
+            Gets the document CRC32 checksum if OptionComputeChecksum was set to true before parsing, 0 otherwise.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.DeclaredEncoding">
+            <summary>
+            Gets the document's declared encoding.
+            Declared encoding is determined using the meta http-equiv="content-type" content="text/html;charset=XXXXX" html node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.DocumentNode">
+            <summary>
+            Gets the root node of the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.Encoding">
+            <summary>
+            Gets the document's output encoding.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.ParseErrors">
+            <summary>
+            Gets a list of parse errors found in the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.Remainder">
+            <summary>
+            Gets the remaining text.
+            Will always be null if OptionStopperNodeName is null.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.RemainderOffset">
+            <summary>
+            Gets the offset of Remainder in the original Html text.
+            If OptionStopperNodeName is null, this will return the length of the original Html text.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlDocument.StreamEncoding">
+            <summary>
+            Gets the document's stream encoding.
+            </summary>
+        </member>
+        <member name="T:MCS.Library.HtmlParser.HtmlElementFlag">
+            <summary>
+            Flags that describe the behavior of an Element node.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.CData">
+            <summary>
+            The node is a CDATA node.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.Empty">
+            <summary>
+            The node is empty. META or IMG are example of such nodes.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.Closed">
+            <summary>
+            The node will automatically be closed during parsing.
+            </summary>
+        </member>
+        <member name="F:MCS.Library.HtmlParser.HtmlElementFlag.CanOverlap">
+            <summary>
+            The node can overlap.
+            </summary>
+        </member>
+        <member name="T:MCS.Library.HtmlParser.HtmlEntity">
+            <summary>
+            A utility class to replace special characters by entities and vice-versa.
+            Follows HTML 4.0 specification found at http://www.w3.org/TR/html4/sgml/entities.html
+            </summary>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlEntity.DeEntitize(System.String)">
+            <summary>
+            Replace known entities by characters.
+            </summary>
+            <param name="text">The source text.</param>
+            <returns>The result text.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(MCS.Library.HtmlParser.HtmlNode)">
+            <summary>
+            Clone and entitize an HtmlNode. This will affect attribute values and nodes' text. It will also entitize all child nodes.
+            </summary>
+            <param name="node">The node to entitize.</param>
+            <returns>An entitized cloned node.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(System.String)">
+            <summary>
+            Replace characters above 127 by entities.
+            </summary>
+            <param name="text">The source text.</param>
+            <returns>The result text.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(System.String,System.Boolean)">
+            <summary>
+            Replace characters above 127 by entities.
+            </summary>
+            <param name="text">The source text.</param>
+            <param name="useNames">If set to false, the function will not use known entities name. Default is true.</param>
+            <returns>The result text.</returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlEntity.Entitize(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Replace characters above 127 by entities.
+            </summary>
+            <param name="text">The source text.</param>
+            <param name="useNames">If set to false, the function will not use known entities name. Default is true.</param>
+            <param name="entitizeQuotAmpAndLtGt">If set to true, the [quote], [ampersand], [lower than] and [greather than] characters will be entitized.</param>
+            <returns>The result text</returns>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlEntity.EntityName">
+            <summary>
+            A collection of entities indexed by name.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlEntity.EntityValue">
+            <summary>
+            A collection of entities indexed by value.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.HtmlNodeCollection">
             <summary>
             Represents a combined list and collection of HTML nodes.
@@ -1272,33 +1272,6 @@
             Initialize the HtmlNodeCollection with the base parent node
             </summary>
             <param name="parentnode">The base node of the collection</param>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Item(MCS.Library.HtmlParser.HtmlNode)">
-            <summary>
-            Gets a given node from the list.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Item(System.String)">
-            <summary>
-            Get node with tag name
-            </summary>
-            <param name="nodeName"></param>
-            <returns></returns>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Count">
-            <summary>
-            Gets the number of elements actually contained in the list.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.IsReadOnly">
-            <summary>
-            Is collection read only
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Item(System.Int32)">
-            <summary>
-            Gets the node at the specified index.
-            </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.HtmlNodeCollection.Add(MCS.Library.HtmlParser.HtmlNode)">
             <summary>
@@ -1443,6 +1416,33 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Item(MCS.Library.HtmlParser.HtmlNode)">
+            <summary>
+            Gets a given node from the list.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Item(System.String)">
+            <summary>
+            Get node with tag name
+            </summary>
+            <param name="nodeName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Count">
+            <summary>
+            Gets the number of elements actually contained in the list.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.IsReadOnly">
+            <summary>
+            Is collection read only
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeCollection.Item(System.Int32)">
+            <summary>
+            Gets the node at the specified index.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.HtmlNodeNavigator">
             <summary>
             Represents an HTML navigator on an HTML document seen as a data store.
@@ -1527,80 +1527,6 @@
             <param name="encoding">The character encoding to use.</param>
             <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
             <param name="buffersize">The minimum buffer size.</param>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.BaseURI">
-            <summary>
-            Gets the base URI for the current node.
-            Always returns string.Empty in the case of HtmlNavigator implementation.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.CurrentDocument">
-            <summary>
-            Gets the current HTML document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.CurrentNode">
-            <summary>
-            Gets the current HTML node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.HasAttributes">
-            <summary>
-            Gets a value indicating whether the current node has child nodes.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.HasChildren">
-            <summary>
-            Gets a value indicating whether the current node has child nodes.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.IsEmptyElement">
-            <summary>
-            Gets a value indicating whether the current node is an empty element.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.LocalName">
-            <summary>
-            Gets the name of the current HTML node without the namespace prefix.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.Name">
-            <summary>
-            Gets the qualified name of the current node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.NamespaceURI">
-            <summary>
-            Gets the namespace URI (as defined in the W3C Namespace Specification) of the current node.
-            Always returns string.Empty in the case of HtmlNavigator implementation.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.NameTable">
-            <summary>
-            Gets the <see cref="T:System.Xml.XmlNameTable"/> associated with this implementation.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.NodeType">
-            <summary>
-            Gets the type of the current node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.Prefix">
-            <summary>
-            Gets the prefix associated with the current node.
-            Always returns string.Empty in the case of HtmlNavigator implementation.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.Value">
-            <summary>
-            Gets the text value of the current node.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.XmlLang">
-            <summary>
-            Gets the xml:lang scope for the current node.
-            Always returns string.Empty in the case of HtmlNavigator implementation.
-            </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.HtmlNodeNavigator.Clone">
             <summary>
@@ -1724,6 +1650,80 @@
             Moves to the root node to which the current node belongs.
             </summary>
         </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.BaseURI">
+            <summary>
+            Gets the base URI for the current node.
+            Always returns string.Empty in the case of HtmlNavigator implementation.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.CurrentDocument">
+            <summary>
+            Gets the current HTML document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.CurrentNode">
+            <summary>
+            Gets the current HTML node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.HasAttributes">
+            <summary>
+            Gets a value indicating whether the current node has child nodes.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.HasChildren">
+            <summary>
+            Gets a value indicating whether the current node has child nodes.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.IsEmptyElement">
+            <summary>
+            Gets a value indicating whether the current node is an empty element.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.LocalName">
+            <summary>
+            Gets the name of the current HTML node without the namespace prefix.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.Name">
+            <summary>
+            Gets the qualified name of the current node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.NamespaceURI">
+            <summary>
+            Gets the namespace URI (as defined in the W3C Namespace Specification) of the current node.
+            Always returns string.Empty in the case of HtmlNavigator implementation.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.NameTable">
+            <summary>
+            Gets the <see cref="T:System.Xml.XmlNameTable"/> associated with this implementation.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.NodeType">
+            <summary>
+            Gets the type of the current node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.Prefix">
+            <summary>
+            Gets the prefix associated with the current node.
+            Always returns string.Empty in the case of HtmlNavigator implementation.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.Value">
+            <summary>
+            Gets the text value of the current node.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlNodeNavigator.XmlLang">
+            <summary>
+            Gets the xml:lang scope for the current node.
+            Always returns string.Empty in the case of HtmlNavigator implementation.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.HtmlNodeType">
             <summary>
             Represents the type of a node.
@@ -1824,6 +1824,13 @@
             构造方法
             </summary>
         </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlSanitizeNode.MatchAndAction(MCS.Library.HtmlParser.HtmlNode,System.Action{MCS.Library.HtmlParser.HtmlNode,MCS.Library.HtmlParser.HtmlAttribute})">
+            <summary>
+            是否匹配，匹配到了则执行操作
+            </summary>
+            <param name="node"></param>
+            <param name="action"></param>
+        </member>
         <member name="P:MCS.Library.HtmlParser.HtmlSanitizeNode.TagName">
             <summary>
             
@@ -1833,13 +1840,6 @@
             <summary>
             标签的名称
             </summary>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlSanitizeNode.MatchAndAction(MCS.Library.HtmlParser.HtmlNode,System.Action{MCS.Library.HtmlParser.HtmlNode,MCS.Library.HtmlParser.HtmlAttribute})">
-            <summary>
-            是否匹配，匹配到了则执行操作
-            </summary>
-            <param name="node"></param>
-            <param name="action"></param>
         </member>
         <member name="T:MCS.Library.HtmlParser.HtmlSanitizer">
             <summary>
@@ -1941,17 +1941,30 @@
             
             </summary>
         </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContext.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="T:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1">
             <summary>
             
             </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1.ChangeStage(`0)">
+            <summary>
+            
+            </summary>
+            <param name="stage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1.ResetWriter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1.Dispose">
             <summary>
             
             </summary>
@@ -1976,20 +1989,7 @@
             
             </summary>
         </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1.ChangeStage(`0)">
-            <summary>
-            
-            </summary>
-            <param name="stage"></param>
-            <returns></returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1.ResetWriter">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContextBase`1.Dispose">
+        <member name="M:MCS.Library.HtmlParser.HtmlStyleParserContext.#ctor">
             <summary>
             
             </summary>
@@ -2039,16 +2039,16 @@
             
             </summary>
         </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlStyleValueParserContext.ParenthesesLevel">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="M:MCS.Library.HtmlParser.HtmlStyleValueParserContext.ResetWriter">
             <summary>
             
             </summary>
             <returns></returns>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlStyleValueParserContext.ParenthesesLevel">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:MCS.Library.HtmlParser.HtmlStyleValueParsingStage">
             <summary>
@@ -2095,21 +2095,6 @@
             A utility class to get HTML document from HTTP.
             </summary>
         </member>
-        <member name="T:MCS.Library.HtmlParser.HtmlWeb.PostResponseHandler">
-            <summary>
-            Represents the method that will handle the PostResponse event.
-            </summary>
-        </member>
-        <member name="T:MCS.Library.HtmlParser.HtmlWeb.PreHandleDocumentHandler">
-            <summary>
-            Represents the method that will handle the PreHandleDocument event.
-            </summary>
-        </member>
-        <member name="T:MCS.Library.HtmlParser.HtmlWeb.PreRequestHandler">
-            <summary>
-            Represents the method that will handle the PreRequest event.
-            </summary>
-        </member>
         <member name="F:MCS.Library.HtmlParser.HtmlWeb.PostResponse">
             <summary>
             Occurs after an HTTP request has been executed.
@@ -2123,67 +2108,6 @@
         <member name="F:MCS.Library.HtmlParser.HtmlWeb.PreRequest">
             <summary>
             Occurs before an HTTP request is executed.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.AutoDetectEncoding">
-            <summary>
-            Gets or Sets a value indicating if document encoding must be automatically detected.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.OverrideEncoding">
-            <summary>
-            Gets or sets the Encoding used to override the response stream from any web request
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.CacheOnly">
-            <summary>
-            Gets or Sets a value indicating whether to get document only from the cache.
-            If this is set to true and document is not found in the cache, nothing will be loaded.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.CachePath">
-            <summary>
-            Gets or Sets the cache path. If null, no caching mechanism will be used.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.FromCache">
-            <summary>
-            Gets a value indicating if the last document was retrieved from the cache.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.RequestDuration">
-            <summary>
-            Gets the last request duration in milliseconds.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.ResponseUri">
-            <summary>
-            Gets the URI of the Internet resource that actually responded to the request.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.StatusCode">
-            <summary>
-            Gets the last request status.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.StreamBufferSize">
-            <summary>
-            Gets or Sets the size of the buffer used for memory operations.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.UseCookies">
-            <summary>
-            Gets or Sets a value indicating if cookies will be stored.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.UserAgent">
-            <summary>
-            Gets or Sets the User Agent HTTP 1.1 header sent on any webrequest
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.HtmlWeb.UsingCache">
-            <summary>
-            Gets or Sets a value indicating whether the caching mechanisms should be used or not.
             </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.HtmlWeb.GetContentTypeForExtension(System.String,System.String)">
@@ -2334,22 +2258,86 @@
             <param name="writer">The XmlTextWriter to which you want to save.</param>
             <param name="xmlPath">A file path where the temporary XML before transformation will be saved. Mostly used for debugging purposes.</param>
         </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.AutoDetectEncoding">
+            <summary>
+            Gets or Sets a value indicating if document encoding must be automatically detected.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.OverrideEncoding">
+            <summary>
+            Gets or sets the Encoding used to override the response stream from any web request
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.CacheOnly">
+            <summary>
+            Gets or Sets a value indicating whether to get document only from the cache.
+            If this is set to true and document is not found in the cache, nothing will be loaded.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.CachePath">
+            <summary>
+            Gets or Sets the cache path. If null, no caching mechanism will be used.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.FromCache">
+            <summary>
+            Gets a value indicating if the last document was retrieved from the cache.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.RequestDuration">
+            <summary>
+            Gets the last request duration in milliseconds.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.ResponseUri">
+            <summary>
+            Gets the URI of the Internet resource that actually responded to the request.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.StatusCode">
+            <summary>
+            Gets the last request status.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.StreamBufferSize">
+            <summary>
+            Gets or Sets the size of the buffer used for memory operations.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.UseCookies">
+            <summary>
+            Gets or Sets a value indicating if cookies will be stored.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.UserAgent">
+            <summary>
+            Gets or Sets the User Agent HTTP 1.1 header sent on any webrequest
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.HtmlWeb.UsingCache">
+            <summary>
+            Gets or Sets a value indicating whether the caching mechanisms should be used or not.
+            </summary>
+        </member>
+        <member name="T:MCS.Library.HtmlParser.HtmlWeb.PostResponseHandler">
+            <summary>
+            Represents the method that will handle the PostResponse event.
+            </summary>
+        </member>
+        <member name="T:MCS.Library.HtmlParser.HtmlWeb.PreHandleDocumentHandler">
+            <summary>
+            Represents the method that will handle the PreHandleDocument event.
+            </summary>
+        </member>
+        <member name="T:MCS.Library.HtmlParser.HtmlWeb.PreRequestHandler">
+            <summary>
+            Represents the method that will handle the PreRequest event.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.PermissionHelper">
             <summary>
             Wraps getting AppDomain permissions
             </summary>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.PermissionHelper.GetIsRegistryAvailable">
-            <summary>
-            Checks to see if Registry access is available to the caller
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.PermissionHelper.GetIsDnsAvailable">
-            <summary>
-            Checks to see if DNS information is available to the caller
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:MCS.Library.HtmlParser.IPermissionHelper">
             <summary>
@@ -2363,6 +2351,18 @@
             <returns></returns>
         </member>
         <member name="M:MCS.Library.HtmlParser.IPermissionHelper.GetIsDnsAvailable">
+            <summary>
+            Checks to see if DNS information is available to the caller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.PermissionHelper.GetIsRegistryAvailable">
+            <summary>
+            Checks to see if Registry access is available to the caller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MCS.Library.HtmlParser.PermissionHelper.GetIsDnsAvailable">
             <summary>
             Checks to see if DNS information is available to the caller
             </summary>
@@ -2407,31 +2407,6 @@
         <member name="M:MCS.Library.HtmlParser.MixedCodeDocument.#ctor">
             <summary>
             Creates a mixed code document instance.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.Code">
-            <summary>
-            Gets the code represented by the mixed code document seen as a template.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.CodeFragments">
-            <summary>
-            Gets the list of code fragments in the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.Fragments">
-            <summary>
-            Gets the list of all fragments in the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.StreamEncoding">
-            <summary>
-            Gets the encoding of the stream used to read the document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.TextFragments">
-            <summary>
-            Gets the list of text fragments in the document.
             </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.MixedCodeDocument.CreateCodeFragment">
@@ -2570,14 +2545,34 @@
             </summary>
             <param name="writer">The TextWriter to which you want to save.</param>
         </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.Code">
+            <summary>
+            Gets the code represented by the mixed code document seen as a template.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.CodeFragments">
+            <summary>
+            Gets the list of code fragments in the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.Fragments">
+            <summary>
+            Gets the list of all fragments in the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.StreamEncoding">
+            <summary>
+            Gets the encoding of the stream used to read the document.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocument.TextFragments">
+            <summary>
+            Gets the list of text fragments in the document.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.MixedCodeDocumentCodeFragment">
             <summary>
             Represents a fragment of code in a mixed code document.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentCodeFragment.Code">
-            <summary>
-            Gets the fragment code text.
             </summary>
         </member>
         <member name="T:MCS.Library.HtmlParser.MixedCodeDocumentFragment">
@@ -2610,24 +2605,14 @@
             Gets the fragment position in the document's stream.
             </summary>
         </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentCodeFragment.Code">
+            <summary>
+            Gets the fragment code text.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList">
             <summary>
             Represents a list of mixed code fragments.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.Doc">
-            <summary>
-             Gets the Document
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.Count">
-            <summary>
-            Gets the number of fragments contained in the list.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.Item(System.Int32)">
-            <summary>
-            Gets a fragment from the list using its index.
             </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.System#Collections#IEnumerable#GetEnumerator">
@@ -2669,19 +2654,24 @@
             </summary>
             <param name="index">The index of the fragment to remove.</param>
         </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.Doc">
+            <summary>
+             Gets the Document
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.Count">
+            <summary>
+            Gets the number of fragments contained in the list.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.Item(System.Int32)">
+            <summary>
+            Gets a fragment from the list using its index.
+            </summary>
+        </member>
         <member name="T:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.MixedCodeDocumentFragmentEnumerator">
             <summary>
             Represents a fragment enumerator.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.MixedCodeDocumentFragmentEnumerator.Current">
-            <summary>
-            Gets the current element in the collection.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.MixedCodeDocumentFragmentEnumerator.System#Collections#IEnumerator#Current">
-            <summary>
-            Gets the current element in the collection.
             </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.MixedCodeDocumentFragmentEnumerator.MoveNext">
@@ -2693,6 +2683,16 @@
         <member name="M:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.MixedCodeDocumentFragmentEnumerator.Reset">
             <summary>
             Sets the enumerator to its initial position, which is before the first element in the collection.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.MixedCodeDocumentFragmentEnumerator.Current">
+            <summary>
+            Gets the current element in the collection.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.MixedCodeDocumentFragmentList.MixedCodeDocumentFragmentEnumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            Gets the current element in the collection.
             </summary>
         </member>
         <member name="T:MCS.Library.HtmlParser.MixedCodeDocumentFragmentType">
@@ -2731,41 +2731,12 @@
             </summary>
             <param name="baseReader">The TextReader to base parsing on. Must not be null.</param>
         </member>
-        <member name="P:MCS.Library.HtmlParser.ParseReader.Length">
-            <summary>
-            Gets the length in bytes of the stream.
-            Always throws a NotSupportedException for the ParserReader class.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.ParseReader.Position">
-            <summary>
-            Gets or sets the position within the stream.
-            </summary>
-        </member>
         <member name="M:MCS.Library.HtmlParser.ParseReader.CheckLength(System.Int32)">
             <summary>
             Checks the length of the underlying stream.
             </summary>
             <param name="length">The required length.</param>
             <returns>true if the underlying stream's length is greater than the required length, false otherwise.</returns>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.ParseReader.CanSeek">
-            <summary>
-            Gets a value indicating whether the current stream supports seeking.
-            Always returns true for the ParserReader class.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.ParseReader.CanRead">
-            <summary>
-            Gets a value indicating whether the current stream supports reading.
-            Always returns true for the ParserReader class.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.ParseReader.CanWrite">
-            <summary>
-            Gets a value indicating whether the current stream supports writing.
-            Always returns false for the ParserReader class.
-            </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.ParseReader.SetLength(System.Int64)">
             <summary>
@@ -2777,16 +2748,6 @@
         <member name="M:MCS.Library.HtmlParser.ParseReader.Flush">
             <summary>
             Clears all buffers for this stream and causes any buffered data to be written to the underlying device.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.ParseReader.BaseReaderPosition">
-            <summary>
-            Gets the position within the underlying stream.
-            </summary>
-        </member>
-        <member name="P:MCS.Library.HtmlParser.ParseReader.MaxReaderPosition">
-            <summary>
-            Gets the maximum position within the underlying stream.
             </summary>
         </member>
         <member name="M:MCS.Library.HtmlParser.ParseReader.CloseBaseReader">
@@ -2853,6 +2814,53 @@
             <param name="origin">A value of type SeekOrigin indicating the reference point used to obtain the new position.</param>
             <returns>The new position within the current stream.</returns>
         </member>
+        <member name="M:MCS.Library.HtmlParser.ParseReader.GetBufferedString(System.Int32,System.Int32)">
+            <summary>
+            Extracts a string out of the buffered text.
+            </summary>
+            <param name="offset">The zero-based byte offset in buffered text at which to begin extracting.</param>
+            <param name="length">The maximum number of bytes to be read from the buffered text.</param>
+            <returns></returns>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.ParseReader.Length">
+            <summary>
+            Gets the length in bytes of the stream.
+            Always throws a NotSupportedException for the ParserReader class.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.ParseReader.Position">
+            <summary>
+            Gets or sets the position within the stream.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.ParseReader.CanSeek">
+            <summary>
+            Gets a value indicating whether the current stream supports seeking.
+            Always returns true for the ParserReader class.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.ParseReader.CanRead">
+            <summary>
+            Gets a value indicating whether the current stream supports reading.
+            Always returns true for the ParserReader class.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.ParseReader.CanWrite">
+            <summary>
+            Gets a value indicating whether the current stream supports writing.
+            Always returns false for the ParserReader class.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.ParseReader.BaseReaderPosition">
+            <summary>
+            Gets the position within the underlying stream.
+            </summary>
+        </member>
+        <member name="P:MCS.Library.HtmlParser.ParseReader.MaxReaderPosition">
+            <summary>
+            Gets the maximum position within the underlying stream.
+            </summary>
+        </member>
         <member name="P:MCS.Library.HtmlParser.ParseReader.Item(System.Int32)">
             <summary>
             Gets the character at the specified index or -1 if no more characters are available.
@@ -2867,14 +2875,6 @@
             <summary>
             Gets the currently buffered text.
             </summary>
-        </member>
-        <member name="M:MCS.Library.HtmlParser.ParseReader.GetBufferedString(System.Int32,System.Int32)">
-            <summary>
-            Extracts a string out of the buffered text.
-            </summary>
-            <param name="offset">The zero-based byte offset in buffered text at which to begin extracting.</param>
-            <param name="length">The maximum number of bytes to be read from the buffered text.</param>
-            <returns></returns>
         </member>
     </members>
 </doc>
