@@ -5,6 +5,7 @@ CREATE FUNCTION [SC].[GetSchemaOrganizationXml]
 	@Name NVARCHAR(255),
 	@DisplayName NVARCHAR(255),
 	@CodeName NVARCHAR(64),
+	@DepartmentType NVARCHAR(32),
 	@Description NVARCHAR(255)
 )
 RETURNS XML
@@ -12,13 +13,14 @@ AS
 BEGIN
 	DECLARE @result XML
 
-	DECLARE @tempTable TABLE([ID] NVARCHAR(36), Name NVARCHAR(255), DisplayName NVARCHAR(255), CodeName NVARCHAR(64), [Description] NVARCHAR(255))
+	DECLARE @tempTable TABLE([ID] NVARCHAR(36), Name NVARCHAR(255), DisplayName NVARCHAR(255), CodeName NVARCHAR(64), DepartmentType NVARCHAR(32), [Description] NVARCHAR(255))
 
-	INSERT INTO @tempTable([ID], Name, DisplayName, CodeName, [Description])
+	INSERT INTO @tempTable([ID], Name, DisplayName, CodeName, DepartmentType, [Description])
 	SELECT @ID AS [ID],
 		@Name AS Name,
 		@DisplayName AS DisplayName,
 		@CodeName AS CodeName,
+		@DepartmentType AS DepartmentType,
 		@Description AS Comment
 
 	SELECT @result = 
