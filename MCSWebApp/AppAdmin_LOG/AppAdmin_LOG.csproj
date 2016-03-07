@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
   <PropertyGroup>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -20,13 +20,17 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <TargetFrameworkProfile />    
+    <TargetFrameworkProfile />
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -319,10 +323,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>set path=%25path%25;C:\Windows\System32
- 
-
-
+    <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -345,13 +346,9 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>IF EXIST "$(TargetDir)DeluxeWorks.Library.dll" DEL "$(TargetDir)DeluxeWorks.Library.dll"
-IF EXIST "$(TargetDir)DeluxeWorks.Library.Data.dll" DEL "$(TargetDir)DeluxeWorks.Library.Data.dll"
-IF EXIST "$(TargetDir)DeluxeWorks.Library.OGUPermission.dll" DEL "$(TargetDir)DeluxeWorks.Library.OGUPermission.dll"
-IF EXIST "$(TargetDir)DeluxeWorks.Library.Passport.dll" DEL "$(TargetDir)DeluxeWorks.Library.Passport.dll"</PreBuildEvent>
-    <PostBuildEvent>set path=%25path%25;C:\Windows\System32 IF EXIST "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.dll" COPY "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.dll" "$(TargetDir)"
-IF EXIST "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.Data.dll" COPY "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.Data.dll" "$(TargetDir)"
-IF EXIST "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.OGUPermission.dll" COPY "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.OGUPermission.dll" "$(TargetDir)"
-IF EXIST "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.Passport.dll" COPY "$(ProjectDir)\..\..\Framework\Bin\DeluxeWorks.Library.Passport.dll" "$(TargetDir)"</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

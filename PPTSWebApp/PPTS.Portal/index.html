@@ -1,0 +1,653 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>学大教育PPTS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!--#bootstrap基础样式-->
+    <link href="http://localhost/mcsweb/vendors/bootstrap-3.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--#font awesome字体样式-->
+    <link href="http://localhost/mcsweb/vendors/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--#ace admin基础样式-->
+    <link href="http://localhost/mcsweb/vendors/ace-1.2.3/ace.min.css" rel="stylesheet" />
+    <!--#blockUI样式-->
+    <link href="http://localhost/mcsweb/vendors/angular-block-ui-0.2.2/dist/angular-block-ui.css" rel="stylesheet" />
+    <!--#网站主样式-->
+    <link href="assets/styles/site.css" rel="stylesheet" />
+</head>
+
+<body class="no-skin" ng-controller="pptsController">
+    <!-- #开始：网站头部区域，包括logo，消息提醒，用户名，以及用户相关的关联菜单项（注销等） -->
+    <div id="navbar" class="navbar navbar-default">
+        <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {}
+        </script>
+        <div class="navbar-container" id="navbar-container">
+            <!-- #开始：响应式布局下的菜单栏区域 -->
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- /结束：响应式布局下的菜单栏区域 -->
+            <div class="navbar-header pull-left">
+                <!-- #开始：头部.logo区域 -->
+                <a id="logo" href="#" class="navbar-brand">
+                    <img src="assets/images/logo.gif" />
+                </a>
+                <!-- /结束：头部.logo区域 -->
+                <!-- #section:basics/navbar.toggle -->
+                <!-- /section:basics/navbar.toggle -->
+            </div>
+            <!-- #开始：头部.下拉菜单区域 -->
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="grey">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-tasks"></i>
+                            <span class="badge badge-grey">4</span>
+                        </a>
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-check"></i> 4 Tasks to complete
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Software Update</span>
+                                        <span class="pull-right">65%</span>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width:65%" class="progress-bar"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Hardware Upgrade</span>
+                                        <span class="pull-right">35%</span>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width:35%" class="progress-bar progress-bar-danger"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Unit Testing</span>
+                                        <span class="pull-right">15%</span>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width:15%" class="progress-bar progress-bar-warning"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Bug Fixes</span>
+                                        <span class="pull-right">90%</span>
+                                    </div>
+                                    <div class="progress progress-mini progress-striped active">
+                                        <div style="width:90%" class="progress-bar progress-bar-success"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer">
+                                <a href="#">
+                                    See tasks with details
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="purple">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                            <span class="badge badge-important">8</span>
+                        </a>
+                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-exclamation-triangle"></i> 8 Notifications
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">
+                                            <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+                                            New Comments
+                                        </span>
+                                        <span class="pull-right badge badge-info">+12</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="btn btn-xs btn-primary fa fa-user"></i> Bob just signed up as an editor ...
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">
+                                            <i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+                                            New Orders
+                                        </span>
+                                        <span class="pull-right badge badge-success">+8</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">
+                                            <i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+                                            Followers
+                                        </span>
+                                        <span class="pull-right badge badge-info">+11</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer">
+                                <a href="#">
+                                    See all notifications
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="green">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+                            <span class="badge badge-success">5</span>
+                        </a>
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-envelope-o"></i> 5 Messages
+                            </li>
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar">
+                                    <li>
+                                        <a href="#">
+                                            <img src="./assets/images/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                            <span class="msg-body">
+                                                <span class="msg-title">
+                                                    <span class="blue">Alex:</span> Ciao sociis natoque penatibus et auctor ...
+                                            </span>
+                                            <span class="msg-time">
+                                                    <i class="ace-icon fa fa-clock-o"></i>
+                                                    <span>a moment ago</span>
+                                            </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-footer">
+                                <a href="inbox.html">
+                                    See all messages
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #开始：头部.下拉菜单区域.用户菜单 -->
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="javascript:void(0)" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="assets/images/user.png" alt="用户头像" />
+                            <span class="user-info">
+                                <small>您好,咨询师1</small>
+                                <small>校教育咨询师-方庄</small>
+                            </span>
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li class="dropdown-hover">
+                                <a class="clearfix" tabindex="-1" href="#">
+                                    <i class="ace-icon fa fa-user"></i> 切换角色
+                                    <i class="ace-icon fa fa-caret-right pull-right"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="#" tabindex="-1">校教育咨询师-方庄</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" tabindex="-1">校学管主任-方庄</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" tabindex="-1">校教育咨询师-校区2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" tabindex="-1">系统管理员-总部</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-hover">
+                                <a class="clearfix" tabindex="-1" href="#">
+                                    <i class="ace-icon fa fa-cogs"></i> 页面设置
+                                    <i class="ace-icon fa fa-caret-right pull-right"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="javascript:void(0);" ng-click="changeSettingNavbar()" tabindex="-1">固定头部导航条</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" ng-click="changeSettingBreadcrumbs()" tabindex="-1">固定路径导航条</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" ng-click="changeSettingMainContainer()" tabindex="-1">固定页面宽度</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" ng-click="changeSettingSidebar()" tabindex="-1">固定左侧菜单</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" ng-click="changeSettingCompact()" tabindex="-1">左侧复合菜单</a>
+                                    </li>
+                                    <!--<li class="dropdown-hover">
+                                        <a href="javascript:void(0);" tabindex="-1">选择页面主题<i class="ace-icon fa fa-caret-right pull-right"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li>
+                                                <a href="#" tabindex="-1">主题1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" tabindex="-1">主题2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" tabindex="-1">主题3</a>
+                                            </li>
+                                        </ul>
+                                    </li>-->
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-power-off"></i> 注销
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- /结束：头部.下拉菜单区域.用户菜单 -->
+                </ul>
+            </div>
+            <!-- /结束：头部.下拉菜单区域 -->
+        </div>
+    </div>
+    <!-- /结束：网站头部区域，包括logo，消息提醒，用户名，以及用户相关的关联菜单项（注销等） -->
+    <!-- #开始：网站主体内容区域 -->
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+        try {
+            ace.settings.check('main-container', 'fixed')
+        } catch (e) {}
+        </script>
+        <!-- #开始：网站主体内容区域.左侧区域 -->
+        <div id="sidebar" class="sidebar responsive">
+            <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'fixed')
+            } catch (e) {}
+            </script>
+            <!-- #开始：网站主体内容区域.左侧区域.顶部快捷按钮 -->
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    <button class="btn btn-success">
+                        <i class="ace-icon fa fa-signal"></i>
+                    </button>
+                    <button class="btn btn-info">
+                        <i class="ace-icon fa fa-pencil"></i>
+                    </button>
+                    <button class="btn btn-warning">
+                        <i class="ace-icon fa fa-users"></i>
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="ace-icon fa fa-cogs"></i>
+                    </button>
+                </div>
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
+                    <span class="btn btn-info"></span>
+                    <span class="btn btn-warning"></span>
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div>
+            <!-- /结束：网站主体内容区域.左侧区域.顶部快捷按钮 -->
+            <!-- #开始：网站主体内容区域.左侧区域.主菜单 -->
+            <ul class="nav nav-list">
+                <!--首页-->
+                <li ui-sref-active="active">
+                    <a ui-sref="main">
+                        <i class="menu-icon fa fa-home"></i>
+                        <span class="menu-text"> 首页 </span>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <!--基础信息-->
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-desktop"></i>
+                        <span class="menu-text"> 基础信息 </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="typography.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 产品管理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 折扣表管理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="buttons.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 买赠表管理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="treeview.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 综合服务费
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <!--潜在客户管理-->
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text"> 潜在客户管理 </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="tables.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 潜在客户
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 市场部-资源管理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 划转资源
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 分配咨询师
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 分配坐席
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 分配市场专员
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 跟进记录
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 潜在客户列表
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <!--学员管理-->
+                <li class="">
+                    <a href="javascript:void(0)" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-pencil-square-o"></i>
+                        <span class="menu-text"> 学员管理 </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li ui-sref-active="active">
+                            <a ui-sref="student">
+                                <i class="menu-icon fa fa-caret-right"></i> 学员列表
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <!--账户管理-->
+                <li class="">
+                    <a href="widgets.html" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-list-alt"></i>
+                        <span class="menu-text"> 账户管理 </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 充值
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 账户
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 缴费单列表
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 退费
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 退费列表
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 转让
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 剩余课时列表
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 结课
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <!--订单管理-->
+                <li class="">
+                    <a href="calendar.html" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-calendar"></i>
+                        <span class="menu-text"> 订单管理 
+
+                            <!-- #section:basics/sidebar.layout.badge -->
+                            <span class="badge badge-transparent tooltip-error" title="2 Important Events">
+                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                            </span>
+                        <!-- /section:basics/sidebar.layout.badge -->
+                        </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 订购
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 订购单资产兑换
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 非授课类产品确认收入
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 确认为合作方支出
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <!--课程管理-->
+                <li class="">
+                    <a href="gallery.html" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-picture-o"></i>
+                        <span class="menu-text"> 课程管理 </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> “1对1”课程管理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> “班组”课程管理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="form-elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 班组课表列表
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <!--工作台-->
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tag"></i>
+                        <span class="menu-text"> 工作台 </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="profile.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 咨询体系工作台
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="inbox.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 学管体系工作台
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="pricing.html">
+                                <i class="menu-icon fa fa-caret-right"></i> 教师线工作台
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <!--系统管理-->
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-file-o"></i>
+                        <span class="menu-text">
+                            系统管理
+                        </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+            <!-- /结束：网站主体内容区域.左侧区域.主菜单 -->
+            <!-- #开始：网站主体内容区域.左侧区域.最小化左侧区域按钮 -->
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+            <!-- /结束：网站主体内容区域.左侧区域.最小化左侧区域按钮 -->
+            <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'collapsed')
+            } catch (e) {}
+            </script>
+        </div>
+        <!-- /结束：网站主体内容区域.左侧区域 -->
+        <!-- #开始：网站主体内容区域.中间区域 -->
+        <div class="main-content" ui-view>
+        </div>
+        <!-- /结束：网站主体内容区域.底部区域 -->
+        <!-- #开始：网站主体内容区域.底部区域 -->
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span>
+                        技术支持邮箱：<a href="mailto:support@21edu.com">support@21edu.com</a>&nbsp;&nbsp;技术支持电话：010-64465149-666&nbsp;&nbsp;<a href="javascript:void(0);">意见反馈</a>
+                        <br />&copy;2010学大教育 (京ICP备05011326号)
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- /结束：网站主体内容区域.底部区域 -->
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div>
+    <!-- /结束：网站主体内容区域 -->
+    <script src="http://localhost/mcsweb/vendors/requirejs-2.1.22/require.js" type="text/javascript" data-main="./app/common/config/require.config.js"></script>
+</body>
+
+</html>

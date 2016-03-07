@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FBEDBD75-FCF5-4FD7-AEA7-1F814D2E68DD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCS.Web.Component</RootNamespace>
+    <AssemblyName>MCS.Web.Component</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Scripts\Utils\mcs.requireLoader.js" />
+    <Content Include="Assets\Styles\font.css" />
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
+    <Content Include="Vendors\ace-1.2.3\ace-elements.min.js" />
+    <Content Include="Vendors\ace-1.2.3\ace-extra.min.js" />
+    <Content Include="Vendors\ace-1.2.3\ace.js" />
+    <Content Include="Vendors\ace-1.2.3\ace.min.css" />
+    <Content Include="Vendors\ace-1.2.3\ace.min.js" />
+    <Content Include="Vendors\angular-1.5.0\.bower.json" />
+    <Content Include="Vendors\angular-1.5.0\angular.min.js.gzip" />
+    <Content Include="Vendors\angular-1.5.0\angular.min.js.map" />
+    <Content Include="Vendors\angular-1.5.0\bower.json" />
+    <Content Include="Vendors\angular-1.5.0\package.json" />
+    <Content Include="Vendors\angular-1.5.0\README.md" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\angular-block-ui.css" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\angular-block-ui.js" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\angular-block-ui.min.css" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\angular-block-ui.min.js" />
+    <Content Include="Vendors\angular-resource-1.5.0\angular-resource.js" />
+    <Content Include="Vendors\angular-resource-1.5.0\angular-resource.min.js" />
+    <Content Include="Vendors\angular-resource-1.5.0\index.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\release\angular-ui-router.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\release\angular-ui-router.min.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\common.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\resolve.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\state.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\stateDirectives.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\stateFilters.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\templateFactory.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\urlMatcherFactory.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\urlRouter.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\view.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\viewDirective.js" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\src\viewScroll.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap-theme.css" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap.css" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap.min.css" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\js\bootstrap.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\js\bootstrap.min.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\js\npm.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Vendors\bootstrap-3.3.6\Gruntfile.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\grunt\bs-commonjs-generator.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\grunt\bs-raw-files-generator.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\affix.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\alert.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\button.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\carousel.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\collapse.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\dropdown.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\modal.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\popover.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\scrollspy.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\tab.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\tooltip.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\transition.js" />
+    <Content Include="Vendors\bootstrap-3.3.6\package.js" />
+    <Content Include="Vendors\font-awesome-4.5.0\.gitignore" />
+    <Content Include="Vendors\font-awesome-4.5.0\css\font-awesome.css" />
+    <Content Include="Vendors\font-awesome-4.5.0\css\font-awesome.min.css" />
+    <Content Include="Vendors\font-awesome-4.5.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Vendors\font-awesome-4.5.0\HELP-US-OUT.txt" />
+    <Content Include="Vendors\jquery-2.2.1\AUTHORS.txt" />
+    <Content Include="Vendors\jquery-2.2.1\dist\jquery.js" />
+    <Content Include="Vendors\jquery-2.2.1\dist\jquery.min.js" />
+    <Content Include="Vendors\jquery-2.2.1\dist\jquery.slim.js" />
+    <Content Include="Vendors\jquery-2.2.1\dist\jquery.slim.min.js" />
+    <Content Include="Vendors\jquery-2.2.1\LICENSE.txt" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\jsonp.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\load.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\parseJSON.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\parseXML.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\script.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\var\location.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\var\nonce.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\var\rquery.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\ajax\xhr.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\attributes.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\attributes\attr.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\attributes\classes.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\attributes\prop.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\attributes\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\attributes\val.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\callbacks.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core\access.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core\DOMEval.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core\init.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core\parseHTML.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core\ready.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\core\var\rsingleTag.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\addGetHookIf.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\adjustCSS.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\curCSS.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\defaultDisplay.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\showHide.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\var\cssExpand.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\var\getStyles.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\var\isHidden.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\var\rmargin.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\var\rnumnonpx.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\css\var\swap.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\data.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\data\accepts.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\data\Data.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\data\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\data\var\acceptData.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\data\var\dataPriv.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\data\var\dataUser.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\deferred.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\deferred\exceptionHook.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\deprecated.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\dimensions.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\effects.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\effects\animatedSelector.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\effects\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\effects\Tween.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\event.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\event\ajax.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\event\alias.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\event\focusin.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\event\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\event\trigger.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\exports\amd.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\exports\global.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\intro.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\jquery.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\buildFragment.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\createSafeFragment.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\getAll.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\setGlobalEval.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\var\nodeNames.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\var\rleadingWhitespace.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\var\rscriptType.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\var\rtagName.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\wrapMap.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\manipulation\_evalUrl.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\offset.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\outro.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\queue.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\queue\delay.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\selector-native.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\selector-sizzle.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\selector.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\serialize.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\traversing.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\traversing\findFilter.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\traversing\var\dir.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\traversing\var\rneedsContext.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\traversing\var\siblings.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\arr.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\class2type.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\concat.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\deletedIds.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\document.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\documentElement.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\hasOwn.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\indexOf.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\pnum.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\push.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\rcssNum.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\rnotwhite.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\slice.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\support.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\var\toString.js" />
+    <Content Include="Vendors\jquery-2.2.1\src\wrap.js" />
+    <Content Include="Vendors\requirejs-2.1.22\.bower.json" />
+    <Content Include="Vendors\requirejs-2.1.22\bower.json" />
+    <Content Include="Vendors\requirejs-2.1.22\README.md" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\.bower.json" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\bower.json" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\CHANGELOG.md" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\CONTRIBUTING.md" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\LICENSE" />
+    <Content Include="Vendors\angular-ui-router-0.2.18\README.md" />
+    <Content Include="Vendors\angular-resource-1.5.0\.bower.json" />
+    <Content Include="Vendors\angular-resource-1.5.0\angular-resource.min.js.map" />
+    <Content Include="Vendors\angular-resource-1.5.0\bower.json" />
+    <Content Include="Vendors\angular-resource-1.5.0\package.json" />
+    <Content Include="Vendors\angular-resource-1.5.0\README.md" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\.bower.json" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\bower.json" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\angular-block-ui.css.map" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\angular-block-ui.js.map" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\angular-block-ui.min.js.map" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\LICENSE" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\dist\README.md" />
+    <Content Include="Vendors\angular-block-ui-0.2.2\LICENSE" />
+    <Content Include="Vendors\bootstrap-3.3.6\.bower.json" />
+    <Content Include="Vendors\bootstrap-3.3.6\bower.json" />
+    <Content Include="Vendors\bootstrap-3.3.6\CHANGELOG.md" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap.css.map" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\css\bootstrap.min.css.map" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Vendors\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Vendors\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Vendors\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Vendors\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Vendors\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Vendors\bootstrap-3.3.6\grunt\.jshintrc" />
+    <Content Include="Vendors\bootstrap-3.3.6\grunt\configBridge.json" />
+    <Content Include="Vendors\bootstrap-3.3.6\grunt\sauce_browsers.yml" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\.jscsrc" />
+    <Content Include="Vendors\bootstrap-3.3.6\js\.jshintrc" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\.csscomb.json" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\.csslintrc" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\alerts.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\badges.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\bootstrap.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\breadcrumbs.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\button-groups.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\buttons.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\carousel.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\close.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\code.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\component-animations.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\dropdowns.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\forms.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\glyphicons.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\grid.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\input-groups.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\jumbotron.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\labels.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\list-group.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\media.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\alerts.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\background-variant.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\border-radius.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\buttons.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\center-block.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\clearfix.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\forms.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\gradients.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\grid-framework.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\grid.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\hide-text.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\image.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\labels.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\list-group.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\nav-divider.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\nav-vertical-align.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\opacity.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\pagination.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\panels.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\progress-bar.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\reset-filter.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\reset-text.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\resize.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\responsive-visibility.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\size.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\tab-focus.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\table-row.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\text-emphasis.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\text-overflow.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\mixins\vendor-prefixes.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\modals.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\navbar.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\navs.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\normalize.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\pager.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\pagination.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\panels.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\popovers.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\print.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\progress-bars.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\responsive-embed.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\responsive-utilities.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\scaffolding.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\tables.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\theme.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\thumbnails.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\tooltip.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\type.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\utilities.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\variables.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\less\wells.less" />
+    <Content Include="Vendors\bootstrap-3.3.6\LICENSE" />
+    <Content Include="Vendors\bootstrap-3.3.6\nuget\bootstrap.less.nuspec" />
+    <Content Include="Vendors\bootstrap-3.3.6\nuget\bootstrap.nuspec" />
+    <Content Include="Vendors\bootstrap-3.3.6\nuget\MyGet.ps1" />
+    <Content Include="Vendors\bootstrap-3.3.6\package.json" />
+    <Content Include="Vendors\bootstrap-3.3.6\README.md" />
+    <Content Include="Vendors\jquery-2.2.1\.bower.json" />
+    <Content Include="Vendors\jquery-2.2.1\bower.json" />
+    <Content Include="Vendors\jquery-2.2.1\dist\jquery.min.map" />
+    <Content Include="Vendors\jquery-2.2.1\dist\jquery.slim.min.map" />
+    <Content Include="Vendors\jquery-2.2.1\README.md" />
+    <Content Include="Vendors\jquery-2.2.1\src\.jshintrc" />
+    <None Include="Properties\PublishProfiles\MCSWebApp_Local.pubxml" />
+    <Content Include="Vendors\font-awesome-4.5.0\.bower.json" />
+    <Content Include="Vendors\font-awesome-4.5.0\.npmignore" />
+    <Content Include="Vendors\font-awesome-4.5.0\bower.json" />
+    <Content Include="Vendors\font-awesome-4.5.0\css\font-awesome.css.map" />
+    <Content Include="Vendors\font-awesome-4.5.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Vendors\font-awesome-4.5.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Vendors\font-awesome-4.5.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Vendors\font-awesome-4.5.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Vendors\font-awesome-4.5.0\fonts\FontAwesome.otf" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\animated.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\bordered-pulled.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\core.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\fixed-width.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\font-awesome.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\icons.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\larger.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\list.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\mixins.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\path.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\rotated-flipped.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\stacked.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\less\variables.less" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\font-awesome.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_animated.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_bordered-pulled.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_core.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_fixed-width.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_icons.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_larger.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_list.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_mixins.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_path.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_rotated-flipped.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_stacked.scss" />
+    <Content Include="Vendors\font-awesome-4.5.0\scss\_variables.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\index.html" />
+    <Content Include="Vendors\angular-1.5.0\angular-csp.css" />
+    <Content Include="Vendors\angular-1.5.0\angular.js" />
+    <Content Include="Vendors\angular-1.5.0\angular.min.js" />
+    <Content Include="Vendors\angular-1.5.0\index.js" />
+    <Content Include="Vendors\requirejs-2.1.22\require.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Widgets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1313</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:10075/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+   </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

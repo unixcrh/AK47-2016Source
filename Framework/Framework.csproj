@@ -25,10 +25,14 @@
     <ProjectItem Include="MCS.Web.Responsive.WebControls\MCS.Web.Responsive.WebControls.csproj" />
     <ProjectItem Include="MCS.Web.WebControls\MCS.Web.WebControls.csproj" />
     <ProjectItem Include="MCS.Library.OGUPermission\MCS.Library.OGUPermission.csproj" />
+
     <ProjectItem Include="MCS.Library.Passport\MCS.Library.Passport.csproj" />
     <ProjectItem Include="MCS.Library.Passport.Social\MCS.Library.Passport.Social.csproj" />
+    <ProjectItem Include="MCS.Web.MVC.Library\MCS.Web.MVC.Library.csproj" />
+
     <ProjectItem Include="MCS.Library.ServiceBase\MCS.Library.ServiceBase.csproj" />
     <ProjectItem Include="MCS.Library.WcfExtensions\MCS.Library.WcfExtensions.csproj" />
+
 
     <ProjectItem Include="MCS.Library.SOA.DataObjects.Schemas.Client\MCS.Library.SOA.DataObjects.Schemas.Client.csproj" />
     <ProjectItem Include="MCS.Library.SOA.DataObjects.Security.Client\MCS.Library.SOA.DataObjects.Security.Client.csproj" />

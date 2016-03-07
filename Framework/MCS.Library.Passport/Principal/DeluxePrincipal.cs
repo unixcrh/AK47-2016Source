@@ -9,6 +9,8 @@
 // 1.1          胡自强      2008-12-2       添加注释
 // -------------------------------------------------
 #endregion
+using MCS.Library.Caching;
+using MCS.Library.Configuration;
 using MCS.Library.Core;
 using MCS.Library.Data.DataObjects;
 using MCS.Library.Net.SNTP;
@@ -244,6 +246,142 @@ namespace MCS.Library.Principal
             container.CopyFrom(this.Identity as DeluxeIdentity);
 
             return container;
+        }
+
+        /// <summary>
+        /// 根据当前请求创建Principal
+        /// </summary>
+        /// <returns></returns>
+        public static IPrincipal CreateByRequest()
+        {
+            return DoAuthentication();
+        }
+
+        private static IPrincipal DoAuthentication()
+        {
+            IPrincipal principal = null;
+            ITicket ticket;
+
+            string logonName = InternalGetLogOnName(out ticket);
+
+            if (logonName.IsNotEmpty())
+            {
+                logonName = ImpersonateSettings.GetConfig().Impersonation[logonName];
+
+                LogOnIdentity loi = new LogOnIdentity(logonName);
+
+                if (ticket != null)
+                    ticket.SignInInfo.UserID = loi.LogOnNameWithDomain;
+
+                principal = SetPrincipal(loi.LogOnNameWithDomain, ticket);
+            }
+
+            return principal;
+        }
+
+        private static string InternalGetLogOnName(out ITicket ticket)
+        {
+            string userID = string.Empty;
+            ticket = null;
+
+            if (ImpersonateSettings.GetConfig().EnableTestUser)
+            {
+                //是否使用测试帐户
+                userID = HttpContext.Current.Request.Headers["testUserID"];
+
+                if (userID.IsNotEmpty())
+                    HttpContext.Current.Response.AppendHeader("testUserID", userID);
+                else
+                    userID = ImpersonateSettings.GetConfig().TestUserID;
+            }
+
+            if (userID.IsNullOrEmpty())
+                userID = GetLogOnName(out ticket);
+
+            return userID;
+        }
+
+        /// <summary>
+        /// 进行认证，返回用户名
+        /// </summary>
+        /// <param name="ticket"><see cref="ITicket"/> 对象。</param>
+        /// <returns>用户名</returns>
+        private static string GetLogOnName(out ITicket ticket)
+        {
+            string userID = string.Empty;
+            ticket = CheckAuthenticatedAndGetTicket();
+
+            if (ticket != null)
+            {
+                if (PassportClientSettings.GetConfig().IdentityWithoutDomainName)
+                    userID = ticket.SignInInfo.UserID;
+                else
+                    userID = ticket.SignInInfo.UserIDWithDomain;
+            }
+
+            return userID;
+        }
+
+        private static ITicket CheckAuthenticatedAndGetTicket()
+        {
+            AuthenticateDirElement aDir =
+                AuthenticateDirSettings.GetConfig().AuthenticateDirs.GetMatchedElement<AuthenticateDirElement>();
+
+            bool autoRedirect = (aDir == null || aDir.AutoRedirect);
+
+            PassportManager.CheckAuthenticated(autoRedirect);
+
+            bool fromCookie = false;
+
+            return PassportManager.GetTicket(out fromCookie);
+        }
+
+        private static IPrincipal SetPrincipal(string userID, ITicket ticket)
+        {
+            IPrincipal principal = GetPrincipalInSession(userID);
+
+            if (principal == null)
+            {
+                LogOnIdentity loi = new LogOnIdentity(userID);
+
+                string identityID = string.Empty;
+
+                if (PassportClientSettings.GetConfig().IdentityWithoutDomainName)
+                    identityID = loi.LogOnNameWithoutDomain;
+                else
+                    identityID = loi.LogOnName;
+
+                principal = PrincipalSettings.GetConfig().GetPrincipalBuilder().CreatePrincipal(identityID, ticket);
+
+                HttpCookie cookie = new HttpCookie(Common.GetPrincipalSessionKey());
+                cookie.Expires = DateTime.MinValue;
+
+                CookieCacheDependency cookieDependency = new CookieCacheDependency(cookie);
+
+                SlidingTimeDependency slidingDependency =
+                    new SlidingTimeDependency(Common.GetSessionTimeOut());
+
+                PrincipalCache.Instance.Add(
+                    Common.GetPrincipalSessionKey(),
+                    principal,
+                    new MixedDependency(cookieDependency, slidingDependency));
+            }
+
+            PrincipaContextAccessor.SetPrincipal(principal);
+
+            return principal;
+        }
+
+        private static IPrincipal GetPrincipalInSession(string userID)
+        {
+            string strKey = Common.GetPrincipalSessionKey();
+            IPrincipal principal;
+
+            if (PrincipalCache.Instance.TryGetValue(strKey, out principal))
+                if (string.Compare(principal.Identity.Name, userID, true) != 0)
+                    principal = null;
+
+            return principal;
         }
     }
 }

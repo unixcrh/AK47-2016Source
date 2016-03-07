@@ -11,6 +11,7 @@
 #endregion
 #region using
 using MCS.Library.Core;
+using MCS.Library.Data.Builder;
 using MCS.Library.Data.Properties;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,63 @@ namespace MCS.Library.Data
     {
         private bool _autoClose = true;
         private TimeSpan _commandTimeout = TimeSpan.FromSeconds(30);
+
+        #region Public Methods
+        /// <summary>
+        /// 在上下文中添加待执行的SQL语句，自动添加语句分隔符
+        /// </summary>
+        /// <param name="sqlBuilder"></param>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        public abstract void AppendSqlWithSperatorInContext(SqlBuilderBase sqlBuilder, string format, params object[] args);
+
+        /// <summary>
+        /// 在上下文中添加待执行的SQL语句
+        /// </summary>
+        /// <param name="sqlBuilder"></param>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        public abstract void AppendSqlInContext(SqlBuilderBase sqlBuilder, string format, params object[] args);
+
+        /// <summary>
+        /// 清除上下文中的SQL语句
+        /// </summary>
+        public abstract void ClearSqlInContext();
+
+        /// <summary>
+        /// 得到上下文中的SQL语句
+        /// </summary>
+        public abstract string GetSqlInContext();
+
+        /// <summary>
+        /// 执行保存在上下文中的SQL语句，返回DataSet
+        /// </summary>
+        /// <param name="clearSqlAfterExecute">执行完后是否清除上下文中的SQL，默认是true</param>
+        /// <param name="tableNames">可选参数，DataSet中的表名</param>
+        /// <returns></returns>
+        public abstract DataSet ExecuteDataSetSqlInContext(bool clearSqlAfterExecute = true, params string[] tableNames);
+
+        /// <summary>
+        /// 执行保存在上下文中的SQL语句，返回DataReader
+        /// </summary>
+        /// <param name="clearSqlAfterExecute">执行完后是否清除上下文中的SQL，默认是true</param>
+        /// <returns></returns>
+        public abstract DbDataReader ExecuteReaderSqlInContext(bool clearSqlAfterExecute = true);
+
+        /// <summary>
+        /// 执行保存在上下文中的SQL语句，返回单值
+        /// </summary>
+        /// <param name="clearSqlAfterExecute">执行完后是否清除上下文中的SQL，默认是true</param>
+        /// <returns></returns>
+        public abstract object ExecuteScalarSqlInContext(bool clearSqlAfterExecute = true);
+
+        /// <summary>
+        /// 执行保存在上下文中的SQL语句，返回受影响的行数
+        /// </summary>
+        /// <param name="clearSqlAfterExecute">执行完后是否清除上下文中的SQL，默认是true</param>
+        public abstract int ExecuteNonQuerySqlInContext(bool clearSqlAfterExecute = true);
+
+        #endregion End Public Methods
 
         /// <summary>
         /// 获取一个DbContext对象

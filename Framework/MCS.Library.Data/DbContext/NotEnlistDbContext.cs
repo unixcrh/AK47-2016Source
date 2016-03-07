@@ -145,41 +145,6 @@ namespace MCS.Library.Data
             }
         }
 
-        /*
-        protected override GraphWithoutTransaction GraphWithoutTx
-        {
-            get
-            {
-                return StaticGraphWithoutTx;
-            }
-        }
-
-        /// <summary>
-        /// Get connection graph according current transaction.
-        /// </summary>
-        /// <returns></returns>
-        private static GraphWithoutTransaction StaticGraphWithoutTx
-        {
-            get
-            {
-                GraphWithoutTransaction result;
-
-                lock (typeof(GraphWithoutTransaction))
-                {
-                    if (NotEnlistDbContext.graphWithoutTx == null)
-                    {
-                        result = new GraphWithoutTransaction();
-
-                        NotEnlistDbContext.graphWithoutTx = result;
-                    }
-                    else
-                        result = NotEnlistDbContext.graphWithoutTx;
-                }
-
-                return result;
-            }
-        }
-         */
         #endregion
 
         #region Private methods

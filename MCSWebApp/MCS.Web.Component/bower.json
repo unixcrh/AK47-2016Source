@@ -1,0 +1,22 @@
+{
+  "name": "mcs-bower",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "mcs component"
+  ],
+  "authors": [
+    "miracle"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./vendors",
+    "test",
+    "tests"
+  ]
+}

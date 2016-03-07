@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCS.Web.MVC.Library.Test", "MCS.Web.MVC.Library.Test.csproj", "{47FB9E03-7ACE-415D-8BB5-4E7036968451}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2B974479-EB50-46D1-A812-58BB45447D65} = {2B974479-EB50-46D1-A812-58BB45447D65}
+		{A9962EDB-8271-4D6B-8513-BEF4000DC7B1} = {A9962EDB-8271-4D6B-8513-BEF4000DC7B1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCS.Web.MVC.Library", "..\..\MCS.Web.MVC.Library\MCS.Web.MVC.Library.csproj", "{A9962EDB-8271-4D6B-8513-BEF4000DC7B1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2B974479-EB50-46D1-A812-58BB45447D65} = {2B974479-EB50-46D1-A812-58BB45447D65}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCS.Library.Passport", "..\..\MCS.Library.Passport\MCS.Library.Passport.csproj", "{2B974479-EB50-46D1-A812-58BB45447D65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DELUXEWORKSTEST|Any CPU = DELUXEWORKSTEST|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47FB9E03-7ACE-415D-8BB5-4E7036968451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FB9E03-7ACE-415D-8BB5-4E7036968451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FB9E03-7ACE-415D-8BB5-4E7036968451}.DELUXEWORKSTEST|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FB9E03-7ACE-415D-8BB5-4E7036968451}.DELUXEWORKSTEST|Any CPU.Build.0 = Debug|Any CPU
+		{47FB9E03-7ACE-415D-8BB5-4E7036968451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FB9E03-7ACE-415D-8BB5-4E7036968451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9962EDB-8271-4D6B-8513-BEF4000DC7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9962EDB-8271-4D6B-8513-BEF4000DC7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9962EDB-8271-4D6B-8513-BEF4000DC7B1}.DELUXEWORKSTEST|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9962EDB-8271-4D6B-8513-BEF4000DC7B1}.DELUXEWORKSTEST|Any CPU.Build.0 = Debug|Any CPU
+		{A9962EDB-8271-4D6B-8513-BEF4000DC7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9962EDB-8271-4D6B-8513-BEF4000DC7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B974479-EB50-46D1-A812-58BB45447D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B974479-EB50-46D1-A812-58BB45447D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B974479-EB50-46D1-A812-58BB45447D65}.DELUXEWORKSTEST|Any CPU.ActiveCfg = DELUXEWORKSTEST|Any CPU
+		{2B974479-EB50-46D1-A812-58BB45447D65}.DELUXEWORKSTEST|Any CPU.Build.0 = DELUXEWORKSTEST|Any CPU
+		{2B974479-EB50-46D1-A812-58BB45447D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B974479-EB50-46D1-A812-58BB45447D65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.1.56.70:8080/tfs/pptsv2.0
+		SccProjectUniqueName0 = ..\\..\\MCS.Web.MVC.Library\\MCS.Web.MVC.Library.csproj
+		SccProjectName0 = ../../MCS.Web.MVC.Library
+		SccLocalPath0 = ..\\..\\MCS.Web.MVC.Library
+		SccProjectUniqueName1 = ..\\..\\MCS.Library.Passport\\MCS.Library.Passport.csproj
+		SccProjectName1 = ../../MCS.Library.Passport
+		SccLocalPath1 = ..\\..\\MCS.Library.Passport
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = MCS.Web.MVC.Library.Test.csproj
+		SccLocalPath3 = .
+	EndGlobalSection
+EndGlobal

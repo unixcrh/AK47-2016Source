@@ -30,6 +30,15 @@ namespace MCS.Library.Data.Adapters
         }
 
         /// <summary>
+        /// 从连接名称得到DbContext
+        /// </summary>
+        /// <returns></returns>
+        public DbContext GetDbContext()
+        {
+            return DbContext.GetContext(this.GetConnectionName());
+        }
+
+        /// <summary>
         /// 更新对象
         /// </summary>
         /// <param name="data"></param>
@@ -41,16 +50,46 @@ namespace MCS.Library.Data.Adapters
             {
                 Dictionary<string, object> context = new Dictionary<string, object>();
 
-                BeforeInnerUpdate(data, context);
+                this.BeforeInnerUpdate(data, context);
 
                 using (TransactionScope scope = TransactionScopeFactory.Create())
                 {
-                    if (InnerUpdate(data, context) == 0)
-                        InnerInsert(data, context);
+                    if (this.InnerUpdate(data, context) == 0)
+                        this.InnerInsert(data, context);
 
-                    AfterInnerUpdate(data, context);
+                    this.AfterInnerUpdate(data, context);
 
                     scope.Complete();
+                }
+            });
+        }
+
+        /// <summary>
+        /// 在当前的DbContext中记录更新操作，但是不执行。只有整个事务提交时才真正地执行
+        /// 会执行BeforeInnerUpdateInContext和AfterUpdateInContext
+        /// </summary>
+        /// <param name="data"></param>
+        public void UpdateInContext(T data)
+        {
+            ExceptionHelper.FalseThrow<ArgumentNullException>(data != null, "data");
+
+            PerformanceMonitorHelper.GetDefaultMonitor().WriteExecutionDuration(string.Format("Update In Context({0})", this.GetType().FullName), () =>
+            {
+                Dictionary<string, object> context = new Dictionary<string, object>();
+
+                using (DbContext dbContext = DbContext.GetContext(this.GetConnectionName()))
+                {
+                    this.BeforeInnerUpdateInContext(data, dbContext, context);
+
+                    this.InnerUpdateInContext(data, dbContext, context);
+
+                    dbContext.AppendSqlWithSperatorInContext(TSqlBuilder.Instance, "IF @@ROWCOUNT = 0");
+
+                    dbContext.AppendSqlInContext(TSqlBuilder.Instance, "\nBEGIN\n");
+                    this.InnerInsertInContext(data, dbContext, context);
+                    dbContext.AppendSqlInContext(TSqlBuilder.Instance, "\nEND");
+
+                    this.AfterInnerUpdateInContext(data, dbContext, context);
                 }
             });
         }
@@ -168,10 +207,6 @@ namespace MCS.Library.Data.Adapters
         /// <returns></returns>
         protected abstract string GetConnectionName();
 
-        //protected virtual string GetConnectionName()
-        //{
-        //    return ConnectionDefine.DBConnectionName;
-        //}
 
         /// <summary>
         /// 
@@ -186,8 +221,28 @@ namespace MCS.Library.Data.Adapters
         /// 
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        protected virtual void BeforeInnerUpdateInContext(T data, DbContext dbContext, Dictionary<string, object> context)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
         /// <param name="context"></param>
         protected virtual void AfterInnerUpdate(T data, Dictionary<string, object> context)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        protected virtual void AfterInnerUpdateInContext(T data, DbContext dbContext, Dictionary<string, object> context)
         {
         }
 
@@ -249,6 +304,42 @@ namespace MCS.Library.Data.Adapters
             DbHelper.RunSql(db => result = db.ExecuteNonQuery(CommandType.Text, sql), this.GetConnectionName());
 
             return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        protected virtual string InnerUpdateInContext(T data, DbContext dbContext, Dictionary<string, object> context)
+        {
+            ORMappingItemCollection mappings = GetMappingInfo(context);
+
+            string sql = this.GetUpdateSql(data, mappings, context);
+
+            dbContext.AppendSqlInContext(TSqlBuilder.Instance, sql);
+
+            return sql;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        protected virtual string InnerInsertInContext(T data, DbContext dbContext, Dictionary<string, object> context)
+        {
+            ORMappingItemCollection mappings = GetMappingInfo(context);
+
+            string sql = this.GetInsertSql(data, mappings, context);
+
+            dbContext.AppendSqlInContext(TSqlBuilder.Instance, sql);
+
+            return sql;
         }
 
         /// <summary>
