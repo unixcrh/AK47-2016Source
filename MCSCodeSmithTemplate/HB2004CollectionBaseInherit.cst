@@ -1,0 +1,75 @@
+
+<%-- 
+Name:CollectionBaseInherit
+Author: 周维海
+Description: 生成从CollectionBase继承的简单类
+%>
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="ItemClassName" Type="System.String" Default="" Optional="True" Category="Strings" Description="This is a sample string property." %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="System.Data" %>
+using System;
+using System.Data;
+using System.Collections;
+
+public class <%=ItemClassName%>Collection : CollectionBase
+{
+   public <%=ItemClassName%>Collection()
+   {
+   }
+
+   public <%=ItemClassName%>Collection(DataView dv)
+   {
+		LoadFromDataView(dv);
+   }
+
+   public void LoadFromDataView(DataView dv)
+   {
+        foreach(DataRowView drv in dv)
+		{
+			<%=ItemClassName%> o = new <%=ItemClassName%>();
+			DataToObject.GetDataFromDataRow(o, drv.row);
+
+			this.Add(o);
+		}
+   }
+
+   public <%=ItemClassName%> this[ int index ]  {
+      get  {
+         return( (<%=ItemClassName%>) List[index] );
+      }
+      set  {
+         List[index] = value;
+      }
+   }
+
+   public int Add( <%=ItemClassName%> value )  {
+      return( List.Add( value ) );
+   }
+
+   public int IndexOf( <%=ItemClassName%> value )  {
+      return( List.IndexOf( value ) );
+   }
+
+   public void Insert( int index, <%=ItemClassName%> value )  {
+      List.Insert( index, value );
+   }
+
+   public void Remove( <%=ItemClassName%> value )  {
+      List.Remove( value );
+   }
+
+   public bool Contains( <%=ItemClassName%> value )  {
+      // If value is not of type Int16, this will return false.
+      return( List.Contains( value ) );
+   }   
+}
+
+<script runat="template">
+// My methods here.
+
+public string SampleMethod()
+{
+	return "Method output.";
+}
+</script>

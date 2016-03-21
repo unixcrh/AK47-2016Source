@@ -1,0 +1,925 @@
+{
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "80",
+          "short_name": "80",
+          "types": [
+            "street_number"
+          ]
+        },
+        {
+          "long_name": "德星路",
+          "short_name": "德星路",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "长堤路购物休闲街",
+          "short_name": "长堤路购物休闲街",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "荔湾区",
+          "short_name": "荔湾区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "510175",
+          "short_name": "510175",
+          "types": [
+            "postal_code"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市荔湾区长堤路购物休闲街德星路80号 邮政编码: 510175",
+      "geometry": {
+        "location": {
+          "lat": 23.116514,
+          "lng": 113.249195
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1178629802915,
+            "lng": 113.2505439802915
+          },
+          "southwest": {
+            "lat": 23.1151650197085,
+            "lng": 113.2478460197085
+          }
+        }
+      },
+      "place_id": "ChIJ1Tz0T474AjQR_qa5q4l-aGw",
+      "types": [
+        "street_address"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "长堤路购物休闲街",
+          "short_name": "长堤路购物休闲街",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市长堤路购物休闲街",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.123482,
+            "lng": 113.2704599
+          },
+          "southwest": {
+            "lat": 23.1018721,
+            "lng": 113.2466744
+          }
+        },
+        "location": {
+          "lat": 23.109475,
+          "lng": 113.256964
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.123482,
+            "lng": 113.2704599
+          },
+          "southwest": {
+            "lat": 23.1018721,
+            "lng": 113.2466744
+          }
+        }
+      },
+      "place_id": "ChIJ5SpwQZf4AjQRZrBY3XxPrv4",
+      "types": [
+        "neighborhood",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "荔湾区",
+          "short_name": "荔湾区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市荔湾区",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.1596133,
+            "lng": 113.276887
+          },
+          "southwest": {
+            "lat": 23.0418625,
+            "lng": 113.1771208
+          }
+        },
+        "location": {
+          "lat": 23.125981,
+          "lng": 113.244261
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1596133,
+            "lng": 113.276887
+          },
+          "southwest": {
+            "lat": 23.0418625,
+            "lng": 113.1771208
+          }
+        }
+      },
+      "place_id": "ChIJRWzXTddXAjQRarB7ZSwVwv0",
+      "types": [
+        "sublocality_level_1",
+        "sublocality",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.9329876,
+            "lng": 114.0599571
+          },
+          "southwest": {
+            "lat": 22.5598068,
+            "lng": 112.9585068
+          }
+        },
+        "location": {
+          "lat": 23.12911,
+          "lng": 113.264385
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.555094,
+            "lng": 113.7332153
+          },
+          "southwest": {
+            "lat": 22.6961015,
+            "lng": 112.7224731
+          }
+        }
+      },
+      "place_id": "ChIJxytco5X4AjQRFeTqrXXgWQ4",
+      "types": [
+        "locality",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "510065",
+          "short_name": "510065",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "越秀区",
+          "short_name": "越秀区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市越秀区 邮政编码: 510065",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.1417029,
+            "lng": 113.2870851
+          },
+          "southwest": {
+            "lat": 23.1154936,
+            "lng": 113.2498667
+          }
+        },
+        "location": {
+          "lat": 23.1377933,
+          "lng": 113.2861265
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1387381302915,
+            "lng": 113.2876897302915
+          },
+          "southwest": {
+            "lat": 23.1360401697085,
+            "lng": 113.2849917697085
+          }
+        }
+      },
+      "place_id": "ChIJ4cUQ2tT4AjQRpGe_ox2ZKBY",
+      "types": [
+        "postal_code"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "510140",
+          "short_name": "510140",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "荔湾区",
+          "short_name": "荔湾区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市荔湾区 邮政编码: 510140",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.1257514,
+            "lng": 113.2692204
+          },
+          "southwest": {
+            "lat": 23.1071151,
+            "lng": 113.2394453
+          }
+        },
+        "location": {
+          "lat": 23.1168694,
+          "lng": 113.2457303
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1257514,
+            "lng": 113.2528443
+          },
+          "southwest": {
+            "lat": 23.1080071,
+            "lng": 113.2394453
+          }
+        }
+      },
+      "place_id": "ChIJefbR0474AjQRw7e-k93Tjjw",
+      "types": [
+        "postal_code"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "510060",
+          "short_name": "510060",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "越秀区",
+          "short_name": "越秀区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市越秀区 邮政编码: 510060",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.1395945,
+            "lng": 113.3823546
+          },
+          "southwest": {
+            "lat": 23.1154936,
+            "lng": 113.248378
+          }
+        },
+        "location": {
+          "lat": 23.1336867,
+          "lng": 113.2887985
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1395945,
+            "lng": 113.2945283
+          },
+          "southwest": {
+            "lat": 23.1286399,
+            "lng": 113.2766642
+          }
+        }
+      },
+      "place_id": "ChIJO7tXlCz_AjQREktDJWb_bQw",
+      "types": [
+        "postal_code"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "510180",
+          "short_name": "510180",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "越秀区",
+          "short_name": "越秀区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市越秀区 邮政编码: 510180",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.1372264,
+            "lng": 113.2841075
+          },
+          "southwest": {
+            "lat": 23.1154936,
+            "lng": 113.2498667
+          }
+        },
+        "location": {
+          "lat": 23.1278228,
+          "lng": 113.2579064
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1304643,
+            "lng": 113.2647541
+          },
+          "southwest": {
+            "lat": 23.1208846,
+            "lng": 113.2543331
+          }
+        }
+      },
+      "place_id": "ChIJsfqE-uv4AjQRygYA5qJahAo",
+      "types": [
+        "postal_code"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "510016",
+          "short_name": "510016",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "越秀区",
+          "short_name": "越秀区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市越秀区 邮政编码: 510016",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.1463297,
+            "lng": 113.2841075
+          },
+          "southwest": {
+            "lat": 23.1154936,
+            "lng": 113.2498667
+          }
+        },
+        "location": {
+          "lat": 23.1393821,
+          "lng": 113.2586158
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1463297,
+            "lng": 113.2632656
+          },
+          "southwest": {
+            "lat": 23.1332674,
+            "lng": 113.2513553
+          }
+        }
+      },
+      "place_id": "ChIJX1TZyub4AjQRk4t7jJ_inhA",
+      "types": [
+        "postal_code"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "510175",
+          "short_name": "510175",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "荔湾区",
+          "short_name": "荔湾区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省广州市荔湾区 邮政编码: 510175",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 23.1322819,
+            "lng": 113.2632656
+          },
+          "southwest": {
+            "lat": 23.0996298,
+            "lng": 113.2156239
+          }
+        },
+        "location": {
+          "lat": 23.126214,
+          "lng": 113.237777
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1322819,
+            "lng": 113.2632656
+          },
+          "southwest": {
+            "lat": 23.0996298,
+            "lng": 113.2156239
+          }
+        }
+      },
+      "place_id": "ChIJM0FW3l_4AjQRCjX3Wn_ARvM",
+      "types": [
+        "postal_code"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "广东省",
+          "short_name": "广东省",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国广东省",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 25.5167714,
+            "lng": 117.3185074
+          },
+          "southwest": {
+            "lat": 20.2209735,
+            "lng": 109.668994
+          }
+        },
+        "location": {
+          "lat": 23.132191,
+          "lng": 113.266531
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 25.5167714,
+            "lng": 117.3183372
+          },
+          "southwest": {
+            "lat": 20.2209735,
+            "lng": 109.668994
+          }
+        }
+      },
+      "place_id": "ChIJP1yvMvGFUjERKZ8lCW8c1C4",
+      "types": [
+        "administrative_area_level_1",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "中国",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 53.56097399999999,
+            "lng": 134.7728099
+          },
+          "southwest": {
+            "lat": 18.1576156,
+            "lng": 73.4994136
+          }
+        },
+        "location": {
+          "lat": 35.86166,
+          "lng": 104.195397
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 53.56097399999999,
+            "lng": 134.7728099
+          },
+          "southwest": {
+            "lat": 18.1576156,
+            "lng": 73.4994136
+          }
+        }
+      },
+      "place_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
+      "types": [
+        "country",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "上九路",
+          "short_name": "上九路",
+          "types": [
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "long_name": "上下九",
+          "short_name": "上下九",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "荔湾区",
+          "short_name": "荔湾区",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "广州市",
+          "short_name": "广州市",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "中国",
+          "short_name": "CN",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "510175",
+          "short_name": "510175",
+          "types": [
+            "postal_code"
+          ]
+        }
+      ],
+      "formatted_address": "中国广州市荔湾区长堤路购物休闲街上九路 邮政编码: 510016",
+      "geometry": {
+        "location": {
+          "lat": 23.115799,
+          "lng": 113.251259
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 23.1171479802915,
+            "lng": 113.2526079802915
+          },
+          "southwest": {
+            "lat": 23.1144500197085,
+            "lng": 113.2499100197085
+          }
+        }
+      },
+      "place_id": "ChIJ8UdZKo74AjQRXmQoSguwEJ4",
+      "types": [
+        "bus_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ],
+  "status": "OK"
+}

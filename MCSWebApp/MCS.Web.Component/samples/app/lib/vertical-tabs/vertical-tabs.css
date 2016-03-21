@@ -1,0 +1,96 @@
+﻿div.mcs-tabs-container {
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+div.mcs-tabs-container.align-left {
+    float: left;
+    margin-left: 0px;
+    margin-right: 40px;
+}
+
+div.mcs-tabs-container > div.mcs-tabs {
+    position: relative;
+    z-index: 100;
+    float: left;
+    width: 200px;
+    height: 1050px;
+    overflow: hidden;
+}
+
+div.mcs-tabs-container > div.mcs-tabs div.mcs-tabs-wrap {
+    position: relative !important;
+    float: left;
+    clear: both;
+}
+
+div.mcs-tabs-container > div.mcs-tabs ul {
+    float: left;
+    width: 200px;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+div.mcs-tabs-container > div.mcs-tabs ul li {
+    position: relative;
+    float: left;
+    clear: both;
+    margin: 0px;
+}
+
+div.mcs-tabs-container > div.mcs-tabs ul li h2 {
+    display: block;
+    width: 200px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px dotted #ccc;
+}
+
+div.mcs-tabs-container > div.mcs-tabs ul li a {
+    text-decoration: none;
+    -moz-transition: color 0.1s linear 0s;
+    display: block;
+    width: 175px;
+    padding: 6px 0 6px 22px;
+    line-height: 21px;
+    border-bottom: 1px dotted #ccc;
+    color: #555;
+    background: url("list_arrow.gif") no-repeat 8px center;
+}
+
+div.mcs-tabs-container.align-left > div.mcs-tabs ul li a:active,
+div.mcs-tabs-container.align-left > div.mcs-tabs ul li a:hover {
+    padding-right: 0px;
+    border-left-color: #f5f8fd;
+    color: #258ED2;
+}
+
+div.mcs-tabs-container.align-left > div.mcs-tabs ul li a:active {
+    background-position: 8px center;
+    background-color: #f5f8fd;
+}
+
+div.mcs-tabs-container.align-left > div.mcs-tabs ul li {
+    background-position: right bottom;
+}
+
+div.mcs-tabs-container > div.mcs-tabs-views {
+    position: relative;
+    z-index: 5;
+    height: 1000px;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+div.mcs-tabs-container > div.mcs-tabs-views div.mcs-view {
+    width: 100%;
+    background-image: none;
+    background-repeat: no-repeat !important;
+    background-position: 0px 0px !important;
+    background-color: transparent !important;
+    overflow: hidden;
+}

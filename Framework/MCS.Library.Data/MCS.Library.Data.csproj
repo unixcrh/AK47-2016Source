@@ -129,7 +129,9 @@
     <Compile Include="Mapping\ConditionMapping.cs" />
     <Compile Include="Mapping\ConditionMappingCache.cs" />
     <Compile Include="Mapping\ConditionMappingItem.cs" />
+    <Compile Include="Mapping\ConditionMappingItemBase.cs" />
     <Compile Include="Mapping\ConditionMappingItemCollection.cs" />
+    <Compile Include="Mapping\InConditionMappingItem.cs" />
     <Compile Include="Mapping\ORMappingContext.cs" />
     <Compile Include="Mapping\ORMappingPartial.cs" />
     <Compile Include="Mapping\ORMappintItemEncryption.cs" />

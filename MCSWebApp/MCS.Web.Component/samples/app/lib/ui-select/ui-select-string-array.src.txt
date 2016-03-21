@@ -1,0 +1,3 @@
+﻿vm.multiple = {};
+vm.multiple.colors = ['Blue', 'Red'];
+vm.availableColors = ['Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Maroon', 'Umbra', 'Turquoise'];

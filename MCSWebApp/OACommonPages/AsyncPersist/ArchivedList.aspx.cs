@@ -113,7 +113,7 @@ namespace MCS.OA.CommonPages.AsyncPersist
 			{
 				var condition = this.CurrentAdvancedSearchCondition;
 
-				WhereSqlClauseBuilder builder = ConditionMapping.GetWhereSqlClauseBuilder(condition);
+                IConnectiveSqlClause builder = ConditionMapping.GetWhereSqlClauseBuilder(condition);
 
 				this.Condition = new ConnectiveSqlClauseCollection(builder, this.search1.GetCondition());
 			}

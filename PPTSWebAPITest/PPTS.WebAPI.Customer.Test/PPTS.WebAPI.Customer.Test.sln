@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPTS.WebAPI.Customer.Test", "PPTS.WebAPI.Customer.Test.csproj", "{C347538A-6D85-46C0-9E82-2DF7B0A75F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPTS.WebAPI.Customer", "..\..\PPTSWebApp\PPTS.WebAPI.Customer\PPTS.WebAPI.Customer.csproj", "{CE7CE1AF-FBD4-4187-9091-211E51BC1517}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155} = {96802A24-2E16-4B0E-83BE-AC8A54E19155}
+		{0414177E-283E-4E91-8032-37228B715F16} = {0414177E-283E-4E91-8032-37228B715F16}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPTS.Data.Customers", "..\..\PPTSFramework\PPTS.Data.Customers\PPTS.Data.Customers.csproj", "{96802A24-2E16-4B0E-83BE-AC8A54E19155}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0414177E-283E-4E91-8032-37228B715F16} = {0414177E-283E-4E91-8032-37228B715F16}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPTS.Data.Common", "..\..\PPTSFramework\PPTS.Data.Common\PPTS.Data.Common.csproj", "{0414177E-283E-4E91-8032-37228B715F16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C347538A-6D85-46C0-9E82-2DF7B0A75F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C347538A-6D85-46C0-9E82-2DF7B0A75F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C347538A-6D85-46C0-9E82-2DF7B0A75F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C347538A-6D85-46C0-9E82-2DF7B0A75F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE7CE1AF-FBD4-4187-9091-211E51BC1517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE7CE1AF-FBD4-4187-9091-211E51BC1517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE7CE1AF-FBD4-4187-9091-211E51BC1517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7CE1AF-FBD4-4187-9091-211E51BC1517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.1.56.70:8080/tfs/pptsv2.0
+		SccProjectUniqueName0 = ..\\..\\PPTSWebApp\\PPTS.WebAPI.Customer\\PPTS.WebAPI.Customer.csproj
+		SccProjectName0 = ../../PPTSWebApp/PPTS.WebAPI.Customer
+		SccLocalPath0 = ..\\..\\PPTSWebApp\\PPTS.WebAPI.Customer
+		SccProjectUniqueName1 = ..\\..\\PPTSFramework\\PPTS.Data.Customers\\PPTS.Data.Customers.csproj
+		SccProjectName1 = ../../PPTSFramework/PPTS.Data.Customers
+		SccLocalPath1 = ..\\..\\PPTSFramework\\PPTS.Data.Customers
+		SccProjectUniqueName2 = ..\\..\\PPTSFramework\\PPTS.Data.Common\\PPTS.Data.Common.csproj
+		SccProjectName2 = ../../PPTSFramework/PPTS.Data.Common
+		SccLocalPath2 = ..\\..\\PPTSFramework\\PPTS.Data.Common
+		SccLocalPath3 = .
+		SccProjectUniqueName4 = PPTS.WebAPI.Customer.Test.csproj
+		SccLocalPath4 = .
+	EndGlobalSection
+EndGlobal

@@ -142,6 +142,7 @@
   <ItemGroup>
     <None Include="HB2008ParamsDB.local.UnitTest.publish.xml" />
     <None Include="HB2008ParamsDB.local.publish.xml" />
+    <None Include="学大开发环境.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="HB2008ParamsDB.refactorlog" />

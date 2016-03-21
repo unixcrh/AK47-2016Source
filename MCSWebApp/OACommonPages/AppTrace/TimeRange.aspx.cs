@@ -48,7 +48,7 @@ namespace MCS.OA.CommonPages.AppTrace
 		{
 			this.TimeCondition = new SearchCondition() { TimeFrom = this.timeFrom.Value, TimeTo = this.timeTo.Value };
 			this.views.ActiveViewIndex = 1;
-			WhereSqlClauseBuilder where = ConditionMapping.GetWhereSqlClauseBuilder(this.TimeCondition);
+            IConnectiveSqlClause where = ConditionMapping.GetWhereSqlClauseBuilder(this.TimeCondition);
 
 			string[] ids = TimeRangeDataSource.QueryGuidsByCondition(where);
 

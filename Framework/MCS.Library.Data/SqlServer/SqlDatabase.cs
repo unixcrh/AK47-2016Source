@@ -67,7 +67,7 @@ namespace MCS.Library.Data.SqlServer
 		/// <returns>是否匹配</returns>
 		protected override bool SameNumberOfParametersAndValues(DbCommand command, object[] values)
 		{
-			return command.Parameters.Count - 1 == values.Length;   // SQL Server默认有一个返回参数
+			return command.Parameters.Count - 1 >= values.Length;   // SQL Server默认有一个返回参数
 		}
 
 		/// <summary>

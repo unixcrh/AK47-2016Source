@@ -1,4 +1,5 @@
 ﻿using MCS.Library.Core;
+using MCS.Library.Data;
 using MCS.Library.Data.Adapters;
 using MCS.Library.Data.Builder;
 using MCS.Library.Data.Mapping;
@@ -33,7 +34,7 @@ namespace MCS.Library.SOA.DataObjects
             resourceID.CheckStringIsNullOrEmpty("resourceID");
 
             return Load(wb => wb.AppendItem("RESOURCE_ID", resourceID),
-                ob => ob.AppendItem("INNER_ID", Data.Builder.FieldSortDirection.Ascending));
+                ob => ob.AppendItem("INNER_ID", FieldSortDirection.Ascending));
         }
 
         /// <summary>

@@ -274,6 +274,7 @@
     <Compile Include="Core\NonXElementSerializedFieldsAttribute.cs" />
     <Compile Include="Core\ValidatorTypeConfigurationElement.cs" />
     <Compile Include="Core\XmlSerializableHashtable.cs" />
+    <Compile Include="Data\FieldSortDirection.cs" />
     <Compile Include="Data\ConnectionMappingElement.cs" />
     <Compile Include="Data\DataObjects\ColumnDataType.cs" />
     <Compile Include="Data\DataObjects\ColumnDefinitionBase.cs" />
@@ -312,8 +313,12 @@
     <Compile Include="Data\DataObjects\TreeNodeBaseCollection.cs" />
     <Compile Include="Data\DbConnectionMappingContext.cs" />
     <Compile Include="Core\IQueue.cs" />
+    <Compile Include="Data\IOrderByRequestParams.cs" />
+    <Compile Include="Data\IPageRequestParams.cs" />
     <Compile Include="Data\Mapping\ConditionMappingAttribute.cs" />
+    <Compile Include="Data\Mapping\ConditionMappingAttributeBase.cs" />
     <Compile Include="Data\Mapping\EnumDefine.cs" />
+    <Compile Include="Data\Mapping\InConditionMappingAttribute.cs" />
     <Compile Include="Data\Mapping\ORFieldMappingAttribute.cs" />
     <Compile Include="Data\Mapping\ORTableMappingAttribute.cs" />
     <Compile Include="Data\Mapping\PropertyEncryptionAttribute.cs" />
@@ -322,6 +327,8 @@
     <Compile Include="Data\Mapping\SubClassPropertyEncryptionAttribute.cs" />
     <Compile Include="Data\Mapping\SubClassSqlBehaviorAttribute.cs" />
     <Compile Include="Data\Mapping\SubClassTypeAttribute.cs" />
+    <Compile Include="Data\PagedQueryResult.cs" />
+    <Compile Include="Data\PageRequestParam.cs" />
     <Compile Include="Expression\BuiltInFunctionAttribute.cs" />
     <Compile Include="Expression\BuiltInFunctionHelper.cs" />
     <Compile Include="Expression\BuiltInFunctionInfo.cs" />

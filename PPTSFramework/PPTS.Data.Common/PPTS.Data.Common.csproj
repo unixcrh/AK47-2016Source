@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0414177E-283E-4E91-8032-37228B715F16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PPTS.Data.Common</RootNamespace>
+    <AssemblyName>PPTS.Data.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MCS.Library.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MCS.Library">
+      <HintPath>..\..\Bin\MCS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.Data">
+      <HintPath>..\..\Bin\MCS.Library.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.Passport">
+      <HintPath>..\..\Bin\MCS.Library.Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="MCS.Library.SOA.DataObjects">
+      <HintPath>..\..\Bin\MCS.Library.SOA.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\ConstantsCache.cs" />
+    <Compile Include="Adapters\ConstantAdapter.cs" />
+    <Compile Include="Common\ConnectionDefine.cs" />
+    <Compile Include="Entities\BaseConstantEntity.cs" />
+    <Compile Include="Entities\ConstantCategoryAttribute.cs" />
+    <Compile Include="Entities\ConstantEntity.cs" />
+    <Compile Include="Entities\Enumerations.cs" />
+    <Compile Include="Entities\TypeConstantCategoriesCache.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MCS.Library.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Executors\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>IF NOT EXIST "$(ProjectDir)..\..\PPTSBin" MD "$(ProjectDir)..\..\PPTSBin"
+IF EXIST "$(ProjectDir)..\..\PPTSBin\$(TargetFileName)" DEL "$(ProjectDir)..\..\PPTSBin\$(TargetFileName)"
+IF EXIST "$(ProjectDir)..\..\PPTSBin\$(TargetName).pdb" DEL "$(ProjectDir)..\..\PPTSBin\$(TargetName).pdb"
+IF EXIST "$(ProjectDir)..\..\PPTSBin\$(TargetName).xml" DEL "$(ProjectDir)..\..\PPTSBin\$(TargetName).xml"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)"  "$(ProjectDir)..\..\PPTSBin" /Y /D /R
+IF EXIST "$(TargetDir)$(TargetName).pdb" XCOPY "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\PPTSBin" /Y /D /R
+IF EXIST "$(TargetDir)$(TargetName).xml"  XCOPY "$(TargetDir)$(TargetName).xml" "$(ProjectDir)..\..\PPTSBin" /Y /D /R</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

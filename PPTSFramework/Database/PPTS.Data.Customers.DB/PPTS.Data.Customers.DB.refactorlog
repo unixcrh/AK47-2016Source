@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="4c08638b-f0c8-4f70-9885-9e63cef98d77" ChangeDateTime="03/09/2016 07:01:48">
+    <Property Name="ElementName" Value="[CM].[PotentialCustomers].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[PotentialCustomers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CustomerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d3419d1b-d877-47ba-9f54-beac4a3dcafa" ChangeDateTime="03/09/2016 07:33:23">
+    <Property Name="ElementName" Value="[CM].[PotentialCustomers].[InquiryPlaceID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[PotentialCustomers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ConsultingSite" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="819491cc-ad13-46e8-8da3-9eef0dec9dd0" ChangeDateTime="03/09/2016 07:34:11">
+    <Property Name="ElementName" Value="[CM].[PotentialCustomers].[TeachingPlaceID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[PotentialCustomers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TeachingLocation" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2d481ff8-3856-4395-9a6e-9158e7c972fa" ChangeDateTime="03/09/2016 07:49:09">
+    <Property Name="ElementName" Value="[CM].[Parents].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[Parents]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParentID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="817497ab-a9d3-4018-b993-456906ee6e6e" ChangeDateTime="03/09/2016 08:40:43">
+    <Property Name="ElementName" Value="[CM].[CustomerRelations].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[CustomerRelations]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CustomerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="00694e89-8309-40a6-9cbe-f5c288712879" ChangeDateTime="03/09/2016 08:41:36">
+    <Property Name="ElementName" Value="[CM].[CustomerRelations].[StudentRole]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[CustomerRelations]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CustomerRole" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="64df143a-1996-47e9-ab06-8289859507a8" ChangeDateTime="03/09/2016 08:59:36">
+    <Property Name="ElementName" Value="[CM].[CusomerStaffRelations].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[CusomerStaffRelations]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CustomerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3102f32f-0295-486b-b185-64f8d55d38a1" ChangeDateTime="03/09/2016 09:36:25">
+    <Property Name="ElementName" Value="[CM].[Phones].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[Phones]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OwnerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="86ce3825-4fba-4fc6-8146-f31888ad76d1" ChangeDateTime="03/09/2016 09:49:11">
+    <Property Name="ElementName" Value="[CM].[Phones].[Category]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[Phones]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsPrimary" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="77ab17d0-89b5-4c84-b3a5-d312be5a24e5" ChangeDateTime="03/14/2016 05:57:41">
+    <Property Name="ElementName" Value="[CM].[PotentialCustomers].[SchollID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[CM].[PotentialCustomers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SchoolID" />
+  </Operation>
+</Operations>

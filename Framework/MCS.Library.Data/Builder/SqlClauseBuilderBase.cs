@@ -556,7 +556,7 @@ namespace MCS.Library.Data.Builder
     /// 提供一组字段和值的集合，帮助生成ORDER BY语句的字段排序部分
     /// </summary>
     [Serializable]
-    public class OrderBySqlClauseBuilder : SqlClauseBuilderBase
+    public class OrderBySqlClauseBuilder : SqlClauseBuilderBase, IEnumerable<IOrderByRequestItem>
     {
         /// <summary>
         /// 添加一个构造项
@@ -595,6 +595,34 @@ namespace MCS.Library.Data.Builder
             }
 
             return strB.ToString();
+        }
+
+        /// <summary>
+        /// 创建一个包装好的OrderBySqlClauseBuilder
+        /// </summary>
+        /// <param name="sourceBuilder"></param>
+        /// <returns></returns>
+        public static OrderBySqlClauseBuilder CreateWrapperBuilder(IEnumerable<IOrderByRequestItem> sourceBuilder)
+        {
+            OrderBySqlClauseBuilder result = sourceBuilder as OrderBySqlClauseBuilder;
+
+            if (result == null)
+            {
+                result = new OrderBySqlClauseBuilder();
+
+                foreach (IOrderByRequestItem sourceItem in sourceBuilder)
+                {
+                    result.Add(new SqlClauseBuilderItemOrd(sourceItem));
+                }
+            }
+
+            return result;
+        }
+
+        IEnumerator<IOrderByRequestItem> IEnumerable<IOrderByRequestItem>.GetEnumerator()
+        {
+            foreach (IOrderByRequestItem item in this)
+                yield return item;
         }
     }
 

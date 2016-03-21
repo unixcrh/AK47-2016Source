@@ -68,7 +68,7 @@ namespace MCS.OA.CommonPages.AppTrace
 
 		private void BindDataGrid()
 		{
-			WhereSqlClauseBuilder builder = ConditionMapping.GetWhereSqlClauseBuilder(this.QueryCondition);
+            IConnectiveSqlClause builder = ConditionMapping.GetWhereSqlClauseBuilder(this.QueryCondition);
 
 			this.objectDataSource.Condition = builder;
 			this.objectDataSource.LastQueryRowCount = -1;

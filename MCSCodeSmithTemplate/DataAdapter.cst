@@ -1,0 +1,173 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="" %>
+<%@ Property Name="NamespaceName" Type="System.String" Category="Options" Default="AutoGenerate.Adapters" Description="" %>
+<%@ Property Name="EntityClassName" Type="System.String" Category="ClassInfo" Description="数据实体的名称" %>
+<%@ Property Name="EntityCollectionClassName" Type="System.String" Category="ClassInfo" Description="数据实体集合类的名称" %>
+<%@ Property Name="AdapterClassSurfix" Type="System.String" Default="Adapter" Category="Options" Description="" %>
+<%@ Property Name="DataBaseConnectionStringKey" Type="System.String" Default="HB2004" Category="Options" Description="" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.BaseTemplates" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+using MCS.Library.Caching;
+using MCS.Library.Core;
+using MCS.Library.Data.Adapters;
+using MCS.Library.Data.Builder;
+using MCS.Library.Data.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace <%= NamespaceName%>
+{
+	public class <%= GetOperateClassName(GetEntityClassName(SourceTable), AdapterClassSurfix)%> : UpdatableAndLoadableAdapterBase<<%=GetEntityClassName(SourceTable)%>, <%=GetEntityClassName(SourceTable)%>Collection>
+	{
+		public static readonly <%= GetOperateClassName(EntityClassName, AdapterClassSurfix)%> Instance = new <%= GetOperateClassName(EntityClassName, AdapterClassSurfix)%>();
+
+		private <%= GetOperateClassName(EntityClassName, AdapterClassSurfix)%>()
+		{
+		}
+
+		/// <summary>
+		/// 插入操作
+		/// </summary>
+		/// <param name="<%= GetInstanceNameOfEntityClass(EntityClassName)%>"></param>
+		/*
+		public void Insert(<%= EntityClassName%> <%= GetInstanceNameOfEntityClass(EntityClassName)%>)
+		{
+			this.InnerInsert(<%= GetInstanceNameOfEntityClass(EntityClassName)%>, new Dictionary<string, object>());
+		}
+		*/
+
+		/// <summary>
+		/// 加载操作
+		/// </summary>
+		<% for (int i = 0; i < SourceTable.PrimaryKey.MemberColumns.Count; i++) {
+                ColumnSchema key = SourceTable.PrimaryKey.MemberColumns[i];
+        %>
+        /// <param name="<%=GetReferenceName(key.Name)%>"></param>
+        <% } %>
+		/// <returns></returns>
+		public <%= EntityClassName%> Load(<%= GetKeyReference(SourceTable.PrimaryKey.MemberColumns)%>)
+		{
+            return this.Load(builder => builder<% for (int i = 0; i < SourceTable.PrimaryKey.MemberColumns.Count; i++) {
+                ColumnSchema key = SourceTable.PrimaryKey.MemberColumns[i];
+            %>.AppendItem("<%=key.Name%>", <%=GetReferenceName(key.Name)%>)<% } %>).SingleOrDefault();
+		}
+        
+        protected override string GetConnectionName()
+        {
+            throw new NotImplementedException();
+        }
+	}
+}
+<script runat="template">
+public string GetEntityClassName(TableSchema table)
+{
+	if (table.Name.EndsWith("s"))
+	{
+		return table.Name.Substring(0, table.Name.Length - 1);
+	}
+	else
+	{
+		return table.Name;
+	}
+}
+
+public string GetOperateClassName(string entityClassName, string AdapterClassSurfix)
+{
+	return entityClassName + AdapterClassSurfix;
+}
+
+public string GetInstanceNameOfEntityClass(string entityClassName)
+{
+	if (entityClassName.Length == 1)
+		return "_" + entityClassName;
+		
+	if (Char.IsUpper(entityClassName, 0))
+		return entityClassName.Substring(0, 1).ToLower() + entityClassName.Substring(1, entityClassName.Length - 1);
+	else
+		return "_" + entityClassName;
+}
+
+public string GetKeyReference(ColumnSchemaCollection keys)
+{
+	string ret = string.Empty;
+	
+	bool needAddComma = false;
+	
+	for(int i = 0; i < keys.Count; i++)
+	{
+		ColumnSchema key = (ColumnSchema)keys[i];
+		
+		if (needAddComma)
+			ret += ", ";
+		else
+			needAddComma = true;
+			
+		ret += GetReferenceTypeName(key) + " " + GetReferenceName(key.Name);
+	}
+	
+	return ret;
+}
+
+public string GetReferenceName(string fieldName)
+{
+	string ret = "";
+	string[] f = fieldName.Split(new char[]{'_'});
+	
+	for(int i = 0; i < f.Length; i++)
+	{
+		string s = f[i].ToLower();
+		if (s.Length >= 1 && i > 0)
+			s = s.Substring(0, 1).ToUpper() + s.Substring(1, s.Length - 1);
+		
+		ret += s;
+	}
+	
+	return ret;
+}
+
+public string GetReferenceTypeName(ColumnSchema cs)
+{
+	string ret = string.Empty;
+	
+	switch(cs.DataType)
+	{
+		case DbType.String:
+		case DbType.Binary:
+		case DbType.Byte:
+			ret = "string";
+			break;
+			
+		case DbType.Int16:
+		case DbType.Int32:
+		case DbType.Int64:
+		case DbType.UInt16:
+		case DbType.UInt32:
+			ret = "int";
+			break;
+			
+		case DbType.DateTime:
+		case DbType.Date:
+		case DbType.Time:
+			ret = "DateTime";
+			break;
+			
+		case DbType.Decimal:
+		case DbType.Double:
+			ret = "float";
+			break;
+			
+		default:
+			ret = "string";
+			break;
+	}
+	
+	return ret;
+}
+</script>

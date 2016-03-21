@@ -1,0 +1,60 @@
+﻿<!-- #开始：位置条 -->
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+
+    <ul class="breadcrumb">
+        <li class="active">
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a ui-sref="main">首页</a>
+        </li>
+        <li>
+            <i class="ace-icon fa fa-pencil-square-o"></i>
+            第三方组件
+        </li>
+        <li>
+            垂直页签
+        </li>
+    </ul>
+</div>
+<!-- /结束：位置条 -->
+<div class="note note-info">
+    <h3>
+        垂直页签使用说明
+        <span class="close" data-close="note"></span>
+    </h3>
+    <p>
+        引入下拉框组件所需要的CSS以及JS;<br />
+        <code>&lt;link href="http://[app_server_addr]/mcsweb/libs/angular-ui-select-0.13.2/dist/select.min.css" rel="stylesheet" /&gt;</code><br />
+        <code>&lt;link href="http://[app_server_addr]/mcsweb/libs/angular-ui-select-0.13.2/dist/select2.css" rel="stylesheet" /&gt;</code><br />
+        <code>&lt;script src="http://[app_server_addr]/mcsweb/libs/angular-ui-select-0.13.2/dist/select.js"&gt;&lt;/script&gt;</code>
+    </p>
+</div>
+
+<div class="mcs-tabs-container align-left">
+    <div class="mcs-tabs">
+        <div class="mcs-tabs-wrap">
+            <ul class="mcs-tabs-ul">
+                <li class="mcs_li_first"><h2>学生信息</h2></li>
+                <li><a href="#student-info" rel="student-info">基础信息</a></li>
+                <li><a href="#student-parent" rel="student-parent">学生家长</a></li>
+                <li><a href="#student-trace" rel="student-trace">跟进记录</a></li>
+                <li><a href="#student-account" rel="student-account">账户信息</a></li>
+                <li><a href="#student-pay" rel="student-pay">充值记录</a></li>
+                <li><a href="#student-order" rel="student-order">订购历史</a></li>
+                <li><a href="#student-tranfer" rel="student-tranfer">转让记录</a></li>
+                <li><a href="#student-asset" rel="student-asset">资产</a></li>
+                <li><a href="#student-balance" rel="student-balance">账户余额</a></li>
+                <li><a href="#student-apply-course" rel="student-apply-course">排课条件</a></li>
+                <li><a href="#student-course" rel="student-course">课表</a></li>
+                <li><a href="#student-online-course" rel="student-online-course">上课记录</a></li>
+            </ul>
+        </div>
+        <div class="mcs-tabs-views">
+            <div class="student-info mcs-view">
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectItem Include="PPTS.Data.Common\PPTS.Data.Common.csproj" />
+    <ProjectItem Include="PPTS.Data.Customers\PPTS.Data.Customers.csproj" />
+  </ItemGroup>
+  <Target Name="BuildOtherProjects">
+    <MSBuild Projects="@(ProjectItem)" RebaseOutputs="True" />
+  </Target>
+</Project>

@@ -68,14 +68,20 @@
     <Compile Include="Adapters\AdapterTest.cs" />
     <Compile Include="Adapters\UserAdapter.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="DataObjects\ConditionObject.cs" />
+    <Compile Include="DataObjects\ConditionWithInObject.cs" />
     <Compile Include="DataObjects\ContainerObject.cs" />
     <Compile Include="DataObjects\TestObject.cs" />
     <Compile Include="DataObjects\User.cs" />
+    <Compile Include="DataObjects\UserCondition.cs" />
+    <Compile Include="DataObjects\UserDataSource.cs" />
     <Compile Include="DBContext\DbContextTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConnectionMappingTest.cs" />
     <Compile Include="PropertyEncryptionTest.cs" />
     <Compile Include="MappingTest.cs" />
+    <Compile Include="ConditionMappingTest.cs" />
+    <Compile Include="DataSourceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

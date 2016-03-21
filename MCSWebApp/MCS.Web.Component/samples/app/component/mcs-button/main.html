@@ -1,0 +1,90 @@
+﻿<!-- #开始：位置条 -->
+<style>
+    .max-button {
+        width: 200px;
+        height: 100px;
+        background-color: #660e0b;
+    }
+</style>
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+
+    <ul class="breadcrumb">
+        <li class="active">
+            <i class="ace-icon fa fa-home home-icon"></i>
+            首页
+        </li>
+        <li class="active">
+            <i class="ace-icon fa fa-buttons"></i>
+            按钮
+        </li>
+    </ul>
+</div>
+<!-- /结束：位置条 -->
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="header smaller lighter green">按钮</h3>
+                    <div>
+                        <mcs-button type="add" text="新增潜在客户" click="vm.createCustomer()"></mcs-button>
+                        <mcs-button type="add" text="新增跟进记录"></mcs-button>
+                        <mcs-button type="edit"></mcs-button>
+                        <mcs-button type="delete"></mcs-button>
+                        <mcs-button type="search"></mcs-button>
+                        <mcs-button type="save"></mcs-button>
+                        <mcs-button type="cancel"></mcs-button>
+                        <mcs-button icon="cny" text="充 值"></mcs-button>
+                        <mcs-button text="我没有图标哦"></mcs-button>
+                        <mcs-button type="add" size="mini" text="我是小不点"></mcs-button>
+                        <mcs-button type="add" size="medium" text="我不大不小"></mcs-button>
+                        <mcs-button type="add" size="large" text="有点大哦"></mcs-button>
+                        <mcs-button type="add" size="large" text="没有最大,只有更大" css="max-button"></mcs-button>
+                    </div>
+                </div>
+                <div class="laycode col-sm-12">
+                    <div class="code_box code_skin0">
+                        <span class="code_title">代码</span>
+                        <pre class="codes">
+                            <code><b>Html</b></code><br />
+                            &lt;mcs-button type="add" text="新增潜在客户" click="vm.createCustomer()"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="add" text="新增跟进记录"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="edit"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="delete"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="save"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="cancel"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button icon="cny" text="充 值"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button text="我没有图标哦"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="add" size="mini" text="我是小不点"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="add" size="medium" text="我不大不小"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="add" size="large" text="有点大哦"&gt;&lt;/mcs-button&gt;
+                            &lt;mcs-button type="add" size="large" text="没有最大,只有更大" css="max-button"&gt;&lt;/mcs-button&gt;
+                            <code><b>Javascript</b></code><br />
+                            angular.module('app.component').controller('MCSButtonController', [
+                                '$scope', function ($scope) {
+                                    var vm = this;
+                                    vm.createCustomer = function () {
+                                        alert('我要加一个潜客，随你咋想！');
+                                    };
+                                }
+                            ]);
+                        </pre>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <h3 class="header smaller lighter green">使用说明</h3>
+                    <div>
+                        <h4> 1. 通用按钮如(“新 增”,“编 辑”,“删 除”,“查 询”等)可以指定type属性(默认包含"add", "edit", "delete", "search", "save", "cancel"....)如<code>&lt;mcs-button type="edit"&gt;&lt;/mcs-button&gt;</code>将会产生一个“编辑”按钮;</h4>
+                        <h4> 2. 定制按钮如(“充 值”)可不设置type,但需要指定text,如想添加图标,可以设置icon,如:如<code>&lt;mcs-button type="add" text="充 值" icon="cny"&gt;&lt;/mcs-button&gt;</code>,可设置icon=“fa-cny”或icon=“cny”,图标来源参考<a href="http://fontawesome.io/icons/">FontAwesome网站</a>;</h4>
+                        <h4> 3. 不想要图标的按钮: 只需要设置text即可(不设置任何icon属性, 当然type也不需要设置了(设置type将会产生对应图标));如&lt;mcs-button text="我没有图标哦"&gt;&lt;/mcs-button&gt;;</h4>
+                        <h4> 4. 如定制按钮的大小(默认的大小不需要设置), 如你需要更大或更小的按钮（默认包含mini,medium,large）,如<code>&lt;mcs-button type="add" text="充 值" icon="cny" size="large"&gt;&lt;/mcs-button&gt;</code>;</h4>
+                        <h4> 5. 如觉得默认的样式还是不如法眼, 你当然可以定制自己的样式, 只需要传入对应的css属性既可,如<code>&lt;mcs-button type="add" size="large" text="没有最大,只有更大" css="max-button"&gt;&lt;/mcs-button&gt;</code>。</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

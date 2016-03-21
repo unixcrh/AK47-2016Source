@@ -1,0 +1,16 @@
+{
+  "name": "angular-ui-bootstrap3-patched",
+  "version": "0.7.0",
+  "main": "",
+  "dependencies": {},
+  "homepage": "https://github.com/digiwise/angular-ui-bootstrap3-patched",
+  "_release": "0.7.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.7.0",
+    "commit": "c6b154dea76585db897cb0a4beb2cc6aa48b70d2"
+  },
+  "_source": "git://github.com/digiwise/angular-ui-bootstrap3-patched.git",
+  "_target": "~0.7.0",
+  "_originalSource": "angular-ui-bootstrap3-patched"
+}

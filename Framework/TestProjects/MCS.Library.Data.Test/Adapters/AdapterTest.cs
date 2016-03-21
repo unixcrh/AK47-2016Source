@@ -40,6 +40,48 @@ namespace MCS.Library.Data.Test.Adapters
             }
         }
 
+        [TestMethod]
+        public void DeleteUserInContextByID()
+        {
+            User user = new User() { UserID = UuidHelper.NewUuidString(), UserName = "沈峥", Gender = GenderType.Male };
+
+            UserAdapter.Instance.Update(user);
+
+            using (DbContext context = UserAdapter.Instance.GetDbContext())
+            {
+                UserAdapter.Instance.DeleteInContext(user);
+
+                Console.WriteLine(context.GetSqlInContext());
+
+                context.ExecuteNonQuerySqlInContext();
+
+                User userLoaded = UserAdapter.Instance.LoadByInBuilder(builder => builder.AppendItem(user.UserID), "UserID").SingleOrDefault();
+
+                Assert.IsNull(userLoaded);
+            }
+        }
+
+        [TestMethod]
+        public void DeleteUserInContextByBuilder()
+        {
+            User user = new User() { UserID = UuidHelper.NewUuidString(), UserName = "沈峥", Gender = GenderType.Male };
+
+            UserAdapter.Instance.Update(user);
+
+            using (DbContext context = UserAdapter.Instance.GetDbContext())
+            {
+                UserAdapter.Instance.DeleteInContext(builder => builder.AppendItem("UserID", user.UserID));
+
+                Console.WriteLine(context.GetSqlInContext());
+
+                context.ExecuteNonQuerySqlInContext();
+
+                User userLoaded = UserAdapter.Instance.LoadByInBuilder(builder => builder.AppendItem(user.UserID), "UserID").SingleOrDefault();
+
+                Assert.IsNull(userLoaded);
+            }
+        }
+
         private static void AssertEqual(User expected, User actual)
         {
             Assert.AreEqual(expected.UserID, actual.UserID);

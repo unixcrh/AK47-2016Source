@@ -15,8 +15,19 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "./vendors",
+    "./libs",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "1.4.6",
+    "angular-resource": "1.4.6",
+    "font-awesome": "4.4.0",
+    "requirejs": "2.1.20",
+    "angular-sanitize": "1.4.6",
+    "angular-block-ui": "~0.2.2",
+    "ui-router": "~0.2.18",
+    "angular-ui-bootstrap3-patched": "~0.7.0",
+    "jasmine": "2.3.4"
+  }
 }

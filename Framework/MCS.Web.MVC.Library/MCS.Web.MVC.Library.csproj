@@ -41,16 +41,26 @@
     <AssemblyOriginatorKeyFile>MCS.Library.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MCS.Library">
-      <HintPath>..\..\..\..\..\..\AK47-2016\Bin\MCS.Library.dll</HintPath>
+    <Reference Include="MCS.Library, Version=1.2.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.dll</HintPath>
     </Reference>
-    <Reference Include="MCS.Library.Passport">
-      <HintPath>..\..\..\..\..\..\AK47-2016\Bin\MCS.Library.Passport.dll</HintPath>
+    <Reference Include="MCS.Library.Passport, Version=1.3.0.0, Culture=neutral, PublicKeyToken=62ea08f894871798, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MCS.Library.Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdPartComponent\Bin\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdPartComponent\Bin\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\AK47-2016\ThirdPartComponent\Bin\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -63,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filters\ApiExceptionFilterAttribute.cs" />
     <Compile Include="Filters\PassportAuthorizeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

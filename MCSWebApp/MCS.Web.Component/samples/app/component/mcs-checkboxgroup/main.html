@@ -1,0 +1,74 @@
+﻿<!-- #开始：位置条 -->
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+
+    <ul class="breadcrumb">
+        <li class="active">
+            <i class="ace-icon fa fa-home home-icon"></i>
+            首页
+        </li>
+        <li class="active">
+            <i class="ace-icon fa fa-buttons"></i>
+            复选列表框
+        </li>
+    </ul>
+</div>
+<!-- /结束：位置条 -->
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="header smaller lighter green">复选列表框</h3>
+                    <div>
+                        <mcs-checkbox-group category="selectedGrades" data="vm.dictionaries.grades" click="vm.select(category, key, eventargs)" />
+                        <hr /><p>已选中: {{vm.checkresult.selectedGrades}}</p>
+                    </div>
+                </div>
+                <div class="laycode col-sm-12">
+                    <div class="code_box code_skin0">
+                        <span class="code_title">代码</span>
+                        <pre class="codes">
+                        <code><b>Html</b></code><br />
+                            &lt;mcs-checkbox-group category="selectedGrades" data="vm.dictionaries.grades" click="vm.select(category, value, eventargs)" /&gt;
+                        <code><b>Javascript</b></code><br />
+                            (function () {
+                                angular.module('app.component').controller('MCSCheckboxGroupController', [
+                                    '$scope', function ($scope) {
+                                        var vm = this;
+                                        vm.checkresult = {
+                                            selectedGrades: []
+                                        };
+                                        vm.dictionaries = {
+                                            grades: [
+                                                { key: 'G1', value: '一年级' },
+                                                { key: 'G2', value: '二年级' },
+                                                { key: 'G3', value: '三年级' },
+                                                { key: 'G4', value: '四年级' },
+                                                { key: 'G5', value: '五年级' },
+                                                { key: 'G6', value: '六年级' },
+                                            ]
+                                        };
+                                        vm.select = function (category, key, eventargs) {
+                                            mcs.setSelectedItems(vm.checkresult[category], key, eventargs);
+                                        };
+                                    }
+                                ]);
+                            })();
+                        </pre>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <h3 class="header smaller lighter green">使用说明</h3>
+                    <div>
+                        <h4> 1. 指定复选框所属类别category(如“selectedGrades”, 需与controller中接受选中结果的名字对应);</h4>
+                        <h4> 2. 指定复选框数据源data, 必须为数组结构且包含{key,value}的形式;</h4>
+                        <h4> 3. 如需要接受选中项结果, 必须设置click属性且指定<code>vm.select(category, value, eventargs)</code>,事件在controller中定义。</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

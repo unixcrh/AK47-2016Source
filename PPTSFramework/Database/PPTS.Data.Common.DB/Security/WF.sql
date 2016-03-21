@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [WF]
+    AUTHORIZATION [dbo];

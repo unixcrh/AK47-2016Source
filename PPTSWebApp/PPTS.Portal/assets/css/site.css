@@ -1,0 +1,106 @@
+﻿/*全局字体修改*/
+body{
+    font-family: "微软雅黑", Arial
+}
+
+/*顶部导航条背景色由ace.css里的浅蓝色#438eb9改成了白色*/
+#navbar{
+    background-color: #EBF4FA;
+}
+/*.breadcrumbs {
+    background-color: #E5E5E5
+}*/
+
+.nav.nav-list a {
+    cursor: pointer;
+}
+/*nav-brand里的logo把padding-top, bottom从10px改成了0px*/
+#logo{
+    padding:0px;
+}
+
+/*修改底部版权信息的行距从36px到20px*/
+.footer-content{
+    line-height:20px!important;
+}
+
+.accordion-style1.panel-group {
+    margin-bottom: 0px;
+}
+/*--------------------以下是以mcs-打头的自定义样式-----------------------*/
+.mcs-padding-right-15{
+    padding-right: 15px;
+}
+.mcs-margin-right-20{
+    margin-right: 20px;
+}
+.mcs-width-100 {
+    width:100px;
+}
+.mcs-width-120 {
+    width:120px;
+}
+/*表格选中的单元格高亮色*/
+.mcs-tr-selected{
+    /*background-color: #ffd800!important;*/
+}
+.mcs-tr-selected>td{
+    background-color: LemonChiffon!important;
+}
+
+/*左边框表示成功（未使用）*/
+.mcs-border-left-success{
+    border-left: 3px solid #87b87f!important;
+}
+/*左边框表示危险（未使用）*/
+.mcs-border-left-warning{
+    border-left: 3px solid #d15b47!important;
+}
+.mcs-status-success{
+    color: #82af6f;
+}
+.mcs-status-danger{
+    color: #d15b47;
+}
+
+/*搜索区域的样式*/
+.mcs-panel-search {
+    /*padding-bottom: 10px;*/
+    margin-bottom: 10px!important;
+}
+
+.mcs-panel-search .quick-search {
+    color: #4c8fbd;
+    font-weight: 700;
+    font-size: 13px;
+    line-height:1;  
+    padding:0 6px;
+}
+
+/*工具条区域的样式*/
+.mcs-panel-toolbar{
+    padding-bottom: 10px;
+}
+.mcs-panel-toolbar button{
+    margin-bottom:2px;
+    margin-right: 10px;
+}
+.mcs-panel-pager .pagination{
+    float: right;
+    margin-top:-5px;
+}
+
+/*表单*/
+.mcs-form-td-left{
+    text-align: right;
+    width: 120px;
+    background-color: rgb(245, 245, 245);
+}
+
+.mcs-advance-search .profile-user-info {
+    width:100%;
+}
+
+.mcs-advance-search .profile-user-info .profile-info-name {
+    background: transparent;
+}

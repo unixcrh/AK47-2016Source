@@ -1,0 +1,107 @@
+﻿<%-- 
+Name:   Seagull2.DataGrid_asp_net
+Author: Zheng Shen
+Description: 
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="Html" ResponseEncoding="UTF-8" Src="" Inherits="" Debug="False" CompilerVersion="v3.5" Description="Data Grid" %>
+<%@ Property Name="DataSourceClassName" Type="String" Category="DataSource" Default="StepByStep.DataObjects.SimpleOrderDataSource" Optional="False" Description="Data source class name" %>
+<%@ Property Name="ShowCheckBox" Type="Boolean" Category="DataGrid" Default="False" Optional="True" Description="Show check boxes in data grid" %>
+<%%@ Register Assembly="MCS.Web.WebControls" Namespace="MCS.Web.WebControls" TagPrefix="MCS" %>
+
+<script type="text/javascript">
+    /*
+	function openWindow() {
+		var a = event.srcElement;
+
+		event.returnValue = false;
+
+		var feature = "width=800,height=600,status=no,resizable=yes,toolbar=no,menubar=no,location=no,scrollbars=yes";
+
+		window.open(a.href, "_blank", feature);
+		event.cancelBubble = true;
+	}
+ 
+    function onCommandInput(commandInputControl, e) {
+		switch (e.commandValue) {
+			case "refresh":
+				e.stopCommand = true; //设置后，不再执行默认的处理
+				document.getElementById("RefreshButton").click();
+				break;
+		}
+	}
+    */
+</script>
+<div>
+	<MCS:DeluxeGrid ID="dataGrid" runat="server" AutoGenerateColumns="False" DataSourceID="objectDataSource"
+		DataSourceMaxRow="0" AllowPaging="True" PageSize="10" Width="100%" DataKeyNames="OrderID"
+		CssClass="dataList" ShowCheckBoxs="<%=ShowCheckBox%>" ShowExportControl="true">
+		<Columns>
+			<%%--<asp:TemplateField HeaderText="Order Name" SortExpression="ORDER_NAME">
+				<ItemTemplate>
+					<a onclick="openWindow()" href='SimpleOrderEditor.aspx?ID=<%%#HttpUtility.HtmlAttributeEncode((string)Eval("OrderID")) %>'>
+						<%%#Server.HtmlEncode((string)Eval("OrderName")) %></a>
+				</ItemTemplate>
+			</asp:TemplateField>
+			<asp:BoundField DataField="VendorName" HeaderText="Vendor Name" SortExpression="VENDOR_NAME" />
+			<asp:BoundField DataField="CreateTime" HeaderText="Create Time" HtmlEncode="False"
+				SortExpression="CREATE_TIME" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" />
+			--%>
+		</Columns>
+		<PagerStyle CssClass="pager" />
+		<RowStyle CssClass="item" />
+		<CheckBoxTemplateItemStyle CssClass="checkbox" />
+		<CheckBoxTemplateHeaderStyle CssClass="checkbox" />
+		<HeaderStyle CssClass="head" />
+		<AlternatingRowStyle CssClass="aitem" />
+		<EmptyDataTemplate>
+			暂时没有您需要的数据
+		</EmptyDataTemplate>
+		<PagerSettings FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" Mode="NextPreviousFirstLast"
+			NextPageText="下一页" Position="Bottom" PreviousPageText="上一页"></PagerSettings>
+	</MCS:DeluxeGrid>
+</div>
+<div>
+	<asp:ObjectDataSource ID="objectDataSource" runat="server" EnablePaging="True" SelectCountMethod="GetQueryCount"
+		SelectMethod="Query" SortParameterName="orderBy" OnSelecting="objectDataSource_Selecting"
+		OnSelected="objectDataSource_Selected" TypeName="<%=DataSourceClassName%>"
+		EnableViewState="False">
+		<SelectParameters>
+			<asp:ControlParameter ControlID="whereCondition" Name="where" PropertyName="Value"
+				Type="String" />
+			<asp:Parameter Direction="InputOutput" Name="totalCount" Type="Int32" />
+		</SelectParameters>
+	</asp:ObjectDataSource>
+	<input runat="server" type="hidden" id="whereCondition" />
+    <asp:LinkButton ID="RefreshButton" runat="server" OnClick="RefreshButton_Click"></asp:LinkButton>
+</div>
+
+<%%--//Below is the code behind this page.
+protected void objectDataSource_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+{
+	e.InputParameters["totalCount"] = LastQueryRowCount;
+}
+
+protected void objectDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+{
+	LastQueryRowCount = (int)e.OutputParameters["totalCount"];
+}
+
+protected void RefreshButton_Click(object sender, EventArgs e)
+{
+	LastQueryRowCount = -1;
+	this.dataGrid.SelectedKeys.Clear();
+	this.dataGrid.PageIndex = 0;
+}
+
+private int LastQueryRowCount
+{
+	get
+	{
+		return WebControlUtility.GetViewStateValue(ViewState, "LastQueryRowCount", -1);
+	}
+	set
+	{
+		WebControlUtility.SetViewStateValue(ViewState, "LastQueryRowCount", value);
+	}
+}
+--%>

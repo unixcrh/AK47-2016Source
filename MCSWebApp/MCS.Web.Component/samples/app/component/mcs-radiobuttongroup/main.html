@@ -1,0 +1,70 @@
+﻿<!-- #开始：位置条 -->
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+
+    <ul class="breadcrumb">
+        <li class="active">
+            <i class="ace-icon fa fa-home home-icon"></i>
+            首页
+        </li>
+        <li class="active">
+            <i class="ace-icon fa fa-buttons"></i>
+            单选列表框
+        </li>
+    </ul>
+</div>
+<!-- /结束：位置条 -->
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="header smaller lighter green">单选列表框</h3>
+                    <div>
+                        <mcs-radiobutton-group category="selectedGender" data="vm.dictionaries.genders" click="vm.select(category, key, eventargs)" defaultValue="G2"/>
+                        <hr /><p>已选中: {{vm.checkresult.selectedGender}}</p>
+                    </div>
+                </div>
+                <div class="laycode col-sm-12">
+                    <div class="code_box code_skin0">
+                        <span class="code_title">代码</span>
+                        <pre class="codes">
+                        <code><b>Html</b></code><br />
+                        &lt;mcs-radiobutton-group category="selectedGender" data="vm.dictionaries.genders" click="vm.select(category, key, eventargs)" defaultValue="G1"/&gt;
+                        <code><b>Javascript</b></code><br />
+                        angular.module('app.component').controller('MCSRadiobuttonGroupController', [
+                            '$scope', function ($scope) {
+                                var vm = this;
+                                vm.checkresult = {
+                                    selectedGender: []
+                                };
+                                vm.dictionaries = {
+                                    genders: [
+                                        { key: 'G1', value: '男', checked: false },
+                                        { key: 'G2', value: '女', checked: true }, //默认选中
+                                        { key: 'G3', value: '未知', checked: false }
+                                    ]
+                                };
+                                vm.select = function (category, key, eventargs) {
+                                    mcs.setSelectedItems(vm.checkresult[category], key, eventargs);
+                                };
+                            }
+                        ]);
+                        </pre>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <h3 class="header smaller lighter green">使用说明</h3>
+                    <div>
+                        <h4> 1. 指定复选框所属类别category(如“selectedGender”, 需与controller中接受选中结果的名字对应);</h4>
+                        <h4> 2. 指定复选框数据源data, 必须为数组结构且包含{key,value}的形式;</h4>
+                        <h4> 3. 如需要接受选中项结果, 必须设置click属性且指定<code>vm.select(category, value, eventargs)</code>,事件在controller中定义;</h4>
+                        <h4> 4. 如需要默认选中某项目, 可以设置defaultValue为选中项的key值或改变选中项的checked值为true。</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

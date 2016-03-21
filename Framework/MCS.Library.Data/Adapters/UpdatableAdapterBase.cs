@@ -73,25 +73,22 @@ namespace MCS.Library.Data.Adapters
         {
             ExceptionHelper.FalseThrow<ArgumentNullException>(data != null, "data");
 
-            PerformanceMonitorHelper.GetDefaultMonitor().WriteExecutionDuration(string.Format("Update In Context({0})", this.GetType().FullName), () =>
+            Dictionary<string, object> context = new Dictionary<string, object>();
+
+            using (DbContext dbContext = this.GetDbContext())
             {
-                Dictionary<string, object> context = new Dictionary<string, object>();
+                this.BeforeInnerUpdateInContext(data, dbContext, context);
 
-                using (DbContext dbContext = DbContext.GetContext(this.GetConnectionName()))
-                {
-                    this.BeforeInnerUpdateInContext(data, dbContext, context);
+                this.InnerUpdateInContext(data, dbContext, context);
 
-                    this.InnerUpdateInContext(data, dbContext, context);
+                dbContext.AppendSqlWithSperatorInContext(TSqlBuilder.Instance, "IF @@ROWCOUNT = 0");
 
-                    dbContext.AppendSqlWithSperatorInContext(TSqlBuilder.Instance, "IF @@ROWCOUNT = 0");
+                dbContext.AppendSqlInContext(TSqlBuilder.Instance, "\nBEGIN\n");
+                this.InnerInsertInContext(data, dbContext, context);
+                dbContext.AppendSqlInContext(TSqlBuilder.Instance, "\nEND\n");
 
-                    dbContext.AppendSqlInContext(TSqlBuilder.Instance, "\nBEGIN\n");
-                    this.InnerInsertInContext(data, dbContext, context);
-                    dbContext.AppendSqlInContext(TSqlBuilder.Instance, "\nEND");
-
-                    this.AfterInnerUpdateInContext(data, dbContext, context);
-                }
-            });
+                this.AfterInnerUpdateInContext(data, dbContext, context);
+            }
         }
 
         /// <summary>
@@ -102,7 +99,7 @@ namespace MCS.Library.Data.Adapters
         {
             ExceptionHelper.FalseThrow<ArgumentNullException>(data != null, "data");
 
-            PerformanceMonitorHelper.GetDefaultMonitor().WriteExecutionDuration(string.Format("Delete({0})", this.GetType().FullName), () =>
+            PerformanceMonitorHelper.GetDefaultMonitor().WriteExecutionDuration(string.Format("Delete In Context({0})", this.GetType().FullName), () =>
             {
                 Dictionary<string, object> context = new Dictionary<string, object>();
 
@@ -120,6 +117,26 @@ namespace MCS.Library.Data.Adapters
         }
 
         /// <summary>
+        /// 在上下文中添加删除对象的脚本
+        /// </summary>
+        /// <param name="data"></param>
+        public virtual void DeleteInContext(T data)
+        {
+            ExceptionHelper.FalseThrow<ArgumentNullException>(data != null, "data");
+
+            using (DbContext dbContext = this.GetDbContext())
+            {
+                Dictionary<string, object> context = new Dictionary<string, object>();
+
+                this.BeforeInnerDeleteInContext(data, dbContext, context);
+
+                this.InnerDeleteInContext(data, dbContext, context);
+
+                this.AfterInnerDeleteInContext(data, dbContext, context);
+            }
+        }
+
+        /// <summary>
         /// 按照条件删除
         /// </summary>
         /// <param name="whereAction"></param>
@@ -133,26 +150,53 @@ namespace MCS.Library.Data.Adapters
 
                 whereAction(builder);
 
-                if (builder.Count > 0)
+                Dictionary<string, object> context = new Dictionary<string, object>();
+
+                this.BeforeInnerDelete(builder, context);
+
+                string sql = this.GetDeleteSql(builder, context);
+
+                if (sql.IsNotEmpty())
                 {
-                    Dictionary<string, object> context = new Dictionary<string, object>();
-
-                    string sql = string.Format("DELETE {0} WHERE {1}",
-                        this.GetTableName(),
-                        builder.ToSqlString(TSqlBuilder.Instance));
-
-                    BeforeInnerDelete(builder, context);
-
                     using (TransactionScope scope = TransactionScopeFactory.Create())
                     {
                         DbHelper.RunSql(db => db.ExecuteNonQuery(CommandType.Text, sql), this.GetConnectionName());
 
-                        AfterInnerDelete(builder, context);
+                        this.AfterInnerDelete(builder, context);
 
                         scope.Complete();
                     }
                 }
             });
+        }
+
+        /// <summary>
+        /// 在上下文中添加删除对象的脚本
+        /// </summary>
+        /// <param name="whereAction"></param>
+        public virtual void DeleteInContext(Action<WhereSqlClauseBuilder> whereAction)
+        {
+            whereAction.NullCheck("whereAction");
+
+            WhereSqlClauseBuilder builder = new WhereSqlClauseBuilder();
+
+            whereAction(builder);
+
+            Dictionary<string, object> context = new Dictionary<string, object>();
+
+            using (DbContext dbContext = this.GetDbContext())
+            {
+                this.BeforeInnerDeleteInContext(builder, dbContext, context);
+
+                string sql = this.GetDeleteSql(builder, context);
+
+                if (sql.IsNotEmpty())
+                {
+                    dbContext.AppendSqlWithSperatorInContext(TSqlBuilder.Instance, sql);
+
+                    this.AfterInnerDeleteInContext(builder, context);
+                }
+            }
         }
 
         /// <summary>
@@ -186,6 +230,26 @@ namespace MCS.Library.Data.Adapters
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        protected virtual void BeforeInnerDeleteInContext(WhereSqlClauseBuilder builder, DbContext dbContext, Dictionary<string, object> context)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        protected virtual void BeforeInnerDeleteInContext(T data, DbContext dbContext, Dictionary<string, object> context)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="data"></param>
         /// <param name="context"></param>
         protected virtual void AfterInnerDelete(T data, Dictionary<string, object> context)
@@ -195,9 +259,38 @@ namespace MCS.Library.Data.Adapters
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        protected virtual void AfterInnerDeleteInContext(T data, DbContext dbContext, Dictionary<string, object> context)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        protected virtual void AfterInnerDeleteInContext(WhereSqlClauseBuilder builder, DbContext dbContext, Dictionary<string, object> context)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="builder"></param>
         /// <param name="context"></param>
         protected virtual void AfterInnerDelete(WhereSqlClauseBuilder builder, Dictionary<string, object> context)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="context"></param>
+        protected virtual void AfterInnerDeleteInContext(WhereSqlClauseBuilder builder, Dictionary<string, object> context)
         {
         }
 
@@ -256,16 +349,31 @@ namespace MCS.Library.Data.Adapters
         {
             ORMappingItemCollection mappings = GetMappingInfo(context);
 
-            WhereSqlClauseBuilder builder = ORMapping.GetWhereSqlClauseBuilderByPrimaryKey(data, mappings);
-
-            ExceptionHelper.FalseThrow(builder.Count > 0, "必须为对象{0}指定关键字", typeof(T));
-            string sql = string.Format("DELETE FROM {0} WHERE {1}", this.GetTableName(), builder.ToSqlString(TSqlBuilder.Instance));
+            string sql = this.GetDeleteSql(data, mappings, context);
 
             int result = 0;
 
             DbHelper.RunSql(db => result = db.ExecuteNonQuery(CommandType.Text, sql), this.GetConnectionName());
 
             return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dbContext"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        protected virtual string InnerDeleteInContext(T data, DbContext dbContext, Dictionary<string, object> context)
+        {
+            ORMappingItemCollection mappings = GetMappingInfo(context);
+
+            string sql = this.GetDeleteSql(data, mappings, context);
+
+            dbContext.AppendSqlWithSperatorInContext(TSqlBuilder.Instance, sql);
+
+            return sql;
         }
 
         /// <summary>
@@ -378,6 +486,42 @@ namespace MCS.Library.Data.Adapters
         protected virtual string GetInsertSql(T data, ORMappingItemCollection mappings, Dictionary<string, object> context)
         {
             return ORMapping.GetInsertSql(data, mappings, TSqlBuilder.Instance);
+        }
+
+        /// <summary>
+        /// 得到对象默认的删除语句
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="mappings"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        protected virtual string GetDeleteSql(T data, ORMappingItemCollection mappings, Dictionary<string, object> context)
+        {
+            WhereSqlClauseBuilder builder = ORMapping.GetWhereSqlClauseBuilderByPrimaryKey(data, mappings);
+
+            ExceptionHelper.FalseThrow(builder.Count > 0, "必须为对象{0}指定关键字", typeof(T));
+
+            return string.Format("DELETE {0} WHERE {1}", this.GetTableName(), builder.ToSqlString(TSqlBuilder.Instance));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        protected virtual string GetDeleteSql(WhereSqlClauseBuilder builder, Dictionary<string, object> context)
+        {
+            string sql = string.Empty;
+
+            if (builder.Count > 0)
+            {
+                sql = string.Format("DELETE {0} WHERE {1}",
+                        this.GetTableName(),
+                        builder.ToSqlString(TSqlBuilder.Instance));
+            }
+
+            return sql;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCS.Library.HtmlParser.Test", "MCS.Library.HtmlParser.Test.csproj", "{DC7076E7-B902-420E-BCA5-CEC13972AE12}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -16,20 +16,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCS.Library", "..\..\MCS.Library\MCS.Library.csproj", "{4077B0B7-062A-4F6D-8A45-A180A2ED3215}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://code.cfldcn.com:8080/tfs/base
-		SccProjectUniqueName0 = ..\\..\\MCS.Library.HtmlParser\\MCS.Library.HtmlParser.csproj
-		SccProjectName0 = ../../MCS.Library.HtmlParser
-		SccLocalPath0 = ..\\..\\MCS.Library.HtmlParser
-		SccProjectUniqueName1 = ..\\..\\MCS.Library\\MCS.Library.csproj
-		SccProjectName1 = ../../MCS.Library
-		SccLocalPath1 = ..\\..\\MCS.Library
-		SccLocalPath2 = .
-		SccProjectUniqueName3 = MCS.Library.HtmlParser.Test.csproj
-		SccLocalPath3 = .
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -87,5 +73,19 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.1.56.70:8080/tfs/pptsv2.0
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\MCS.Library.HtmlParser\\MCS.Library.HtmlParser.csproj
+		SccProjectName1 = ../../MCS.Library.HtmlParser
+		SccLocalPath1 = ..\\..\\MCS.Library.HtmlParser
+		SccProjectUniqueName2 = ..\\..\\MCS.Library\\MCS.Library.csproj
+		SccProjectName2 = ../../MCS.Library
+		SccLocalPath2 = ..\\..\\MCS.Library
+		SccProjectUniqueName3 = MCS.Library.HtmlParser.Test.csproj
+		SccLocalPath3 = .
 	EndGlobalSection
 EndGlobal

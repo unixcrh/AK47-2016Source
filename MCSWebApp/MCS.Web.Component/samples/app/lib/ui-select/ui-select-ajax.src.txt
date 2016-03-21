@@ -1,0 +1,41 @@
+﻿<!--json-->
+[
+  { "name":"Adam", "email":"adam@email.com", "age": "12", "country":"United States" },
+  { "name":"Amalie", "email":"amalie@email.com", "age": "12", "country":"Argentina" },
+  { "name":"Estefanía", "email":"estefania@email.com", "age": "21", "country":"Argentina" },
+  { "name":"Adrian", "email":"adrian@email.com", "age": "21", "country":"Ecuador" },
+  { "name":"Wladimir", "email":"wladimir@email.com", "age": "30", "country":"Ecuador" },
+  { "name":"Samantha", "email":"samantha@email.com", "age": "30", "country":"United States" },
+  { "name":"Nicole", "email":"nicole@email.com", "age": "43", "country":"Colombia" },
+  { "name":"Natasha", "email":"natasha@email.com", "age": "54", "country":"Ecuador" },
+  { "name":"Michael", "email":"michael@email.com", "age": "15", "country":"Colombia" },
+  { "name":"Nicolás", "email":"nicolas@email.com", "age": "43", "country":"Colombia" }
+]
+
+<!--js-->
+(function () {
+    angular.module('app.lib').controller('AppUISelectController', [
+        '$scope', '$http', function ($scope，$http) {
+            var vm = this;
+
+            //...
+            vm.person = {};
+			vm.people = [];
+
+            $http.get('http://localhost:1862/samples/app/lib/ui-select/people.json').then(function (result) {
+                vm.people = result.data;
+            });
+        }
+    ]);
+})();
+
+<!--html-->
+
+<ui-select ng-model="vm.person.selected" theme="select2" ng-disabled="vm.disabled" style="width: 400px;" title="Choose a person">
+	<ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+	<ui-select-choices repeat="person in vm.people | props: {name: $select.search, age: $select.search}">
+		<div ng-bind-html="vm.person.name | highlight: $select.search"></div>
+		<span>邮箱: <span ng-bind-html="person.email | highlight: $select.search"></span> 
+		年龄: <span ng-bind-html="person.age | highlight: $select.search"></span></span>
+	</ui-select-choices>
+</ui-select>

@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPTS.Data.Customers.Test", "PPTS.Data.Customers.Test.csproj", "{F72C0601-64EA-4B74-9D3B-C35152100C51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155} = {96802A24-2E16-4B0E-83BE-AC8A54E19155}
+		{0414177E-283E-4E91-8032-37228B715F16} = {0414177E-283E-4E91-8032-37228B715F16}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPTS.Data.Customers", "..\..\PPTS.Data.Customers\PPTS.Data.Customers.csproj", "{96802A24-2E16-4B0E-83BE-AC8A54E19155}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0414177E-283E-4E91-8032-37228B715F16} = {0414177E-283E-4E91-8032-37228B715F16}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPTS.Data.Common", "..\..\PPTS.Data.Common\PPTS.Data.Common.csproj", "{0414177E-283E-4E91-8032-37228B715F16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		DELUXEWORKSTEST|Any CPU = DELUXEWORKSTEST|Any CPU
+		DELUXEWORKSTEST|x64 = DELUXEWORKSTEST|x64
+		DELUXEWORKSTEST|x86 = DELUXEWORKSTEST|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Debug|x64.Build.0 = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Debug|x86.Build.0 = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.DELUXEWORKSTEST|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.DELUXEWORKSTEST|Any CPU.Build.0 = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.DELUXEWORKSTEST|x64.ActiveCfg = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.DELUXEWORKSTEST|x64.Build.0 = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.DELUXEWORKSTEST|x86.ActiveCfg = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.DELUXEWORKSTEST|x86.Build.0 = Debug|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Release|x64.ActiveCfg = Release|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Release|x64.Build.0 = Release|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Release|x86.ActiveCfg = Release|Any CPU
+		{F72C0601-64EA-4B74-9D3B-C35152100C51}.Release|x86.Build.0 = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|x64.Build.0 = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Debug|x86.Build.0 = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.DELUXEWORKSTEST|Any CPU.ActiveCfg = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.DELUXEWORKSTEST|Any CPU.Build.0 = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.DELUXEWORKSTEST|x64.ActiveCfg = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.DELUXEWORKSTEST|x64.Build.0 = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.DELUXEWORKSTEST|x86.ActiveCfg = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.DELUXEWORKSTEST|x86.Build.0 = Debug|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|x64.ActiveCfg = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|x64.Build.0 = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|x86.ActiveCfg = Release|Any CPU
+		{96802A24-2E16-4B0E-83BE-AC8A54E19155}.Release|x86.Build.0 = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|x64.Build.0 = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Debug|x86.Build.0 = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.DELUXEWORKSTEST|Any CPU.ActiveCfg = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.DELUXEWORKSTEST|Any CPU.Build.0 = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.DELUXEWORKSTEST|x64.ActiveCfg = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.DELUXEWORKSTEST|x64.Build.0 = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.DELUXEWORKSTEST|x86.ActiveCfg = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.DELUXEWORKSTEST|x86.Build.0 = Debug|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|x64.ActiveCfg = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|x64.Build.0 = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|x86.ActiveCfg = Release|Any CPU
+		{0414177E-283E-4E91-8032-37228B715F16}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.1.56.70:8080/tfs/pptsv2.0
+		SccProjectUniqueName0 = ..\\PPTS.Data.Common\\PPTS.Data.Common.csproj
+		SccProjectName0 = ../PPTS.Data.Common
+		SccLocalPath0 = ..\\PPTS.Data.Common
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = PPTS.Data.Customers.Test.csproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = ..\\PPTS.Data.Customers\\PPTS.Data.Customers.csproj
+		SccProjectName3 = ../PPTS.Data.Customers
+		SccLocalPath3 = ..\\PPTS.Data.Customers
+	EndGlobalSection
+EndGlobal

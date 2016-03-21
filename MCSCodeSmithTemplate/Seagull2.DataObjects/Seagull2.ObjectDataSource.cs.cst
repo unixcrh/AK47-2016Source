@@ -1,0 +1,66 @@
+<%-- 
+Name:   ObjectDataSource
+Author: Zheng Shen
+Description: Generate code for ObjectDataSource which are used in split page query.
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" CompilerVersion="v3.5" Description="Template description here." %>
+<%@ Property Name="Namespace" Type="System.String" Default="StepByStep.DataObjects" Optional="True" Category="ClassInfo" Description="Data Adapter's namespace" %>
+<%@ Property Name="ClassName" Type="String" Category="Context" Optional="False" Description="Data source class name" %>
+<%@ Property Name="DataEntityName" Type="System.String" Default="" Optional="False" Category="ClassInfo" Description="Class name of data entity" %>
+<%@ Property Name="DataEntityCollectionName" Type="System.String" Default="" Optional="True" Category="ClassInfo" Description="Class name of data entity collection" %>
+<%@ Property Name="ConnectionName" Type="System.String" Default="" Optional="True" Category="Data" Description="Data connection name" %>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MCS.Library.SOA.DataObjects;
+
+namespace <%=Namespace%>
+{
+    public class <%=GetDataSourceClassName()%> : ObjectDataSourceQueryAdapterBase<<%=DataEntityName%>, <%=GetCollectionClassName()%>>
+    {
+        protected override void OnBuildQueryCondition(QueryCondition qc)
+		{
+            //qc.OrderByClause = "";
+            //qc.SelectFields = "*";
+        }
+        <%if (GetConnectionName() != null) {%>
+        
+        protected override string GetConnectionName()
+        {
+            return "<%=ConnectionName%>";
+        }
+        <%}%>
+    }
+}
+<script runat="template">
+    public string GetDataSourceClassName()
+    {
+        string result = ClassName;
+        
+        if (result == null || result == "")
+            result = DataEntityName + "DataSource";
+        
+        return result;
+    }
+    
+    public string GetConnectionName()
+    {
+        string result = ConnectionName;
+        
+        if (result == null || result == "")
+            result = null;
+        
+        return result;
+    }
+
+    public string GetCollectionClassName()
+    {
+        string result = DataEntityCollectionName;
+        
+        if (result == null || result == "")
+            result = DataEntityName + "Collection";
+        
+        return result;
+    }
+</script>

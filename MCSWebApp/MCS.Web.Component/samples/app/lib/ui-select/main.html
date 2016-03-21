@@ -1,0 +1,186 @@
+﻿<!-- #开始：位置条 -->
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+
+    <ul class="breadcrumb">
+        <li class="active">
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a ui-sref="main">首页</a>
+        </li>
+        <li>
+            <i class="ace-icon fa fa-pencil-square-o"></i>
+            第三方组件
+        </li>
+        <li>
+            下拉列表框
+        </li>
+    </ul>
+</div>
+<!-- /结束：位置条 -->
+<div class="note note-info">
+    <h3>
+        基于Angular的下拉列表框使用说明
+        <span class="close" data-close="note"></span>
+    </h3>
+    <p>
+        引入下拉框组件所需要的CSS以及JS;<br />
+        <code>&lt;link href="http://[app_server_addr]/mcsweb/libs/angular-ui-select-0.13.2/dist/select.min.css" rel="stylesheet" /&gt;</code><br />
+        <code>&lt;link href="http://[app_server_addr]/mcsweb/libs/angular-ui-select-0.13.2/dist/select2.css" rel="stylesheet" /&gt;</code><br />
+        <code>&lt;script src="http://[app_server_addr]/mcsweb/libs/angular-ui-select-0.13.2/dist/select.js"&gt;&lt;/script&gt;</code>
+    </p>
+</div>
+
+<p>
+    <button class="btn btn-default" ng-click="vm.enable()">启用</button>
+    <button class="btn btn-default" ng-click="vm.disable()">禁用</button>
+    <button class="btn btn-default" ng-click="vm.clear()">清空</button>
+</p>
+
+<div class="portlet grey">
+    <div class="portlet-title">
+        <div class="caption font-green-sharp">
+            <i class="icon-settings font-green-sharp"></i>
+            <span class="caption-subject bold uppercase">加载非Ajax数据</span>
+            <span class="caption-helper">angular.ui.select</span>
+        </div>
+        <div class="tools">
+            <a href="" class="collapse"></a>
+            <a href="" class="reload"></a>
+            <a href="" class="fullscreen"></a>
+            <a href="" class="remove"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p>已选中: {{vm.person.selected}}</p>
+                <ui-select ng-model="vm.person.selected" theme="select2" ng-disabled="vm.disabled" style="width: 400px;" title="Choose a person">
+                    <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="person in vm.people | props: {name: $select.search, age: $select.search}">
+                        <div ng-bind-html="vm.person.name | highlight: $select.search"></div>
+                        <span>邮箱: <span ng-bind-html="person.email | highlight: $select.search"></span> 
+                        年龄: <span ng-bind-html="person.age | highlight: $select.search"></span></span>
+                    </ui-select-choices>
+                </ui-select>
+                <br/>
+                <div class="note note-info">
+                    <h3>
+                        <a href="./app/lib/ui-select/ui-select-noajax.src.txt" target="_blank"><span class="badge badge-primary">源码下载</span></a>
+                        <span class="close" data-close="note"></span>
+                    </h3>
+                    <p>
+                        1. <code>vm</code>代表Angular中后台控制器的一个实例.<br />
+                        2. 数据源: <code>vm.people=[ { name: 'Adam', email: 'adam@email.com', age: 12, country: 'United States' }, {....}]</code><br />
+                        3. 单个数据项: <code>vm.person={}</code>,当被选中将被提交到ng-model:<code>vm.person.selected</code><br />
+                        4. 当数据项被选中时, 可使用$select.selected服务获取选中项的相关信息:<code>$select.selected.name</code><br />
+                        5. 可对数据项$select.search执行搜索并利用highlight过滤器进行高亮显示:<code>vm.person.name | highlight: $select.search</code><br />
+                        6. 可配置数据源按属性过滤:<code>repeat="person in vm.people | props: {name: $select.search, age: $select.search"</code><br />
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    1. 使用<code>&lt;ui-select&gt;</code>标签定义下拉框，并设置主题为select2; <br />
+                    <code>&lt;ui-select ng-model="vm.person.selected" theme="select2"&gt;&lt;/ui-select&gt;</code>
+                </p>
+                <p>
+                    2. 在<code>&lt;ui-select&gt;</code>标签内部嵌入<code>&lt;ui-select-match&gt;</code>，并设置提示标题placeholder;<br />
+                    <code>&lt;ui-select-match placeholder="Select a person in the list or search his name/age..."&gt;{{$select.selected.name}}&lt;/ui-select-match&gt;</code>
+                </p>
+                <p>
+                    3. 在<code>&lt;ui-select&gt;</code>标签内部嵌入<code>&lt;ui-select-choices&gt;</code>，并设置数据列表repeat;<br />
+                    <code>&lt;ui-select-choices repeat="person in vm.people | props: {name: $select.search, age: $select.search}"&gt;&lt;/ui-select-choices&gt;</code>
+                </p>
+                <p>
+                    4. 在<code>&lt;ui-select-choices&gt;</code>标签内部可设置选中项和设置绑定的数据（可组合多个属性）;<br />
+                    <code>&lt;div ng-bind-html="vm.person.name | highlight: $select.search"&gt;&lt;/div&gt;</code>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="portlet-title">
+        <div class="caption font-green-sharp">
+            <i class="icon-settings font-green-sharp"></i>
+            <span class="caption-subject bold uppercase">加载Ajax数据</span>
+            <span class="caption-helper">angular.ui.select</span>
+        </div>
+        <div class="tools">
+            <a href="" class="collapse"></a>
+            <a href="" class="reload"></a>
+            <a href="" class="fullscreen"></a>
+            <a href="" class="remove"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p>已选中: {{vm.person.selected}}</p>
+                <ui-select ng-model="vm.person.selected" theme="select2" ng-disabled="vm.disabled" style="width: 400px;" title="Choose a person">
+                    <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="person in vm.people | props: {name: $select.search, age: $select.search}">
+                        <div ng-bind-html="vm.person.name | highlight: $select.search"></div>
+                        <span>
+                            邮箱: <span ng-bind-html="person.email | highlight: $select.search"></span>
+                            年龄: <span ng-bind-html="person.age | highlight: $select.search"></span>
+                        </span>
+                    </ui-select-choices>
+                </ui-select>
+                <br />
+                <div class="note note-info">
+                    <h3>
+                        <a href="./app/lib/ui-select/ui-select-ajax.src.txt" target="_blank"><span class="badge badge-primary">源码下载</span></a>
+                        <span class="close" data-close="note"></span>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    注入$http获取ajax数据源<br />
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="portlet-title">
+        <div class="caption font-green-sharp">
+            <i class="icon-settings font-green-sharp"></i>
+            <span class="caption-subject bold uppercase">多选下拉框</span>
+            <span class="caption-helper">angular.ui.select</span>
+        </div>
+        <div class="tools">
+            <a href="" class="collapse"></a>
+            <a href="" class="reload"></a>
+            <a href="" class="fullscreen"></a>
+            <a href="" class="remove"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>字符串数组</h3>
+                <p>已选中: {{vm.multiple.colors}}</p>
+                <ui-select multiple ng-model="vm.multiple.colors" theme="select2" ng-disabled="vm.disabled" close-on-select="false" style="width: 300px;" title="Choose a color">
+                    <ui-select-match placeholder="Select colors...">{{$item}}</ui-select-match>
+                    <ui-select-choices repeat="color in vm.availableColors | filter:$select.search">
+                        {{color}}
+                    </ui-select-choices>
+                </ui-select>
+                <br/>
+                <div class="note note-info">
+                    <h3>
+                        <a href="./app/lib/ui-select/ui-select-string-array.src.txt" target="_blank"><span class="badge badge-primary">源码下载</span></a>
+                        <span class="close" data-close="note"></span>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    在<code>&lt;ui-select&gt;</code>标签上添加multiple属性,<code>&lt;ui-select multiple&gt;&lt;/ui-select&gt;</code><br />
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

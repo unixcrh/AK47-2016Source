@@ -1,10 +1,365 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-cn" ng-app="app">
 <head>
-    <title></title>
-	<meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>MCS平台级组件解决方案</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!--#bootstrap基础样式-->
+    <link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!--#font awesome字体样式-->
+    <link href="../libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--#ace admin基础样式-->
+    <link href="../libs/ace-1.2.3/ace.min.css" rel="stylesheet" />
+
+    <!--#blockUI样式-->
+    <link href="../libs/angular-block-ui-0.2.2/dist/angular-block-ui.css" rel="stylesheet" />
+
+    <link href="../libs/laycode-v1.1/laycode.css" rel="stylesheet" />
+
+    <link href="../libs/angular-ui-select-0.13.2/dist/select.min.css" rel="stylesheet" />
+    <link href="../libs/angular-ui-select-0.13.2/dist/select2.css" rel="stylesheet" />
+    <link href="../libs/mcs-component-1.0.1/mcs.component.css" rel="stylesheet" />
+  
+    <!--#网站主样式-->
+    <link href="assets/css/site.css" rel="stylesheet" />
+
+    <script src="../src/mcs.config.js"></script>
+    <script src="../src/mcs.global.js"></script>
+    <!--#ace配置项-->
+    <script src="../libs/ace-1.2.3/ace-extra.min.js"></script>
 </head>
-<body>
-    124
+<body class="no-skin" ng-controller="AppController">
+    <!-- #开始：网站头部区域，包括logo，消息提醒，用户名，以及用户相关的关联菜单项（注销等） -->
+    <div id="navbar" class="navbar navbar-default">
+        <script type="text/javascript">
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <!-- #开始：响应式布局下的菜单栏区域 -->
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+            <!-- /结束：响应式布局下的菜单栏区域 -->
+            <div class="navbar-header pull-left">
+                <!-- #开始：头部.logo区域 -->
+                <a id="logo" href="#" class="navbar-brand">
+                    <img src="assets/images/logo.gif" />
+                    <small>
+                        <i class="fa fa-leaf"></i>
+                        MCS平台级组件帮助网站
+                    </small>
+                </a>
+                <!-- /结束：头部.logo区域 -->
+            </div>
+        </div>
+    </div>
+    <!-- /结束：网站头部区域，包括logo，消息提醒，用户名，以及用户相关的关联菜单项（注销等） -->
+    <!-- #开始：网站主体内容区域 -->
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+        </script>
+
+        <!-- #开始：网站主体内容区域.左侧区域 -->
+        <div id="sidebar" class="sidebar responsive">
+            <script type="text/javascript">
+                try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+            </script>
+
+            <!-- #开始：网站主体内容区域.左侧区域.顶部快捷按钮 -->
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    <button class="btn btn-success">
+                        <i class="ace-icon fa fa-signal"></i>
+                    </button>
+                    <button class="btn btn-info">
+                        <i class="ace-icon fa fa-pencil"></i>
+                    </button>
+                    <button class="btn btn-warning">
+                        <i class="ace-icon fa fa-users"></i>
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="ace-icon fa fa-cogs"></i>
+                    </button>
+                </div>
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
+
+                    <span class="btn btn-info"></span>
+
+                    <span class="btn btn-warning"></span>
+
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div>
+            <!-- /结束：网站主体内容区域.左侧区域.顶部快捷按钮 -->
+            <!-- #开始：网站主体内容区域.左侧区域.主菜单 -->
+            <ul class="nav nav-list">
+                <!--首页-->
+                <li ui-sref-active="active">
+                    <a ui-sref="main">
+                        <i class="menu-icon fa fa-home"></i>
+                        <span class="menu-text"> 首页 </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <!--基础信息-->
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-desktop"></i>
+                        <span class="menu-text"> 公共组件 </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#/buttons">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                按钮
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/radiobuttongroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                文本框
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/checkboxgroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                复选列表框
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/radiobuttongroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                单选列表框
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/radiobuttongroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                级联下拉框
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/radiobuttongroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                表格
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/radiobuttongroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                对话框
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/radiobuttongroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                树控件
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="#/radiobuttongroup">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                上传控件
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--潜在客户管理-->
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text"> 第三方组件 </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#/ui-select">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                下拉列表框
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a href="#/vertical-tabs">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                垂直页签
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--学员管理-->
+                <li class="">
+                    <a href="javascript:void(0)" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-pencil-square-o"></i>
+                        <span class="menu-text"> 开发规范 </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li ui-sref-active="active">
+                            <a ui-sref="student">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                目录结构
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="student">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                命名规范
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="student">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                配置管理
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /结束：网站主体内容区域.左侧区域.主菜单 -->
+            <!-- #开始：网站主体内容区域.左侧区域.最小化左侧区域按钮 -->
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+            <!-- /结束：网站主体内容区域.左侧区域.最小化左侧区域按钮 -->
+            <script type="text/javascript">
+                try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+            </script>
+        </div>
+        <!-- /结束：网站主体内容区域.左侧区域 -->
+        <!-- #开始：网站主体内容区域.中间区域 -->
+        <div class="main-content" ui-view>
+        </div>
+        <!-- /结束：网站主体内容区域.底部区域 -->
+        <!-- #开始：网站主体内容区域.底部区域 -->
+        <div class="footer hide">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span>
+                        技术支持邮箱：<a href="mailto:support@21edu.com">support@21edu.com</a>&nbsp;&nbsp;技术支持电话：010-64465149-666&nbsp;&nbsp;<a href="javascript:void(0);">意见反馈</a>
+                        <br />&copy;2010学大教育 (京ICP备05011326号)
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- /结束：网站主体内容区域.底部区域 -->
+
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div>
+    <!-- /结束：网站主体内容区域 -->
+    <!--#jquery主文件-->
+    <script src="../libs/jquery-2.2.1/dist/jquery.min.js"></script>
+
+    <!--#bootstrap插件主文件-->
+    <script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+    <!--#ace主要的功能文件-->
+    <script src="../libs/ace-1.2.3/ace.min.js"></script>
+
+    <!--#bootbox是一个全局的对话框插件-->
+    <script src="../libs/bootbox-4.2.0/bootbox.min.js"></script>
+
+    <!--#AngularJS主文件-->
+    <script src="../libs/angular-1.5.0/angular.min.js"></script>
+
+    <!--#AngularJS cookie功能-->
+    <script src="../libs/angular-cookies-1.4.6/angular-cookies.js"></script>
+
+    <!--#AngularJS 客户端路由功能，暂时不使用-->
+    <!--<script src="libs/angular-route-1.4.6/angular-route.js"></script>-->
+    <!--#提供对ng-bind-htm指令的支持-->
+    <script src="../libs/angular-sanitize-1.4.6/angular-sanitize.js"></script>
+
+    <!--#blockUI插件是用来弹出遮罩层的-->
+    <script src="../libs/angular-block-ui-0.2.2/dist/angular-block-ui.js"></script>
+
+    <!--#angular-ui-bootstrap主文件-->
+    <!--<script src="libs/ui-bootstrap-1.1.0/ui-bootstrap-1.1.0.js"></script>-->
+    <script src="../libs/ui-bootstrap-1.1.0/ui-bootstrap-tpls-1.1.0.js"></script>
+
+    <!--#angular-ui-router，负责客户端路由功能-->
+    <script src="../libs/angular-ui-router-0.2.18/release/angular-ui-router.js"></script>
+    <script src="../libs/angular-ui-select-0.13.2/dist/select.js"></script>
+
+    <script src="../libs/mcs-component-1.0.1/mcs.component.js"></script>
+    <!--#主程序-->
+    <script src="app/app.js"></script>
+
+    <!--#整体框架的controller-->
+    <script src="app/common/app.controller.js"></script>
+
+    <!--#整体框架的filter-->
+    <script src="app/common/app.filter.js"></script>
+
+    <!--#开始：第三方组件模块-->
+    <script src="app/lib/angular-ui-select/app-ui-select.controller.js"></script>
+    <!--/结束：第三方组件模块-->
+
+    <!--#开始：公共组件模块-->
+    <script src="app/component/mcs-button/mcs-button.controller.js"></script>
+    <script src="app/component/mcs-checkboxgroup/mcs-checkboxgroup.controller.js"></script>
+    <script src="app/component/mcs-radiobuttongroup/mcs-radiobuttongroup.controller.js"></script>
+    <!--/结束：公共组件模块-->
+
 </body>
 </html>
